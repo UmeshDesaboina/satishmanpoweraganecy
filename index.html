@@ -1,3 +1,9 @@
+cript
+
+Running command
+bash
+
+cat > /mnt/user-data/outputs/sathish_manpower.html << 'HTMLEOF'
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,20 +14,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 :root {
-  --navy:    #060f1e;
-  --navy2:   #0d1f3c;
-  --blue:    #1b3f7a;
-  --gold:    #d4a43a;
-  --gold2:   #f0c060;
-  --red:     #c0392b;
-  --white:   #ffffff;
-  --offwhite:#f7f8fc;
-  --gray:    #64748b;
-  --dark:    #1e293b;
-  --border:  rgba(255,255,255,0.09);
-  --glass:   rgba(255,255,255,0.05);
-  --shadow:  0 24px 64px rgba(0,0,0,0.14);
-  --radius:  18px;
+  --navy:#060f1e;--navy2:#0d1f3c;--blue:#1b3f7a;--gold:#d4a43a;--gold2:#f0c060;
+  --red:#c0392b;--white:#ffffff;--offwhite:#f7f8fc;--gray:#64748b;--dark:#1e293b;
+  --border:rgba(255,255,255,0.09);--glass:rgba(255,255,255,0.05);
+  --shadow:0 24px 64px rgba(0,0,0,0.14);--radius:18px;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -45,12 +41,12 @@ nav.scrolled{background:rgba(6,15,30,.96);backdrop-filter:blur(24px);box-shadow:
 .logo-icon{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--gold),var(--gold2));display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:900;font-size:1.15rem;color:var(--navy);flex-shrink:0;}
 .logo-text .name{font-size:.92rem;font-weight:800;color:#fff;letter-spacing:.5px;line-height:1.2;display:block;}
 .logo-text .pvt{font-size:.58rem;color:var(--gold);letter-spacing:3px;text-transform:uppercase;}
-.nav-menu{display:flex;align-items:center;gap:24px;list-style:none;}
-.nav-menu a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.78rem;font-weight:600;letter-spacing:.8px;text-transform:uppercase;position:relative;transition:color .3s;}
+.nav-menu{display:flex;align-items:center;gap:18px;list-style:none;}
+.nav-menu a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.75rem;font-weight:600;letter-spacing:.8px;text-transform:uppercase;position:relative;transition:color .3s;white-space:nowrap;}
 .nav-menu a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--gold);transition:width .3s;border-radius:2px;}
 .nav-menu a:hover{color:var(--gold);}
 .nav-menu a:hover::after{width:100%;}
-.nav-cta{background:linear-gradient(135deg,var(--gold),var(--gold2))!important;color:var(--navy)!important;padding:10px 22px!important;border-radius:50px!important;font-weight:700!important;}
+.nav-cta{background:linear-gradient(135deg,var(--gold),var(--gold2))!important;color:var(--navy)!important;padding:9px 18px!important;border-radius:50px!important;font-weight:700!important;}
 .nav-cta::after{display:none!important;}
 .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,164,58,.4);}
 .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;}
@@ -64,7 +60,7 @@ nav.scrolled{background:rgba(6,15,30,.96);backdrop-filter:blur(24px);box-shadow:
 .mob-nav a:hover{color:var(--gold);}
 
 /* ─── LANG TOGGLE ─── */
-.lang-btn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:6px 14px;border-radius:50px;font-size:.72rem;font-weight:700;cursor:pointer;transition:all .3s;letter-spacing:1px;}
+.lang-btn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:6px 12px;border-radius:50px;font-size:.68rem;font-weight:700;cursor:pointer;transition:all .3s;letter-spacing:1px;white-space:nowrap;}
 .lang-btn:hover{background:var(--gold);color:var(--navy);border-color:var(--gold);}
 [data-lang="ta"] .en-text{display:none;}
 [data-lang="ta"] .ta-text{display:inline;}
@@ -82,30 +78,40 @@ nav.scrolled{background:rgba(6,15,30,.96);backdrop-filter:blur(24px);box-shadow:
 @keyframes glow{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-30px) scale(1.06);}}
 .hero-inner{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:110px 6% 80px;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;width:100%;}
 .hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(212,164,58,.12);border:1px solid rgba(212,164,58,.3);color:var(--gold);padding:8px 18px;border-radius:50px;font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:22px;animation:fUp .8s ease .5s both;}
-.hero-h1{font-family:'Fraunces',serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:900;color:#fff;line-height:1.08;margin-bottom:22px;animation:fUp .8s ease .7s both;}
+.hero-h1{font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,4rem);font-weight:900;color:#fff;line-height:1.08;margin-bottom:22px;animation:fUp .8s ease .7s both;}
 .hero-h1 .em{color:var(--gold);font-style:italic;}
 .hero-sub{color:rgba(255,255,255,.62);font-size:.97rem;line-height:1.82;margin-bottom:34px;animation:fUp .8s ease .9s both;}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;animation:fUp .8s ease 1.1s both;}
-.btn-gold{padding:15px 32px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font-weight:700;font-size:.88rem;border:none;border-radius:50px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .3s;letter-spacing:.3px;}
+.btn-gold{padding:14px 28px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font-weight:700;font-size:.85rem;border:none;border-radius:50px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .3s;letter-spacing:.3px;}
 .btn-gold:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(212,164,58,.38);}
-.btn-ghost{padding:15px 32px;background:transparent;color:#fff;font-weight:600;font-size:.88rem;border:1.5px solid rgba(255,255,255,.28);border-radius:50px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .3s;}
+.btn-ghost{padding:14px 28px;background:transparent;color:#fff;font-weight:600;font-size:.85rem;border:1.5px solid rgba(255,255,255,.28);border-radius:50px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .3s;}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px);}
-.btn-green{padding:15px 32px;background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;font-weight:700;font-size:.88rem;border:none;border-radius:50px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .3s;}
+.btn-green{padding:14px 28px;background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;font-weight:700;font-size:.85rem;border:none;border-radius:50px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .3s;}
 .btn-green:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(37,211,102,.38);}
-.hero-nums{display:flex;gap:32px;margin-top:48px;animation:fUp .8s ease 1.3s both;}
-.h-num .n{font-family:'Fraunces',serif;font-size:2rem;font-weight:900;color:var(--gold);line-height:1;}
-.h-num .l{font-size:.68rem;color:rgba(255,255,255,.48);text-transform:uppercase;letter-spacing:1.5px;margin-top:4px;}
-.h-num+.h-num{border-left:1px solid rgba(255,255,255,.1);padding-left:28px;}
+.hero-nums{display:flex;gap:24px;margin-top:40px;flex-wrap:wrap;animation:fUp .8s ease 1.3s both;}
+.h-num .n{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:900;color:var(--gold);line-height:1;}
+.h-num .l{font-size:.64rem;color:rgba(255,255,255,.48);text-transform:uppercase;letter-spacing:1.5px;margin-top:4px;}
+.h-num+.h-num{border-left:1px solid rgba(255,255,255,.1);padding-left:20px;}
 .hero-right{animation:fRight .8s ease .8s both;position:relative;}
-.h-card{background:linear-gradient(145deg,rgba(27,63,122,.85),rgba(6,15,30,.9));border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:32px;backdrop-filter:blur(20px);position:relative;overflow:hidden;}
+.h-card{background:linear-gradient(145deg,rgba(27,63,122,.85),rgba(6,15,30,.9));border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:28px;backdrop-filter:blur(20px);position:relative;overflow:hidden;}
 .h-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2),var(--red));}
 .h-card-hd{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:4px;}
-.h-card-sub{font-size:.68rem;color:var(--gold);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:24px;}
+.h-card-sub{font-size:.68rem;color:var(--gold);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:20px;}
+
+/* ─── MINI GRID with tooltip ─── */
 .mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
-.mini-tile{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 10px;text-align:center;transition:all .3s;cursor:default;}
-.mini-tile:hover{background:rgba(212,164,58,.12);border-color:rgba(212,164,58,.3);transform:translateY(-3px);}
-.mini-tile i{font-size:1.2rem;color:var(--gold);display:block;margin-bottom:6px;}
-.mini-tile span{font-size:.68rem;color:rgba(255,255,255,.75);font-weight:600;}
+.mini-tile{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 10px;text-align:center;transition:all .3s;cursor:pointer;position:relative;}
+.mini-tile:hover{background:rgba(212,164,58,.15);border-color:rgba(212,164,58,.4);transform:translateY(-4px);}
+.mini-tile i{font-size:1.25rem;color:var(--gold);display:block;margin-bottom:6px;transition:transform .3s;}
+.mini-tile:hover i{transform:scale(1.15);}
+.mini-tile span{font-size:.68rem;color:rgba(255,255,255,.82);font-weight:600;}
+
+/* Tooltip popup */
+.tile-tooltip{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);background:#fff;color:var(--navy);font-size:.72rem;font-weight:600;line-height:1.55;padding:10px 13px;border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.22);white-space:nowrap;z-index:100;opacity:0;visibility:hidden;transition:opacity .25s ease,transform .25s ease;pointer-events:none;max-width:220px;white-space:normal;text-align:left;min-width:160px;}
+.tile-tooltip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#fff;}
+.mini-tile:hover .tile-tooltip{opacity:1;visibility:visible;transform:translateX(-50%) translateY(-4px);}
+.tile-tooltip strong{display:block;color:var(--gold);font-size:.75rem;margin-bottom:3px;}
+
 .fb{position:absolute;background:#fff;border-radius:12px;padding:10px 15px;display:flex;align-items:center;gap:9px;box-shadow:0 12px 32px rgba(0,0,0,.28);}
 .fb-1{top:-18px;right:-18px;animation:fbFloat 3s ease-in-out infinite;}
 .fb-2{bottom:-18px;left:-18px;animation:fbFloat 3s ease-in-out infinite 1.5s;}
@@ -117,29 +123,29 @@ nav.scrolled{background:rgba(6,15,30,.96);backdrop-filter:blur(24px);box-shadow:
 @keyframes fRight{from{opacity:0;transform:translateX(40px);}to{opacity:1;transform:translateX(0);}}
 
 /* ─── MARQUEE ─── */
-.marquee-wrap{background:linear-gradient(135deg,var(--navy2),var(--blue));padding:18px 0;overflow:hidden;}
-.mq-track{display:flex;gap:56px;animation:mq 28s linear infinite;white-space:nowrap;}
+.marquee-wrap{background:linear-gradient(135deg,var(--navy2),var(--blue));padding:16px 0;overflow:hidden;}
+.mq-track{display:flex;gap:48px;animation:mq 28s linear infinite;white-space:nowrap;}
 .mq-item{display:flex;align-items:center;gap:10px;flex-shrink:0;color:rgba(255,255,255,.68);font-size:.78rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;}
 .mq-item i{color:var(--gold);}
 @keyframes mq{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
 /* ─── TRUST BAR ─── */
-.trust-bar{background:var(--offwhite);padding:36px 6%;border-bottom:1px solid rgba(0,0,0,.06);}
-.trust-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.trust-bar{background:var(--offwhite);padding:28px 6%;border-bottom:1px solid rgba(0,0,0,.06);}
+.trust-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
 .trust-item{display:flex;align-items:center;gap:12px;}
-.trust-icon{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.95rem;flex-shrink:0;}
-.trust-text strong{display:block;font-size:.82rem;font-weight:800;color:var(--navy);}
-.trust-text span{font-size:.72rem;color:var(--gray);}
+.trust-icon{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.9rem;flex-shrink:0;}
+.trust-text strong{display:block;font-size:.8rem;font-weight:800;color:var(--navy);}
+.trust-text span{font-size:.7rem;color:var(--gray);}
 .trust-div{width:1px;height:36px;background:rgba(0,0,0,.1);}
 
 /* ─── SHARED ─── */
-section{padding:100px 6%;}
+section{padding:80px 6%;}
 .max{max-width:1280px;margin:0 auto;}
 .sec-eyebrow{font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:inline-block;}
-.sec-title{font-family:'Fraunces',serif;font-size:clamp(1.9rem,4vw,2.9rem);font-weight:900;line-height:1.15;color:var(--navy);margin-bottom:14px;}
+.sec-title{font-family:'Fraunces',serif;font-size:clamp(1.7rem,4vw,2.9rem);font-weight:900;line-height:1.15;color:var(--navy);margin-bottom:14px;}
 .sec-title em{color:var(--gold);font-style:italic;}
-.sec-desc{font-size:.93rem;color:var(--gray);line-height:1.85;max-width:560px;}
-.sec-hd{margin-bottom:60px;}
+.sec-desc{font-size:.9rem;color:var(--gray);line-height:1.85;max-width:560px;}
+.sec-hd{margin-bottom:50px;}
 .sec-hd.c{text-align:center;}
 .sec-hd.c .sec-desc{margin:0 auto;}
 .rv{opacity:0;transform:translateY(36px);transition:opacity .7s ease,transform .7s ease;}
@@ -148,77 +154,76 @@ section{padding:100px 6%;}
 
 /* ─── ABOUT ─── */
 #about{background:var(--offwhite);}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
-.img-stack{position:relative;height:520px;}
-.img-main{width:72%;height:390px;object-fit:cover;border-radius:22px;box-shadow:var(--shadow);}
-.img-sec{position:absolute;bottom:0;right:0;width:52%;height:270px;object-fit:cover;border-radius:18px;border:5px solid #fff;box-shadow:var(--shadow);}
-.exp-badge{position:absolute;top:40px;right:-10px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:16px;padding:20px 22px;text-align:center;box-shadow:0 10px 30px rgba(212,164,58,.38);z-index:2;}
-.exp-badge .big{font-family:'Fraunces',serif;font-size:2.6rem;font-weight:900;color:var(--navy);line-height:1;}
-.exp-badge .sm{font-size:.68rem;font-weight:700;color:var(--navy);letter-spacing:1px;}
-.cert-badge{position:absolute;bottom:80px;left:-24px;background:#fff;border-radius:14px;padding:12px 16px;box-shadow:0 10px 28px rgba(0,0,0,.14);display:flex;align-items:center;gap:10px;z-index:2;}
-.cert-badge i{color:var(--gold);font-size:1.2rem;}
-.cert-badge .ct{font-size:.72rem;font-weight:700;color:var(--navy);}
-.cert-badge .cs{font-size:.62rem;color:var(--gray);}
-.vals{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px;}
-.val{display:flex;align-items:center;gap:9px;font-size:.83rem;font-weight:600;color:var(--dark);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.img-stack{position:relative;height:460px;}
+.img-main{width:72%;height:350px;object-fit:cover;border-radius:22px;box-shadow:var(--shadow);}
+.img-sec{position:absolute;bottom:0;right:0;width:52%;height:240px;object-fit:cover;border-radius:18px;border:5px solid #fff;box-shadow:var(--shadow);}
+.exp-badge{position:absolute;top:30px;right:-10px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:16px;padding:18px 20px;text-align:center;box-shadow:0 10px 30px rgba(212,164,58,.38);z-index:2;}
+.exp-badge .big{font-family:'Fraunces',serif;font-size:2.4rem;font-weight:900;color:var(--navy);line-height:1;}
+.exp-badge .sm{font-size:.65rem;font-weight:700;color:var(--navy);letter-spacing:1px;}
+.cert-badge{position:absolute;bottom:60px;left:-20px;background:#fff;border-radius:14px;padding:10px 14px;box-shadow:0 10px 28px rgba(0,0,0,.14);display:flex;align-items:center;gap:10px;z-index:2;}
+.cert-badge i{color:var(--gold);font-size:1.1rem;}
+.cert-badge .ct{font-size:.7rem;font-weight:700;color:var(--navy);}
+.cert-badge .cs{font-size:.6rem;color:var(--gray);}
+.vals{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px;}
+.val{display:flex;align-items:center;gap:9px;font-size:.82rem;font-weight:600;color:var(--dark);}
 .val i{color:var(--gold);}
-/* CEO Message */
-.ceo-box{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:20px;padding:28px;margin-top:28px;position:relative;box-shadow:0 4px 18px rgba(0,0,0,.06);}
+.ceo-box{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:20px;padding:24px;margin-top:24px;position:relative;box-shadow:0 4px 18px rgba(0,0,0,.06);}
 .ceo-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:3px 3px 0 0;}
-.ceo-quote{font-size:.88rem;color:var(--gray);line-height:1.8;font-style:italic;margin-bottom:16px;}
+.ceo-quote{font-size:.85rem;color:var(--gray);line-height:1.8;font-style:italic;margin-bottom:14px;}
 .ceo-author{display:flex;align-items:center;gap:12px;}
-.ceo-avatar{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.2rem;font-weight:800;font-family:'Fraunces',serif;}
-.ceo-name{font-size:.88rem;font-weight:800;color:var(--navy);}
-.ceo-title{font-size:.72rem;color:var(--gray);}
+.ceo-avatar{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.1rem;font-weight:800;font-family:'Fraunces',serif;}
+.ceo-name{font-size:.86rem;font-weight:800;color:var(--navy);}
+.ceo-title{font-size:.7rem;color:var(--gray);}
 
 /* ─── INDUSTRIES ─── */
 #industries{background:#fff;}
-.ind-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px;}
-.ind-card{background:var(--offwhite);border:1px solid rgba(0,0,0,.06);border-radius:18px;padding:28px 20px;text-align:center;transition:all .35s;cursor:default;}
+.ind-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:18px;}
+.ind-card{background:var(--offwhite);border:1px solid rgba(0,0,0,.06);border-radius:18px;padding:24px 18px;text-align:center;transition:all .35s;cursor:default;}
 .ind-card:hover{background:var(--navy);transform:translateY(-8px);box-shadow:0 20px 50px rgba(6,15,30,.18);}
-.ind-icon{width:62px;height:62px;border-radius:16px;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.5rem;margin:0 auto 16px;transition:all .3s;}
+.ind-icon{width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.4rem;margin:0 auto 14px;transition:all .3s;}
 .ind-card:hover .ind-icon{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);}
-.ind-card h4{font-size:.88rem;font-weight:700;color:var(--navy);transition:color .3s;}
+.ind-card h4{font-size:.86rem;font-weight:700;color:var(--navy);transition:color .3s;}
 .ind-card:hover h4{color:#fff;}
-.ind-card p{font-size:.74rem;color:var(--gray);margin-top:6px;line-height:1.5;transition:color .3s;}
+.ind-card p{font-size:.72rem;color:var(--gray);margin-top:5px;line-height:1.5;transition:color .3s;}
 .ind-card:hover p{color:rgba(255,255,255,.65);}
 
 /* ─── SERVICES ─── */
 #services{background:var(--offwhite);}
-.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:26px;}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:24px;}
 .svc-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 3px 18px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.05);transition:all .4s cubic-bezier(.175,.885,.32,1.275);cursor:pointer;}
 .svc-card:hover{transform:translateY(-10px);box-shadow:0 28px 60px rgba(6,15,30,.14);border-color:rgba(212,164,58,.28);}
-.svc-img{position:relative;height:195px;overflow:hidden;}
+.svc-img{position:relative;height:180px;overflow:hidden;}
 .svc-img img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease;}
 .svc-card:hover .svc-img img{transform:scale(1.09);}
-.svc-tag{position:absolute;top:12px;left:12px;background:var(--navy);color:var(--gold);font-size:.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 12px;border-radius:50px;}
-.svc-ico{position:absolute;bottom:-20px;right:18px;width:44px;height:44px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.05rem;color:var(--navy);box-shadow:0 5px 14px rgba(212,164,58,.38);z-index:2;}
-.svc-body{padding:28px 22px 22px;}
-.svc-body h3{font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:8px;}
-.svc-body p{font-size:.8rem;color:var(--gray);line-height:1.72;margin-bottom:14px;}
-.svc-link{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:700;color:var(--blue);text-decoration:none;transition:gap .3s,color .3s;}
+.svc-tag{position:absolute;top:10px;left:10px;background:var(--navy);color:var(--gold);font-size:.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 10px;border-radius:50px;}
+.svc-ico{position:absolute;bottom:-18px;right:16px;width:40px;height:40px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--navy);box-shadow:0 5px 14px rgba(212,164,58,.38);z-index:2;}
+.svc-body{padding:24px 20px 18px;}
+.svc-body h3{font-size:.95rem;font-weight:800;color:var(--navy);margin-bottom:7px;}
+.svc-body p{font-size:.78rem;color:var(--gray);line-height:1.7;margin-bottom:12px;}
+.svc-link{display:inline-flex;align-items:center;gap:6px;font-size:.76rem;font-weight:700;color:var(--blue);text-decoration:none;transition:gap .3s,color .3s;}
 .svc-link:hover{gap:10px;color:var(--gold);}
 
 /* ─── STATS COUNTER ─── */
-#stats{background:linear-gradient(135deg,var(--navy),var(--blue));padding:80px 6%;position:relative;overflow:hidden;}
+#stats{background:linear-gradient(135deg,var(--navy),var(--blue));padding:70px 6%;position:relative;overflow:hidden;}
 #stats::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(212,164,58,.1),transparent 70%);}
-.stats-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
-.stat-box{text-align:center;padding:40px 20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;transition:all .3s;}
+.stats-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.stat-box{text-align:center;padding:36px 18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:18px;transition:all .3s;}
 .stat-box:hover{background:rgba(212,164,58,.1);border-color:rgba(212,164,58,.3);transform:translateY(-5px);}
-.stat-num{font-family:'Fraunces',serif;font-size:2.8rem;font-weight:900;color:var(--gold);line-height:1;margin-bottom:8px;}
-.stat-num em{font-style:normal;font-size:2rem;}
-.stat-label{font-size:.82rem;color:rgba(255,255,255,.7);font-weight:600;}
-.stat-icon{font-size:1.5rem;color:rgba(255,255,255,.2);margin-bottom:14px;}
+.stat-num{font-family:'Fraunces',serif;font-size:2.5rem;font-weight:900;color:var(--gold);line-height:1;margin-bottom:7px;}
+.stat-num em{font-style:normal;font-size:1.8rem;}
+.stat-label{font-size:.8rem;color:rgba(255,255,255,.7);font-weight:600;}
+.stat-icon{font-size:1.4rem;color:rgba(255,255,255,.2);margin-bottom:12px;}
 
 /* ─── JOB CATEGORIES ─── */
 #jobs{background:#fff;}
-.jobs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;}
-.job-card{background:var(--offwhite);border:1px solid rgba(0,0,0,.06);border-radius:16px;padding:20px;display:flex;align-items:center;gap:14px;transition:all .3s;}
+.jobs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+.job-card{background:var(--offwhite);border:1px solid rgba(0,0,0,.06);border-radius:14px;padding:18px;display:flex;align-items:center;gap:14px;transition:all .3s;}
 .job-card:hover{border-color:rgba(212,164,58,.4);background:#fff;transform:translateX(5px);box-shadow:0 8px 28px rgba(0,0,0,.08);}
-.job-ico{width:48px;height:48px;flex-shrink:0;border-radius:12px;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.1rem;}
-.job-info h4{font-size:.88rem;font-weight:700;color:var(--navy);}
-.job-info span{font-size:.72rem;color:var(--gray);}
-.job-badge{margin-left:auto;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font-size:.6rem;font-weight:800;padding:4px 10px;border-radius:50px;white-space:nowrap;flex-shrink:0;}
+.job-ico{width:44px;height:44px;flex-shrink:0;border-radius:11px;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1rem;}
+.job-info h4{font-size:.85rem;font-weight:700;color:var(--navy);}
+.job-info span{font-size:.7rem;color:var(--gray);}
+.job-badge{margin-left:auto;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font-size:.58rem;font-weight:800;padding:3px 9px;border-radius:50px;white-space:nowrap;flex-shrink:0;}
 
 /* ─── TESTIMONIALS ─── */
 #testimonials{background:var(--navy);position:relative;overflow:hidden;}
@@ -226,259 +231,300 @@ section{padding:100px 6%;}
 .testi-wrap{position:relative;z-index:1;}
 #testimonials .sec-title{color:#fff;}
 #testimonials .sec-desc{color:rgba(255,255,255,.55);}
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.testi-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:20px;padding:28px;transition:all .3s;position:relative;}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.testi-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:18px;padding:24px;transition:all .3s;position:relative;}
 .testi-card:hover{background:rgba(212,164,58,.07);border-color:rgba(212,164,58,.25);transform:translateY(-5px);}
-.testi-stars{display:flex;gap:4px;margin-bottom:16px;}
-.testi-stars i{color:var(--gold);font-size:.82rem;}
-.testi-text{font-size:.85rem;color:rgba(255,255,255,.75);line-height:1.78;margin-bottom:20px;font-style:italic;}
-.testi-author{display:flex;align-items:center;gap:12px;}
-.testi-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(212,164,58,.4);}
-.testi-name{font-size:.85rem;font-weight:700;color:#fff;}
-.testi-role{font-size:.7rem;color:rgba(255,255,255,.45);}
-.quote-icon{position:absolute;top:20px;right:20px;font-size:2rem;color:rgba(212,164,58,.15);}
+.testi-stars{display:flex;gap:3px;margin-bottom:14px;}
+.testi-stars i{color:var(--gold);font-size:.78rem;}
+.testi-text{font-size:.82rem;color:rgba(255,255,255,.75);line-height:1.78;margin-bottom:18px;font-style:italic;}
+.testi-author{display:flex;align-items:center;gap:11px;}
+.testi-avatar{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid rgba(212,164,58,.4);}
+.testi-name{font-size:.83rem;font-weight:700;color:#fff;}
+.testi-role{font-size:.68rem;color:rgba(255,255,255,.45);}
+.quote-icon{position:absolute;top:18px;right:18px;font-size:1.8rem;color:rgba(212,164,58,.15);}
 
 /* ─── WHY US ─── */
 #why{background:var(--offwhite);}
-.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
-.why-points{display:flex;flex-direction:column;gap:16px;margin-top:32px;}
-.why-pt{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:16px;padding:18px;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.05);}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.why-points{display:flex;flex-direction:column;gap:14px;margin-top:28px;}
+.why-pt{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:14px;padding:16px;transition:all .3s;box-shadow:0 2px 10px rgba(0,0,0,.04);}
 .why-pt:hover{border-color:rgba(212,164,58,.3);transform:translateX(6px);box-shadow:0 8px 28px rgba(0,0,0,.1);}
-.why-ico{width:44px;height:44px;flex-shrink:0;background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1rem;}
-.why-pt h4{font-size:.92rem;font-weight:700;color:var(--navy);margin-bottom:4px;}
-.why-pt p{font-size:.78rem;color:var(--gray);line-height:1.62;}
-.why-stats{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-.wstat{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:20px;padding:30px 24px;text-align:center;box-shadow:0 4px 18px rgba(0,0,0,.06);transition:all .3s;}
+.why-ico{width:42px;height:42px;flex-shrink:0;background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:11px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.95rem;}
+.why-pt h4{font-size:.9rem;font-weight:700;color:var(--navy);margin-bottom:3px;}
+.why-pt p{font-size:.76rem;color:var(--gray);line-height:1.6;}
+.why-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.wstat{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:18px;padding:26px 22px;text-align:center;box-shadow:0 4px 18px rgba(0,0,0,.06);transition:all .3s;}
 .wstat:hover{border-color:rgba(212,164,58,.3);transform:translateY(-5px);box-shadow:0 14px 40px rgba(0,0,0,.1);}
-.wstat .big{font-family:'Fraunces',serif;font-size:2.6rem;font-weight:900;color:var(--navy);line-height:1;margin-bottom:6px;}
+.wstat .big{font-family:'Fraunces',serif;font-size:2.4rem;font-weight:900;color:var(--navy);line-height:1;margin-bottom:6px;}
 .wstat .big em{color:var(--gold);font-style:normal;}
-.wstat p{font-size:.78rem;color:var(--gray);}
+.wstat p{font-size:.76rem;color:var(--gray);}
 
 /* ─── PROCESS ─── */
 #process{background:#fff;}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;position:relative;}
-.steps::after{content:'';position:absolute;top:40px;left:12%;right:12%;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold));z-index:0;}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative;}
+.steps::after{content:'';position:absolute;top:38px;left:12%;right:12%;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold));z-index:0;}
 .step{text-align:center;position:relative;z-index:1;}
-.step-n{width:80px;height:80px;border-radius:50%;background:#fff;border:3px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:1.7rem;font-weight:900;color:var(--navy);margin:0 auto 20px;transition:all .3s;box-shadow:0 5px 20px rgba(212,164,58,.2);}
+.step-n{width:76px;height:76px;border-radius:50%;background:#fff;border:3px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:1.6rem;font-weight:900;color:var(--navy);margin:0 auto 18px;transition:all .3s;box-shadow:0 5px 20px rgba(212,164,58,.2);}
 .step:hover .step-n{background:var(--gold);transform:scale(1.1);}
-.step h4{font-size:.93rem;font-weight:700;color:var(--navy);margin-bottom:8px;}
-.step p{font-size:.78rem;color:var(--gray);line-height:1.65;}
+.step h4{font-size:.9rem;font-weight:700;color:var(--navy);margin-bottom:7px;}
+.step p{font-size:.76rem;color:var(--gray);line-height:1.65;}
 
 /* ─── COVERAGE ─── */
-#coverage{background:var(--navy);position:relative;overflow:hidden;padding:80px 6%;}
+#coverage{background:var(--navy);position:relative;overflow:hidden;padding:70px 6%;}
 #coverage::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(27,63,122,.6),transparent 60%);}
-.cov-inner{position:relative;z-index:1;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+.cov-inner{position:relative;z-index:1;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
 #coverage .sec-title{color:#fff;}
 #coverage .sec-desc{color:rgba(255,255,255,.55);}
-.coverage-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;}
-.cpill{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.75);font-size:.78rem;font-weight:600;padding:8px 14px;border-radius:50px;transition:all .3s;}
-.cpill i{color:var(--gold);font-size:.75rem;}
+.coverage-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
+.cpill{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.75);font-size:.75rem;font-weight:600;padding:7px 13px;border-radius:50px;transition:all .3s;}
+.cpill i{color:var(--gold);font-size:.72rem;}
 .cpill:hover{background:rgba(212,164,58,.12);border-color:rgba(212,164,58,.35);color:#fff;}
-.map-visual{position:relative;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:22px;overflow:hidden;height:380px;}
-.map-visual iframe{width:100%;height:100%;border:0;border-radius:22px;filter:grayscale(20%);}
+.map-visual{position:relative;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:20px;overflow:hidden;height:360px;}
+.map-visual iframe{width:100%;height:100%;border:0;border-radius:20px;}
 
 /* ─── PRICING ─── */
-#pricing{background:var(--offwhite);padding:100px 6%;}
-.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.pkg{background:#fff;border:2px solid rgba(0,0,0,.06);border-radius:22px;padding:36px 28px;text-align:center;transition:all .35s;position:relative;overflow:hidden;}
+#pricing{background:var(--offwhite);}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.pkg{background:#fff;border:2px solid rgba(0,0,0,.06);border-radius:20px;padding:32px 26px;text-align:center;transition:all .35s;position:relative;overflow:hidden;}
 .pkg.featured{border-color:var(--gold);box-shadow:0 20px 60px rgba(212,164,58,.2);}
 .pkg:not(.featured):hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,.1);}
-.pkg-badge{position:absolute;top:20px;right:20px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font-size:.62rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:50px;}
-.pkg-ico{width:58px;height:58px;border-radius:16px;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.4rem;margin:0 auto 16px;}
-.pkg-name{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:900;color:var(--navy);margin-bottom:6px;}
-.pkg-desc{font-size:.8rem;color:var(--gray);margin-bottom:22px;line-height:1.6;}
-.pkg-price{font-family:'Fraunces',serif;font-size:2rem;font-weight:900;color:var(--navy);margin-bottom:4px;}
-.pkg-price em{font-size:1rem;color:var(--gray);font-style:normal;font-family:'Plus Jakarta Sans',sans-serif;font-weight:500;}
-.pkg-period{font-size:.75rem;color:var(--gray);margin-bottom:24px;}
-.pkg-feats{list-style:none;text-align:left;margin-bottom:28px;}
-.pkg-feats li{display:flex;align-items:center;gap:9px;font-size:.8rem;color:var(--dark);padding:6px 0;border-bottom:1px solid rgba(0,0,0,.05);}
-.pkg-feats li i{color:var(--gold);font-size:.78rem;flex-shrink:0;}
-.pkg-btn{display:block;padding:13px;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-radius:12px;font-weight:700;font-size:.85rem;text-decoration:none;transition:all .3s;}
+.pkg-badge{position:absolute;top:16px;right:16px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:50px;}
+.pkg-ico{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.3rem;margin:0 auto 14px;}
+.pkg-name{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:900;color:var(--navy);margin-bottom:6px;}
+.pkg-desc{font-size:.78rem;color:var(--gray);margin-bottom:18px;line-height:1.6;}
+.pkg-price{font-family:'Fraunces',serif;font-size:1.9rem;font-weight:900;color:var(--navy);margin-bottom:3px;}
+.pkg-price em{font-size:.9rem;color:var(--gray);font-style:normal;font-family:'Plus Jakarta Sans',sans-serif;font-weight:500;}
+.pkg-period{font-size:.72rem;color:var(--gray);margin-bottom:20px;}
+.pkg-feats{list-style:none;text-align:left;margin-bottom:24px;}
+.pkg-feats li{display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--dark);padding:5px 0;border-bottom:1px solid rgba(0,0,0,.05);}
+.pkg-feats li i{color:var(--gold);font-size:.75rem;flex-shrink:0;}
+.pkg-btn{display:block;padding:12px;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-radius:10px;font-weight:700;font-size:.82rem;text-decoration:none;transition:all .3s;}
 .pkg.featured .pkg-btn{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);}
 .pkg-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.18);}
 
-/* ─── APPLY PORTAL ─── */
-#apply{background:#fff;padding:100px 6%;}
+/* ─── APPLY PORTAL with Resume Upload ─── */
+#apply{background:#fff;}
 .portal-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start;}
 .portal-info{padding-right:10px;}
 .portal-info .sec-title{margin-bottom:16px;}
-.portal-info p{font-size:.88rem;color:var(--gray);line-height:1.8;margin-bottom:22px;}
-.portal-perks{display:flex;flex-direction:column;gap:12px;}
-.perk{display:flex;align-items:center;gap:12px;font-size:.84rem;font-weight:600;color:var(--dark);}
-.perk i{width:32px;height:32px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:.78rem;flex-shrink:0;}
-.portal-form{background:var(--navy);border-radius:24px;padding:40px;position:relative;overflow:hidden;}
+.portal-info p{font-size:.86rem;color:var(--gray);line-height:1.8;margin-bottom:20px;}
+.portal-perks{display:flex;flex-direction:column;gap:11px;}
+.perk{display:flex;align-items:center;gap:12px;font-size:.82rem;font-weight:600;color:var(--dark);}
+.perk i{width:30px;height:30px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:.75rem;flex-shrink:0;}
+.portal-form{background:var(--navy);border-radius:22px;padding:36px 32px;position:relative;overflow:hidden;}
 .portal-form::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold2));}
-.portal-form .form-title{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:900;color:#fff;margin-bottom:4px;}
-.portal-form .form-sub{font-size:.75rem;color:rgba(255,255,255,.45);margin-bottom:26px;}
-.fg{margin-bottom:16px;}
-.fg label{display:block;font-size:.72rem;font-weight:700;color:rgba(255,255,255,.65);letter-spacing:1px;text-transform:uppercase;margin-bottom:7px;}
-.fg input,.fg select,.fg textarea{width:100%;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 15px;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.83rem;transition:all .3s;outline:none;}
+.portal-form .form-title{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:900;color:#fff;margin-bottom:4px;}
+.portal-form .form-sub{font-size:.72rem;color:rgba(255,255,255,.45);margin-bottom:22px;}
+.fg{margin-bottom:14px;}
+.fg label{display:block;font-size:.7rem;font-weight:700;color:rgba(255,255,255,.65);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+.fg input,.fg select,.fg textarea{width:100%;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.12);border-radius:9px;padding:11px 14px;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;transition:all .3s;outline:none;}
 .fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.32);}
 .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold);background:rgba(255,255,255,.12);}
 .fg select option{background:var(--navy);color:#fff;}
-.fg textarea{resize:vertical;min-height:80px;}
-.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.submit-btn{width:100%;padding:15px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;font-weight:800;border:none;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;transition:all .3s;margin-top:6px;}
+.fg textarea{resize:vertical;min-height:72px;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+
+/* Resume Upload */
+.resume-upload-area{width:100%;background:rgba(255,255,255,.06);border:2px dashed rgba(212,164,58,.4);border-radius:10px;padding:18px;text-align:center;cursor:pointer;transition:all .3s;position:relative;}
+.resume-upload-area:hover{border-color:var(--gold);background:rgba(212,164,58,.08);}
+.resume-upload-area.has-file{border-color:#25d366;background:rgba(37,211,102,.06);}
+.resume-upload-area input[type="file"]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
+.resume-upload-icon{font-size:1.6rem;color:var(--gold);margin-bottom:8px;}
+.resume-upload-text{font-size:.75rem;color:rgba(255,255,255,.65);font-weight:600;}
+.resume-upload-text span{color:var(--gold);text-decoration:underline;}
+.resume-file-name{font-size:.7rem;color:#25d366;font-weight:700;margin-top:5px;display:none;}
+.resume-upload-area.has-file .resume-file-name{display:block;}
+.resume-upload-area.has-file .resume-upload-icon{color:#25d366;}
+.resume-note{font-size:.68rem;color:rgba(255,255,255,.35);margin-top:6px;line-height:1.4;text-align:center;}
+
+.submit-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font-family:'Plus Jakarta Sans',sans-serif;font-size:.86rem;font-weight:800;border:none;border-radius:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;transition:all .3s;margin-top:6px;}
 .submit-btn:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(212,164,58,.4);}
+.submit-btn-email{background:linear-gradient(135deg,#4285f4,#1a73e8)!important;}
+.submit-btn-email:hover{box-shadow:0 14px 32px rgba(66,133,244,.4)!important;}
 
 /* ─── EMPLOYER ENQUIRY ─── */
-#employer{background:var(--offwhite);padding:100px 6%;}
+#employer{background:var(--offwhite);}
 .emp-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:50px;align-items:start;}
-.emp-form{background:linear-gradient(145deg,var(--navy),var(--blue));border-radius:24px;padding:44px 40px;position:relative;overflow:hidden;}
+.emp-form{background:linear-gradient(145deg,var(--navy),var(--blue));border-radius:22px;padding:38px 34px;position:relative;overflow:hidden;}
 .emp-form::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold2),var(--red));}
-.emp-benefits{display:flex;flex-direction:column;gap:20px;margin-top:32px;}
+.emp-benefits{display:flex;flex-direction:column;gap:18px;margin-top:28px;}
 .emp-ben{display:flex;gap:14px;align-items:flex-start;}
-.emp-ben-ico{width:46px;height:46px;flex-shrink:0;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:1.1rem;box-shadow:0 3px 12px rgba(0,0,0,.08);}
-.emp-ben h4{font-size:.9rem;font-weight:700;color:var(--navy);margin-bottom:4px;}
-.emp-ben p{font-size:.78rem;color:var(--gray);line-height:1.6;}
+.emp-ben-ico{width:44px;height:44px;flex-shrink:0;background:#fff;border-radius:11px;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:1rem;box-shadow:0 3px 12px rgba(0,0,0,.08);}
+.emp-ben h4{font-size:.88rem;font-weight:700;color:var(--navy);margin-bottom:3px;}
+.emp-ben p{font-size:.76rem;color:var(--gray);line-height:1.6;}
 
 /* ─── GALLERY ─── */
-#gallery{background:#fff;padding:100px 6%;}
-.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px;}
-.gal-item{border-radius:16px;overflow:hidden;position:relative;cursor:pointer;}
+#gallery{background:#fff;}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:12px;}
+.gal-item{border-radius:14px;overflow:hidden;position:relative;cursor:pointer;}
 .gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
 .gal-item:hover img{transform:scale(1.08);}
 .gal-item:nth-child(1){grid-column:span 2;grid-row:span 2;}
 .gal-item:nth-child(4){grid-column:span 2;}
-.gal-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,15,30,.7),transparent);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:16px;}
+.gal-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,15,30,.7),transparent);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:14px;}
 .gal-item:hover .gal-overlay{opacity:1;}
-.gal-overlay span{color:#fff;font-size:.78rem;font-weight:700;}
+.gal-overlay span{color:#fff;font-size:.76rem;font-weight:700;}
 
 /* ─── BLOG ─── */
-#blog{background:var(--offwhite);padding:100px 6%;}
-.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
-.blog-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 3px 18px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.05);transition:all .35s;}
+#blog{background:var(--offwhite);}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.blog-card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 3px 18px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.05);transition:all .35s;}
 .blog-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,.12);}
-.blog-img{height:185px;overflow:hidden;}
+.blog-img{height:172px;overflow:hidden;}
 .blog-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
 .blog-card:hover .blog-img img{transform:scale(1.06);}
-.blog-body{padding:22px;}
-.blog-cat{font-size:.62rem;font-weight:700;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;}
-.blog-body h3{font-size:.95rem;font-weight:800;color:var(--navy);margin-bottom:10px;line-height:1.4;}
-.blog-body p{font-size:.78rem;color:var(--gray);line-height:1.7;margin-bottom:16px;}
-.blog-meta{display:flex;align-items:center;gap:14px;font-size:.7rem;color:var(--gray);}
+.blog-body{padding:20px;}
+.blog-cat{font-size:.6rem;font-weight:700;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:7px;}
+.blog-body h3{font-size:.92rem;font-weight:800;color:var(--navy);margin-bottom:8px;line-height:1.4;}
+.blog-body p{font-size:.76rem;color:var(--gray);line-height:1.7;margin-bottom:14px;}
+.blog-meta{display:flex;align-items:center;gap:12px;font-size:.68rem;color:var(--gray);}
 .blog-meta i{color:var(--gold);}
-.blog-link{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:700;color:var(--blue);text-decoration:none;margin-top:12px;transition:gap .3s,color .3s;}
+.blog-link{display:inline-flex;align-items:center;gap:6px;font-size:.76rem;font-weight:700;color:var(--blue);text-decoration:none;margin-top:10px;transition:gap .3s,color .3s;}
 .blog-link:hover{gap:10px;color:var(--gold);}
 
 /* ─── FAQ ─── */
-#faq{background:#fff;padding:100px 6%;}
+#faq{background:#fff;}
 .faq-wrap{max-width:820px;margin:0 auto;}
-.faq-tabs{display:flex;gap:12px;margin-bottom:32px;flex-wrap:wrap;}
-.faq-tab{padding:9px 22px;border-radius:50px;font-size:.8rem;font-weight:700;cursor:pointer;border:2px solid rgba(0,0,0,.1);color:var(--gray);transition:all .3s;}
+.faq-tabs{display:flex;gap:10px;margin-bottom:28px;flex-wrap:wrap;}
+.faq-tab{padding:8px 20px;border-radius:50px;font-size:.78rem;font-weight:700;cursor:pointer;border:2px solid rgba(0,0,0,.1);color:var(--gray);transition:all .3s;}
 .faq-tab.active{background:var(--navy);color:var(--gold);border-color:var(--navy);}
-.faq-item{border:1px solid rgba(0,0,0,.08);border-radius:14px;margin-bottom:12px;overflow:hidden;transition:all .3s;}
+.faq-item{border:1px solid rgba(0,0,0,.08);border-radius:12px;margin-bottom:10px;overflow:hidden;transition:all .3s;}
 .faq-item.open{border-color:rgba(212,164,58,.35);box-shadow:0 5px 20px rgba(212,164,58,.1);}
-.faq-q{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;cursor:pointer;font-weight:700;font-size:.88rem;color:var(--navy);}
-.faq-q i{color:var(--gold);transition:transform .3s;font-size:.82rem;flex-shrink:0;}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;cursor:pointer;font-weight:700;font-size:.86rem;color:var(--navy);}
+.faq-q i{color:var(--gold);transition:transform .3s;font-size:.8rem;flex-shrink:0;margin-left:10px;}
 .faq-item.open .faq-q i{transform:rotate(180deg);}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
 .faq-item.open .faq-a{max-height:300px;}
-.faq-a p{padding:0 22px 18px;font-size:.83rem;color:var(--gray);line-height:1.75;}
+.faq-a p{padding:0 20px 16px;font-size:.82rem;color:var(--gray);line-height:1.75;}
 
 /* ─── CONTACT ─── */
 #contact{background:var(--offwhite);}
-.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:start;}
-.ci h3{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:900;color:var(--navy);margin-bottom:14px;}
-.ci p{color:var(--gray);line-height:1.8;margin-bottom:32px;font-size:.88rem;}
-.clist{display:flex;flex-direction:column;gap:18px;}
-.citem{display:flex;align-items:flex-start;gap:14px;}
-.c-ico{width:44px;height:44px;flex-shrink:0;background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.95rem;}
-.citem h5{font-size:.75rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
-.citem p{font-size:.83rem;color:var(--gray);margin:0;}
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:50px;align-items:start;}
+.ci h3{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:900;color:var(--navy);margin-bottom:12px;}
+.ci p{color:var(--gray);line-height:1.8;margin-bottom:28px;font-size:.86rem;}
+.clist{display:flex;flex-direction:column;gap:16px;}
+.citem{display:flex;align-items:flex-start;gap:13px;}
+.c-ico{width:42px;height:42px;flex-shrink:0;background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:11px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.9rem;}
+.citem h5{font-size:.72rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;}
+.citem p{font-size:.82rem;color:var(--gray);margin:0;}
 .citem a{color:var(--blue);text-decoration:none;font-weight:600;}
 .citem a:hover{color:var(--gold);}
-.map-container{margin-top:24px;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);}
-.map-container iframe{display:block;width:100%;border-radius:16px;}
-.social-links{display:flex;gap:10px;margin-top:24px;}
-.social-link{width:42px;height:42px;border-radius:12px;background:var(--navy);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:1rem;transition:all .3s;}
+.map-container{margin-top:22px;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);}
+.map-container iframe{display:block;width:100%;border-radius:14px;}
+.social-links{display:flex;gap:9px;margin-top:20px;}
+.social-link{width:40px;height:40px;border-radius:10px;background:var(--navy);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:.95rem;transition:all .3s;}
 .social-link:hover{background:var(--gold);color:var(--navy);transform:translateY(-3px);}
-.cform-wrap{background:linear-gradient(145deg,var(--navy),var(--blue));border-radius:24px;padding:44px 40px;position:relative;overflow:hidden;}
+.cform-wrap{background:linear-gradient(145deg,var(--navy),var(--blue));border-radius:22px;padding:38px 32px;position:relative;overflow:hidden;}
 .cform-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold2),var(--red));}
-.cform-title{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:900;color:#fff;margin-bottom:4px;}
-.cform-sub{font-size:.75rem;color:rgba(255,255,255,.45);margin-bottom:28px;}
-.wa-btn{width:100%;padding:15px;background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;font-weight:700;border:none;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;transition:all .3s;margin-top:6px;}
+.cform-title{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:900;color:#fff;margin-bottom:3px;}
+.cform-sub{font-size:.72rem;color:rgba(255,255,255,.45);margin-bottom:24px;}
+.wa-btn{width:100%;padding:14px;background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.86rem;font-weight:700;border:none;border-radius:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;transition:all .3s;margin-top:6px;}
 .wa-btn:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(37,211,102,.4);}
-.wa-btn i{font-size:1.15rem;}
+.wa-btn i{font-size:1.1rem;}
 
 /* ─── FOOTER ─── */
-footer{background:var(--navy);color:rgba(255,255,255,.65);padding:70px 6% 30px;position:relative;}
+footer{background:var(--navy);color:rgba(255,255,255,.65);padding:60px 6% 28px;position:relative;}
 footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold2),var(--red),var(--gold));}
-.ftgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:48px;margin-bottom:48px;}
-.ft-brand p{font-size:.82rem;line-height:1.82;margin:14px 0 18px;}
-.ft-social{display:flex;gap:9px;}
-.ft-social a{width:38px;height:38px;background:rgba(255,255,255,.07);border-radius:10px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);text-decoration:none;transition:all .3s;font-size:.88rem;}
+.ftgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px;}
+.ft-brand p{font-size:.8rem;line-height:1.82;margin:12px 0 16px;}
+.ft-social{display:flex;gap:8px;}
+.ft-social a{width:36px;height:36px;background:rgba(255,255,255,.07);border-radius:9px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);text-decoration:none;transition:all .3s;font-size:.84rem;}
 .ft-social a:hover{background:var(--gold);color:var(--navy);transform:translateY(-3px);}
-.ft-col h4{font-size:.8rem;font-weight:700;color:#fff;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;padding-bottom:10px;position:relative;}
-.ft-col h4::after{content:'';position:absolute;bottom:0;left:0;width:28px;height:2px;background:var(--gold);border-radius:2px;}
+.ft-col h4{font-size:.78rem;font-weight:700;color:#fff;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;padding-bottom:9px;position:relative;}
+.ft-col h4::after{content:'';position:absolute;bottom:0;left:0;width:26px;height:2px;background:var(--gold);border-radius:2px;}
 .ft-col ul{list-style:none;}
-.ft-col ul li{margin-bottom:9px;}
-.ft-col ul li a{color:rgba(255,255,255,.58);text-decoration:none;font-size:.8rem;display:flex;align-items:center;gap:6px;transition:color .3s,padding-left .3s;}
-.ft-col ul li a:hover{color:var(--gold);padding-left:5px;}
-.ft-col ul li a i{font-size:.65rem;color:var(--gold);}
-.ft-clist{display:flex;flex-direction:column;gap:13px;}
-.ft-ci{display:flex;gap:9px;align-items:flex-start;font-size:.8rem;}
-.ft-ci i{color:var(--gold);margin-top:3px;flex-shrink:0;}
+.ft-col ul li{margin-bottom:8px;}
+.ft-col ul li a{color:rgba(255,255,255,.58);text-decoration:none;font-size:.78rem;display:flex;align-items:center;gap:6px;transition:color .3s,padding-left .3s;}
+.ft-col ul li a:hover{color:var(--gold);padding-left:4px;}
+.ft-col ul li a i{font-size:.62rem;color:var(--gold);}
+.ft-clist{display:flex;flex-direction:column;gap:11px;}
+.ft-ci{display:flex;gap:8px;align-items:flex-start;font-size:.78rem;}
+.ft-ci i{color:var(--gold);margin-top:2px;flex-shrink:0;}
 .ft-ci a{color:rgba(255,255,255,.6);text-decoration:none;}
 .ft-ci a:hover{color:var(--gold);}
-.ft-bot{border-top:1px solid rgba(255,255,255,.08);padding-top:26px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:.77rem;}
+.ft-bot{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:.74rem;}
 .ft-bot a{color:var(--gold);text-decoration:none;}
-.ft-legal{display:flex;gap:18px;flex-wrap:wrap;}
-.ft-legal a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.72rem;transition:color .3s;}
+.ft-legal{display:flex;gap:16px;flex-wrap:wrap;}
+.ft-legal a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.7rem;transition:color .3s;}
 .ft-legal a:hover{color:var(--gold);}
 
 /* ─── FLOATING UI ─── */
-#scrtop{position:fixed;bottom:32px;right:32px;width:48px;height:48px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:.95rem;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 5px 20px rgba(212,164,58,.38);z-index:800;}
+#scrtop{position:fixed;bottom:28px;right:28px;width:46px;height:46px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:11px;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:.9rem;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 5px 20px rgba(212,164,58,.38);z-index:800;}
 #scrtop.show{opacity:1;visibility:visible;}
 #scrtop:hover{transform:translateY(-4px);}
-.wa-float{position:fixed;bottom:92px;right:32px;width:52px;height:52px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem;text-decoration:none;box-shadow:0 5px 24px rgba(37,211,102,.5);z-index:800;transition:all .3s;animation:waPulse 2.5s ease-in-out infinite;}
+.wa-float{position:fixed;bottom:86px;right:28px;width:50px;height:50px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.4rem;text-decoration:none;box-shadow:0 5px 24px rgba(37,211,102,.5);z-index:800;transition:all .3s;animation:waPulse 2.5s ease-in-out infinite;}
 .wa-float:hover{transform:scale(1.15);}
 @keyframes waPulse{0%,100%{box-shadow:0 5px 24px rgba(37,211,102,.5);}50%{box-shadow:0 5px 42px rgba(37,211,102,.8);}}
 
 /* ─── RESPONSIVE ─── */
 @media(max-width:1100px){
-  .hero-inner,.about-grid,.why-grid,.cov-inner,.contact-grid,.portal-grid,.emp-grid{grid-template-columns:1fr;gap:48px;}
+  .hero-inner{grid-template-columns:1fr;gap:50px;padding-top:100px;}
+  .hero-right{max-width:500px;width:100%;}
+  .about-grid,.why-grid,.contact-grid,.portal-grid,.emp-grid{grid-template-columns:1fr;gap:44px;}
+  .cov-inner{grid-template-columns:1fr;gap:44px;}
   .pkg-grid{grid-template-columns:1fr 1fr;}
   .testi-grid{grid-template-columns:1fr 1fr;}
-  .ftgrid{grid-template-columns:1fr 1fr;}
-  .steps{grid-template-columns:1fr 1fr;}
+  .ftgrid{grid-template-columns:1fr 1fr;gap:32px;}
+  .steps{grid-template-columns:1fr 1fr;gap:24px;}
   .steps::after{display:none;}
-  .hero-right{max-width:480px;}
-  .img-stack{height:380px;}
+  .img-stack{height:360px;}
   .stats-grid{grid-template-columns:repeat(2,1fr);}
   .gallery-grid{grid-template-columns:repeat(3,1fr);}
   .gal-item:nth-child(4){grid-column:span 1;}
   .blog-grid{grid-template-columns:1fr 1fr;}
 }
-@media(max-width:768px){
-  section{padding:70px 5%;}
+@media(max-width:900px){
   .nav-menu{display:none;}
   .burger{display:flex;}
+  .hero-nums{gap:16px;}
+  .h-num+.h-num{padding-left:16px;}
+  .pkg-grid{grid-template-columns:1fr;}
+  .testi-grid{grid-template-columns:1fr;}
+}
+@media(max-width:768px){
+  section{padding:60px 5%;}
+  #coverage{padding:60px 5%;}
   .frow{grid-template-columns:1fr;}
   .svc-grid{grid-template-columns:1fr 1fr;}
-  .ftgrid{grid-template-columns:1fr;gap:28px;}
-  .cform-wrap,.portal-form,.emp-form{padding:28px 20px;}
-  .pkg-grid,.testi-grid,.blog-grid{grid-template-columns:1fr;}
-  .trust-inner{flex-direction:column;align-items:flex-start;}
+  .ftgrid{grid-template-columns:1fr;gap:24px;}
+  .cform-wrap,.portal-form,.emp-form{padding:26px 18px;}
+  .blog-grid{grid-template-columns:1fr;}
+  .trust-inner{flex-direction:column;align-items:flex-start;gap:16px;}
   .trust-div{display:none;}
-  .gallery-grid{grid-template-columns:1fr 1fr;grid-auto-rows:160px;}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-auto-rows:150px;}
   .gal-item:nth-child(1){grid-column:span 2;grid-row:span 1;}
   .ind-grid{grid-template-columns:repeat(2,1fr);}
   .jobs-grid{grid-template-columns:1fr;}
+  .mini-grid{grid-template-columns:repeat(2,1fr);}
+  .tile-tooltip{min-width:140px;font-size:.68rem;}
+  .hero-inner{padding:90px 5% 60px;}
+  .vals{grid-template-columns:1fr;}
 }
 @media(max-width:520px){
   .svc-grid{grid-template-columns:1fr;}
-  .vals{grid-template-columns:1fr;}
   .hero-btns{flex-direction:column;}
   .btn-gold,.btn-ghost,.btn-green{width:100%;justify-content:center;}
   .steps{grid-template-columns:1fr;}
   .mini-grid{grid-template-columns:repeat(3,1fr);}
   .stats-grid{grid-template-columns:1fr 1fr;}
-  .gallery-grid{grid-template-columns:1fr;grid-auto-rows:200px;}
+  .gallery-grid{grid-template-columns:1fr;grid-auto-rows:180px;}
   .gal-item:nth-child(1){grid-column:span 1;}
   .ind-grid{grid-template-columns:1fr 1fr;}
-  .faq-tabs{flex-direction:column;}
-  .blog-grid{grid-template-columns:1fr;}
+  .faq-tabs{flex-wrap:wrap;gap:8px;}
+  .hero-nums{gap:12px;}
+  .h-num+.h-num{padding-left:12px;}
+  .h-num .n{font-size:1.4rem;}
+  .hero-h1{font-size:clamp(1.8rem,7vw,2.8rem);}
+  nav{padding:0 4%;}
+  section{padding:50px 4%;}
+  .pkg-grid,.testi-grid{grid-template-columns:1fr;}
+  .ftgrid{grid-template-columns:1fr;}
+  .tile-tooltip{position:fixed;bottom:auto;top:50%;left:50%;transform:translate(-50%,-50%);max-width:280px;white-space:normal;box-shadow:0 16px 48px rgba(0,0,0,.35);}
+  .tile-tooltip::after{display:none;}
+}
+@media(max-width:360px){
+  .mini-grid{grid-template-columns:repeat(2,1fr);}
+  .logo-text .name{font-size:.78rem;}
 }
 </style>
 </head>
@@ -506,7 +552,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     <li><a href="#about">About</a></li>
     <li><a href="#industries">Industries</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#jobs">Job Openings</a></li>
+    <li><a href="#jobs">Jobs</a></li>
     <li><a href="#blog">Blog</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><button class="lang-btn" onclick="toggleLang()">தமிழ் / EN</button></li>
@@ -574,12 +620,56 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         <div class="h-card-hd">Our Professional Services</div>
         <div class="h-card-sub">Healthcare · Domestic · Technical · PAN India</div>
         <div class="mini-grid">
-          <div class="mini-tile"><i class="fas fa-user-nurse"></i><span>Nurses</span></div>
-          <div class="mini-tile"><i class="fas fa-stethoscope"></i><span>Doctors</span></div>
-          <div class="mini-tile"><i class="fas fa-hands-holding-child"></i><span>Caretakers</span></div>
-          <div class="mini-tile"><i class="fas fa-baby"></i><span>Baby Care</span></div>
-          <div class="mini-tile"><i class="fas fa-broom"></i><span>Maids</span></div>
-          <div class="mini-tile"><i class="fas fa-tools"></i><span>Technicians</span></div>
+
+          <!-- Each tile has a tooltip with description -->
+          <div class="mini-tile">
+            <div class="tile-tooltip">
+              <strong>🏥 Staff Nurses</strong>
+              Qualified male &amp; female nurses for home care, wound dressing, IV therapy, injections, and post-operative bedside nursing.
+            </div>
+            <i class="fas fa-user-nurse"></i><span>Nurses</span>
+          </div>
+
+          <div class="mini-tile">
+            <div class="tile-tooltip">
+              <strong>🩺 Doctor Home Visits</strong>
+              Certified doctors who visit your home for consultations, prescriptions &amp; check-ups. Ideal for elderly &amp; post-surgery patients.
+            </div>
+            <i class="fas fa-stethoscope"></i><span>Doctors</span>
+          </div>
+
+          <div class="mini-tile">
+            <div class="tile-tooltip">
+              <strong>🤲 Caretakers</strong>
+              Compassionate male &amp; female caretakers for elderly, disabled, or post-op patients. Assist with daily activities, medication &amp; companionship.
+            </div>
+            <i class="fas fa-hands-holding-child"></i><span>Caretakers</span>
+          </div>
+
+          <div class="mini-tile">
+            <div class="tile-tooltip">
+              <strong>👶 Baby Care</strong>
+              Trained nannies and baby care specialists for newborn care, feeding routines, hygiene &amp; early development support.
+            </div>
+            <i class="fas fa-baby"></i><span>Baby Care</span>
+          </div>
+
+          <div class="mini-tile">
+            <div class="tile-tooltip">
+              <strong>🧹 Maid Services</strong>
+              Background-verified domestic maids for cooking, cleaning, laundry &amp; household management. Live-in or day-duty available.
+            </div>
+            <i class="fas fa-broom"></i><span>Maids</span>
+          </div>
+
+          <div class="mini-tile">
+            <div class="tile-tooltip">
+              <strong>🔧 Technicians</strong>
+              Certified electricians, plumbers &amp; carpenters for fast, reliable home &amp; commercial maintenance and repair work.
+            </div>
+            <i class="fas fa-tools"></i><span>Technicians</span>
+          </div>
+
         </div>
       </div>
       <div class="fb fb-1">
@@ -673,8 +763,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         <div class="sec-eyebrow">Who We Are</div>
         <h2 class="sec-title">Tamil Nadu's Most <em>Trusted</em> Manpower Agency</h2>
         <p class="sec-desc">Sathish Manpower Private Limited is a certified staffing solutions company based in Kattankulathur, Chengalpattu. We specialize in placing verified healthcare professionals, domestic helpers, and technical workers across homes, hospitals, and businesses throughout Tamil Nadu and across India.</p>
-        <p class="sec-desc" style="margin-top:14px;"><strong>Our Vision:</strong> To be India's most reliable and ethical manpower partner — bridging talent with opportunity across every sector.</p>
-        <p class="sec-desc" style="margin-top:10px;"><strong>Our Mission:</strong> Provide verified, trained professionals who create lasting value for employers and fulfilling careers for candidates.</p>
+        <p class="sec-desc" style="margin-top:12px;"><strong>Our Vision:</strong> To be India's most reliable and ethical manpower partner — bridging talent with opportunity across every sector.</p>
         <div class="vals">
           <div class="val"><i class="fas fa-shield-alt"></i> Integrity First</div>
           <div class="val"><i class="fas fa-handshake"></i> Commitment</div>
@@ -683,9 +772,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           <div class="val"><i class="fas fa-star"></i> Excellence</div>
           <div class="val"><i class="fas fa-clock"></i> Fast Placement</div>
         </div>
-        <!-- CEO Message -->
         <div class="ceo-box rv d3">
-          <p class="ceo-quote">"At Sathish Manpower, we believe every placement is a responsibility — not just a transaction. Our commitment is to find you the right person, not just any person. Trust, quality, and speed have been our pillars for 15 years, and they always will be."</p>
+          <p class="ceo-quote">"At Sathish Manpower, we believe every placement is a responsibility — not just a transaction. Our commitment is to find you the right person, not just any person."</p>
           <div class="ceo-author">
             <div class="ceo-avatar">DS</div>
             <div>
@@ -708,51 +796,15 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
       <p class="sec-desc">From critical healthcare to booming construction — we supply verified talent wherever you need it.</p>
     </div>
     <div class="ind-grid">
-      <div class="ind-card rv d1">
-        <div class="ind-icon"><i class="fas fa-hospital"></i></div>
-        <h4>Healthcare</h4>
-        <p>Nurses, Doctors, Lab Tech</p>
-      </div>
-      <div class="ind-card rv d2">
-        <div class="ind-icon"><i class="fas fa-industry"></i></div>
-        <h4>Manufacturing</h4>
-        <p>Floor workers, supervisors</p>
-      </div>
-      <div class="ind-card rv d3">
-        <div class="ind-icon"><i class="fas fa-hard-hat"></i></div>
-        <h4>Construction</h4>
-        <p>Engineers, site workers</p>
-      </div>
-      <div class="ind-card rv d1">
-        <div class="ind-icon"><i class="fas fa-laptop-code"></i></div>
-        <h4>IT & Technology</h4>
-        <p>Developers, data entry</p>
-      </div>
-      <div class="ind-card rv d2">
-        <div class="ind-icon"><i class="fas fa-shopping-bag"></i></div>
-        <h4>Retail</h4>
-        <p>Sales staff, cashiers</p>
-      </div>
-      <div class="ind-card rv d3">
-        <div class="ind-icon"><i class="fas fa-truck"></i></div>
-        <h4>Logistics</h4>
-        <p>Drivers, warehouse staff</p>
-      </div>
-      <div class="ind-card rv d1">
-        <div class="ind-icon"><i class="fas fa-concierge-bell"></i></div>
-        <h4>Hospitality</h4>
-        <p>Hotel staff, catering</p>
-      </div>
-      <div class="ind-card rv d2">
-        <div class="ind-icon"><i class="fas fa-shield-alt"></i></div>
-        <h4>Security Services</h4>
-        <p>Trained security guards</p>
-      </div>
-      <div class="ind-card rv d3">
-        <div class="ind-icon"><i class="fas fa-building"></i></div>
-        <h4>Office Administration</h4>
-        <p>HR, admin, front desk</p>
-      </div>
+      <div class="ind-card rv d1"><div class="ind-icon"><i class="fas fa-hospital"></i></div><h4>Healthcare</h4><p>Nurses, Doctors, Lab Tech</p></div>
+      <div class="ind-card rv d2"><div class="ind-icon"><i class="fas fa-industry"></i></div><h4>Manufacturing</h4><p>Floor workers, supervisors</p></div>
+      <div class="ind-card rv d3"><div class="ind-icon"><i class="fas fa-hard-hat"></i></div><h4>Construction</h4><p>Engineers, site workers</p></div>
+      <div class="ind-card rv d1"><div class="ind-icon"><i class="fas fa-laptop-code"></i></div><h4>IT & Technology</h4><p>Developers, data entry</p></div>
+      <div class="ind-card rv d2"><div class="ind-icon"><i class="fas fa-shopping-bag"></i></div><h4>Retail</h4><p>Sales staff, cashiers</p></div>
+      <div class="ind-card rv d3"><div class="ind-icon"><i class="fas fa-truck"></i></div><h4>Logistics</h4><p>Drivers, warehouse staff</p></div>
+      <div class="ind-card rv d1"><div class="ind-icon"><i class="fas fa-concierge-bell"></i></div><h4>Hospitality</h4><p>Hotel staff, catering</p></div>
+      <div class="ind-card rv d2"><div class="ind-icon"><i class="fas fa-shield-alt"></i></div><h4>Security Services</h4><p>Trained security guards</p></div>
+      <div class="ind-card rv d3"><div class="ind-icon"><i class="fas fa-building"></i></div><h4>Office Administration</h4><p>HR, admin, front desk</p></div>
     </div>
   </div>
 </section>
@@ -763,140 +815,52 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     <div class="sec-hd c rv">
       <div class="sec-eyebrow">What We Offer</div>
       <h2 class="sec-title">Our Professional <em>Services</em></h2>
-      <p class="sec-desc">Verified, trained professionals for every home and hospital need — from critical healthcare to everyday domestic support.</p>
+      <p class="sec-desc">Verified, trained professionals for every home and hospital need.</p>
     </div>
     <div class="svc-grid">
       <div class="svc-card rv d1">
-        <div class="svc-img">
-          <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=600&q=80" alt="Permanent Staffing" loading="lazy">
-          <div class="svc-tag">Staffing</div>
-          <div class="svc-ico"><i class="fas fa-user-check"></i></div>
-        </div>
-        <div class="svc-body">
-          <h3>Permanent Staffing</h3>
-          <p>End-to-end permanent recruitment across all sectors. We source, screen, and place candidates who grow with your organisation.</p>
-          <a href="#employer" class="svc-link">Get Started <i class="fas fa-arrow-right"></i></a>
-        </div>
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=600&q=80" alt="Permanent Staffing" loading="lazy"><div class="svc-tag">Staffing</div><div class="svc-ico"><i class="fas fa-user-check"></i></div></div>
+        <div class="svc-body"><h3>Permanent Staffing</h3><p>End-to-end permanent recruitment across all sectors. We source, screen, and place candidates who grow with your organisation.</p><a href="#employer" class="svc-link">Get Started <i class="fas fa-arrow-right"></i></a></div>
       </div>
       <div class="svc-card rv d2">
-        <div class="svc-img">
-          <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80" alt="Contract Staffing" loading="lazy">
-          <div class="svc-tag">Staffing</div>
-          <div class="svc-ico"><i class="fas fa-file-contract"></i></div>
-        </div>
-        <div class="svc-body">
-          <h3>Contract Staffing</h3>
-          <p>Flexible contract-based professionals deployed for project durations. Reduced hiring overhead with full compliance management.</p>
-          <a href="#employer" class="svc-link">Enquire Now <i class="fas fa-arrow-right"></i></a>
-        </div>
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80" alt="Contract Staffing" loading="lazy"><div class="svc-tag">Staffing</div><div class="svc-ico"><i class="fas fa-file-contract"></i></div></div>
+        <div class="svc-body"><h3>Contract Staffing</h3><p>Flexible contract-based professionals for project durations. Reduced hiring overhead with full compliance management.</p><a href="#employer" class="svc-link">Enquire Now <i class="fas fa-arrow-right"></i></a></div>
       </div>
       <div class="svc-card rv d3">
-        <div class="svc-img">
-          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="Temporary Staffing" loading="lazy">
-          <div class="svc-tag">Staffing</div>
-          <div class="svc-ico"><i class="fas fa-calendar-alt"></i></div>
-        </div>
-        <div class="svc-body">
-          <h3>Temporary Staffing</h3>
-          <p>On-demand temporary staff for peak seasons, events, or urgent replacements. Deployed within 24 hours.</p>
-          <a href="#employer" class="svc-link">Hire Now <i class="fas fa-arrow-right"></i></a>
-        </div>
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="Temporary Staffing" loading="lazy"><div class="svc-tag">Staffing</div><div class="svc-ico"><i class="fas fa-calendar-alt"></i></div></div>
+        <div class="svc-body"><h3>Temporary Staffing</h3><p>On-demand temporary staff for peak seasons, events, or urgent replacements. Deployed within 24 hours.</p><a href="#employer" class="svc-link">Hire Now <i class="fas fa-arrow-right"></i></a></div>
       </div>
       <div class="svc-card rv d1">
-        <div class="svc-img">
-          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Bulk Hiring" loading="lazy">
-          <div class="svc-tag">Enterprise</div>
-          <div class="svc-ico"><i class="fas fa-users"></i></div>
-        </div>
-        <div class="svc-body">
-          <h3>Bulk Hiring</h3>
-          <p>Large-scale recruitment drives for factories, hospitals, and corporate clients. 10 to 1000 candidates delivered on time.</p>
-          <a href="#employer" class="svc-link">Get Quote <i class="fas fa-arrow-right"></i></a>
-        </div>
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Bulk Hiring" loading="lazy"><div class="svc-tag">Enterprise</div><div class="svc-ico"><i class="fas fa-users"></i></div></div>
+        <div class="svc-body"><h3>Bulk Hiring</h3><p>Large-scale recruitment drives for factories, hospitals, and corporate clients. 10 to 1000 candidates delivered on time.</p><a href="#employer" class="svc-link">Get Quote <i class="fas fa-arrow-right"></i></a></div>
       </div>
       <div class="svc-card rv d2">
-        <div class="svc-img">
-          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="Payroll Management" loading="lazy">
-          <div class="svc-tag">HR Services</div>
-          <div class="svc-ico"><i class="fas fa-money-check-alt"></i></div>
-        </div>
-        <div class="svc-body">
-          <h3>Payroll Management</h3>
-          <p>Complete payroll outsourcing — salary processing, PF, ESI, TDS, and compliance. Accurate and on time, every month.</p>
-          <a href="#employer" class="svc-link">Learn More <i class="fas fa-arrow-right"></i></a>
-        </div>
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="Payroll Management" loading="lazy"><div class="svc-tag">HR Services</div><div class="svc-ico"><i class="fas fa-money-check-alt"></i></div></div>
+        <div class="svc-body"><h3>Payroll Management</h3><p>Complete payroll outsourcing — salary processing, PF, ESI, TDS, and compliance. Accurate and on time, every month.</p><a href="#employer" class="svc-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
       </div>
       <div class="svc-card rv d3">
-        <div class="svc-img">
-          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="HR Consulting" loading="lazy">
-          <div class="svc-tag">Consulting</div>
-          <div class="svc-ico"><i class="fas fa-chart-line"></i></div>
-        </div>
-        <div class="svc-body">
-          <h3>HR Consulting</h3>
-          <p>Strategic HR advice for SMEs — policy drafting, job description design, appraisal frameworks, and workforce planning.</p>
-          <a href="#employer" class="svc-link">Consult Us <i class="fas fa-arrow-right"></i></a>
-        </div>
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="HR Consulting" loading="lazy"><div class="svc-tag">Consulting</div><div class="svc-ico"><i class="fas fa-chart-line"></i></div></div>
+        <div class="svc-body"><h3>HR Consulting</h3><p>Strategic HR advice for SMEs — policy drafting, job descriptions, appraisal frameworks, and workforce planning.</p><a href="#employer" class="svc-link">Consult Us <i class="fas fa-arrow-right"></i></a></div>
       </div>
       <div class="svc-card rv d1">
-        <div class="svc-img">
-          <img src="https://images.unsplash.com/photo-1666214280391-8ff5bd3d0bf0?w=600&q=80" alt="Doctor Home Visit" loading="lazy">
-          <div class="svc-tag">Healthcare</div>
-          <div class="svc-ico"><i class="fas fa-stethoscope"></i></div>
-        </div>
-        <div class="svc-body">
-          <h3>Doctors for Home Visits</h3>
-          <p>Certified doctors who bring clinic-quality consultation to your doorstep. Ideal for elderly, post-surgery, or mobility-restricted patients.</p>
-          <a href="#contact" class="svc-link">Book a Doctor <i class="fas fa-arrow-right"></i></a>
-        </div>
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1666214280391-8ff5bd3d0bf0?w=600&q=80" alt="Doctor Home Visit" loading="lazy"><div class="svc-tag">Healthcare</div><div class="svc-ico"><i class="fas fa-stethoscope"></i></div></div>
+        <div class="svc-body"><h3>Doctors for Home Visits</h3><p>Certified doctors who bring clinic-quality consultation to your doorstep. Ideal for elderly, post-surgery, or mobility-restricted patients.</p><a href="#contact" class="svc-link">Book a Doctor <i class="fas fa-arrow-right"></i></a></div>
       </div>
       <div class="svc-card rv d2">
-        <div class="svc-img">
-          <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&q=80" alt="Nurses" loading="lazy">
-          <div class="svc-tag">Healthcare</div>
-          <div class="svc-ico"><i class="fas fa-user-nurse"></i></div>
-        </div>
-        <div class="svc-body">
-          <h3>Male & Female Nurses</h3>
-          <p>Qualified nurses for wound care, IV therapy, post-operative care, injections, and bedside nursing at home or hospital.</p>
-          <a href="#contact" class="svc-link">Hire a Nurse <i class="fas fa-arrow-right"></i></a>
-        </div>
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&q=80" alt="Nurses" loading="lazy"><div class="svc-tag">Healthcare</div><div class="svc-ico"><i class="fas fa-user-nurse"></i></div></div>
+        <div class="svc-body"><h3>Male & Female Nurses</h3><p>Qualified nurses for wound care, IV therapy, post-operative care, injections, and bedside nursing at home or hospital.</p><a href="#contact" class="svc-link">Hire a Nurse <i class="fas fa-arrow-right"></i></a></div>
       </div>
       <div class="svc-card rv d3">
-        <div class="svc-img">
-          <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=600&q=80" alt="Caretakers" loading="lazy">
-          <div class="svc-tag">Care Support</div>
-          <div class="svc-ico"><i class="fas fa-hands-holding-child"></i></div>
-        </div>
-        <div class="svc-body">
-          <h3>Female & Male Caretakers</h3>
-          <p>Compassionate caretakers for elderly, disabled, or post-operative patients. Daily activities, medication reminders, and companionship.</p>
-          <a href="#contact" class="svc-link">Hire Caretaker <i class="fas fa-arrow-right"></i></a>
-        </div>
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=600&q=80" alt="Caretakers" loading="lazy"><div class="svc-tag">Care Support</div><div class="svc-ico"><i class="fas fa-hands-holding-child"></i></div></div>
+        <div class="svc-body"><h3>Female & Male Caretakers</h3><p>Compassionate caretakers for elderly, disabled, or post-operative patients. Daily activities, medication reminders, and companionship.</p><a href="#contact" class="svc-link">Hire Caretaker <i class="fas fa-arrow-right"></i></a></div>
       </div>
       <div class="svc-card rv d1">
-        <div class="svc-img">
-          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Maid Services" loading="lazy">
-          <div class="svc-tag">Domestic</div>
-          <div class="svc-ico"><i class="fas fa-broom"></i></div>
-        </div>
-        <div class="svc-body">
-          <h3>Maid Services</h3>
-          <p>Verified domestic helpers for cooking, cleaning, laundry, and organizing. Trustworthy, trained, and background-checked.</p>
-          <a href="#contact" class="svc-link">Hire a Maid <i class="fas fa-arrow-right"></i></a>
-        </div>
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Maid Services" loading="lazy"><div class="svc-tag">Domestic</div><div class="svc-ico"><i class="fas fa-broom"></i></div></div>
+        <div class="svc-body"><h3>Maid Services</h3><p>Verified domestic helpers for cooking, cleaning, laundry, and organizing. Trustworthy, trained, and background-checked.</p><a href="#contact" class="svc-link">Hire a Maid <i class="fas fa-arrow-right"></i></a></div>
       </div>
       <div class="svc-card rv d2">
-        <div class="svc-img">
-          <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&q=80" alt="Electricians Plumbers" loading="lazy">
-          <div class="svc-tag">Technical</div>
-          <div class="svc-ico"><i class="fas fa-tools"></i></div>
-        </div>
-        <div class="svc-body">
-          <h3>Electricians, Plumbers & Carpenters</h3>
-          <p>Certified maintenance professionals for electrical, plumbing, and carpentry work. Fast, reliable, top-quality repairs.</p>
-          <a href="#contact" class="svc-link">Book Service <i class="fas fa-arrow-right"></i></a>
-        </div>
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&q=80" alt="Electricians Plumbers" loading="lazy"><div class="svc-tag">Technical</div><div class="svc-ico"><i class="fas fa-tools"></i></div></div>
+        <div class="svc-body"><h3>Electricians, Plumbers & Carpenters</h3><p>Certified maintenance professionals for electrical, plumbing, and carpentry work. Fast, reliable, top-quality repairs.</p><a href="#contact" class="svc-link">Book Service <i class="fas fa-arrow-right"></i></a></div>
       </div>
     </div>
   </div>
@@ -906,26 +870,10 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 <section id="stats">
   <div class="max">
     <div class="stats-grid">
-      <div class="stat-box rv d1">
-        <div class="stat-icon"><i class="fas fa-user-check"></i></div>
-        <div class="stat-num" data-target="500">0<em>+</em></div>
-        <div class="stat-label">Candidates Placed</div>
-      </div>
-      <div class="stat-box rv d2">
-        <div class="stat-icon"><i class="fas fa-handshake"></i></div>
-        <div class="stat-num" data-target="100">0<em>+</em></div>
-        <div class="stat-label">Clients Served</div>
-      </div>
-      <div class="stat-box rv d3">
-        <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
-        <div class="stat-num" data-target="50">0<em>+</em></div>
-        <div class="stat-label">Active Job Openings</div>
-      </div>
-      <div class="stat-box rv d4">
-        <div class="stat-icon"><i class="fas fa-industry"></i></div>
-        <div class="stat-num" data-target="10">0<em>+</em></div>
-        <div class="stat-label">Industries Covered</div>
-      </div>
+      <div class="stat-box rv d1"><div class="stat-icon"><i class="fas fa-user-check"></i></div><div class="stat-num" data-target="500">0<em>+</em></div><div class="stat-label">Candidates Placed</div></div>
+      <div class="stat-box rv d2"><div class="stat-icon"><i class="fas fa-handshake"></i></div><div class="stat-num" data-target="100">0<em>+</em></div><div class="stat-label">Clients Served</div></div>
+      <div class="stat-box rv d3"><div class="stat-icon"><i class="fas fa-briefcase"></i></div><div class="stat-num" data-target="50">0<em>+</em></div><div class="stat-label">Active Job Openings</div></div>
+      <div class="stat-box rv d4"><div class="stat-icon"><i class="fas fa-industry"></i></div><div class="stat-num" data-target="10">0<em>+</em></div><div class="stat-label">Industries Covered</div></div>
     </div>
   </div>
 </section>
@@ -936,71 +884,23 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     <div class="sec-hd c rv">
       <div class="sec-eyebrow">Current Openings</div>
       <h2 class="sec-title">Open <em>Job Positions</em></h2>
-      <p class="sec-desc">We regularly place candidates in these roles. Click any position to apply instantly via WhatsApp.</p>
+      <p class="sec-desc">We regularly place candidates in these roles. Click any position to apply instantly.</p>
     </div>
     <div class="jobs-grid">
-      <div class="job-card rv d1">
-        <div class="job-ico"><i class="fas fa-user-nurse"></i></div>
-        <div class="job-info"><h4>Staff Nurse (Male/Female)</h4><span>Healthcare · Full Time / Part Time</span></div>
-        <div class="job-badge">Hiring</div>
-      </div>
-      <div class="job-card rv d2">
-        <div class="job-ico"><i class="fas fa-stethoscope"></i></div>
-        <div class="job-info"><h4>Doctor (Home Visits)</h4><span>Healthcare · Flexible Hours</span></div>
-        <div class="job-badge">Hiring</div>
-      </div>
-      <div class="job-card rv d3">
-        <div class="job-ico"><i class="fas fa-user-tie"></i></div>
-        <div class="job-info"><h4>HR Executive</h4><span>Corporate · Full Time</span></div>
-        <div class="job-badge">Hiring</div>
-      </div>
-      <div class="job-card rv d1">
-        <div class="job-ico"><i class="fas fa-bolt"></i></div>
-        <div class="job-info"><h4>Electrician</h4><span>Technical · Contract/Full Time</span></div>
-        <div class="job-badge">Hiring</div>
-      </div>
-      <div class="job-card rv d2">
-        <div class="job-ico"><i class="fas fa-car"></i></div>
-        <div class="job-info"><h4>Driver (LMV/HMV)</h4><span>Logistics · Full Time</span></div>
-        <div class="job-badge">Hiring</div>
-      </div>
-      <div class="job-card rv d3">
-        <div class="job-ico"><i class="fas fa-keyboard"></i></div>
-        <div class="job-info"><h4>Data Entry Operator</h4><span>IT / Admin · Full Time</span></div>
-        <div class="job-badge">Hiring</div>
-      </div>
-      <div class="job-card rv d1">
-        <div class="job-ico"><i class="fas fa-tags"></i></div>
-        <div class="job-info"><h4>Sales Executive</h4><span>Retail / Corporate · Full Time</span></div>
-        <div class="job-badge">Hiring</div>
-      </div>
-      <div class="job-card rv d2">
-        <div class="job-ico"><i class="fas fa-shield-alt"></i></div>
-        <div class="job-info"><h4>Security Guard</h4><span>Security Services · All Shifts</span></div>
-        <div class="job-badge">Hiring</div>
-      </div>
-      <div class="job-card rv d3">
-        <div class="job-ico"><i class="fas fa-hands-helping"></i></div>
-        <div class="job-info"><h4>Caretaker / Ayah</h4><span>Healthcare · Live-in / Day Duty</span></div>
-        <div class="job-badge">Hiring</div>
-      </div>
-      <div class="job-card rv d1">
-        <div class="job-ico"><i class="fas fa-broom"></i></div>
-        <div class="job-info"><h4>Domestic Maid</h4><span>Domestic · Full Time / Part Time</span></div>
-        <div class="job-badge">Hiring</div>
-      </div>
-      <div class="job-card rv d2">
-        <div class="job-ico"><i class="fas fa-flask"></i></div>
-        <div class="job-info"><h4>Lab / X-Ray Technician</h4><span>Diagnostics · Full Time</span></div>
-        <div class="job-badge">Hiring</div>
-      </div>
-      <div class="job-card rv d3">
-        <div class="job-ico"><i class="fas fa-hospital-user"></i></div>
-        <div class="job-info"><h4>Wardboy / Aayabai</h4><span>Hospital Staff · All Shifts</span></div>
-        <div class="job-badge">Hiring</div>
-      </div>
+      <div class="job-card rv d1"><div class="job-ico"><i class="fas fa-user-nurse"></i></div><div class="job-info"><h4>Staff Nurse (Male/Female)</h4><span>Healthcare · Full Time / Part Time</span></div><div class="job-badge">Hiring</div></div>
+      <div class="job-card rv d2"><div class="job-ico"><i class="fas fa-stethoscope"></i></div><div class="job-info"><h4>Doctor (Home Visits)</h4><span>Healthcare · Flexible Hours</span></div><div class="job-badge">Hiring</div></div>
+      <div class="job-card rv d3"><div class="job-ico"><i class="fas fa-user-tie"></i></div><div class="job-info"><h4>HR Executive</h4><span>Corporate · Full Time</span></div><div class="job-badge">Hiring</div></div>
+      <div class="job-card rv d1"><div class="job-ico"><i class="fas fa-bolt"></i></div><div class="job-info"><h4>Electrician</h4><span>Technical · Contract/Full Time</span></div><div class="job-badge">Hiring</div></div>
+      <div class="job-card rv d2"><div class="job-ico"><i class="fas fa-car"></i></div><div class="job-info"><h4>Driver (LMV/HMV)</h4><span>Logistics · Full Time</span></div><div class="job-badge">Hiring</div></div>
+      <div class="job-card rv d3"><div class="job-ico"><i class="fas fa-keyboard"></i></div><div class="job-info"><h4>Data Entry Operator</h4><span>IT / Admin · Full Time</span></div><div class="job-badge">Hiring</div></div>
+      <div class="job-card rv d1"><div class="job-ico"><i class="fas fa-tags"></i></div><div class="job-info"><h4>Sales Executive</h4><span>Retail / Corporate · Full Time</span></div><div class="job-badge">Hiring</div></div>
+      <div class="job-card rv d2"><div class="job-ico"><i class="fas fa-shield-alt"></i></div><div class="job-info"><h4>Security Guard</h4><span>Security Services · All Shifts</span></div><div class="job-badge">Hiring</div></div>
+      <div class="job-card rv d3"><div class="job-ico"><i class="fas fa-hands-helping"></i></div><div class="job-info"><h4>Caretaker / Ayah</h4><span>Healthcare · Live-in / Day Duty</span></div><div class="job-badge">Hiring</div></div>
+      <div class="job-card rv d1"><div class="job-ico"><i class="fas fa-broom"></i></div><div class="job-info"><h4>Domestic Maid</h4><span>Domestic · Full Time / Part Time</span></div><div class="job-badge">Hiring</div></div>
+      <div class="job-card rv d2"><div class="job-ico"><i class="fas fa-flask"></i></div><div class="job-info"><h4>Lab / X-Ray Technician</h4><span>Diagnostics · Full Time</span></div><div class="job-badge">Hiring</div></div>
+      <div class="job-card rv d3"><div class="job-ico"><i class="fas fa-hospital-user"></i></div><div class="job-info"><h4>Wardboy / Aayabai</h4><span>Hospital Staff · All Shifts</span></div><div class="job-badge">Hiring</div></div>
     </div>
-    <div style="text-align:center;margin-top:40px;">
+    <div style="text-align:center;margin-top:36px;">
       <a href="#apply" class="btn-gold"><i class="fas fa-paper-plane"></i> Apply for Any Position</a>
     </div>
   </div>
@@ -1018,7 +918,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
       <div class="testi-card rv d1">
         <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
         <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="testi-text">"Sathish Manpower provided us a qualified nurse within just 6 hours of our call. She was professional, caring, and exactly what our elderly mother needed post-surgery. Highly recommend!"</p>
+        <p class="testi-text">"Sathish Manpower provided us a qualified nurse within just 6 hours of our call. She was professional, caring, and exactly what our elderly mother needed post-surgery."</p>
         <div class="testi-author">
           <img class="testi-avatar" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=100&q=80" alt="Priya Rajan">
           <div><div class="testi-name">Priya Rajan</div><div class="testi-role">Chennai · Home Care Client</div></div>
@@ -1036,7 +936,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
       <div class="testi-card rv d3">
         <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
         <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-        <p class="testi-text">"Got placed as an HR Executive within 2 weeks of registering with Sathish Manpower. The team was supportive throughout the interview process. Truly a candidate-friendly agency."</p>
+        <p class="testi-text">"Got placed as an HR Executive within 2 weeks of registering. The team was supportive throughout the interview process. Truly a candidate-friendly agency."</p>
         <div class="testi-author">
           <img class="testi-avatar" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80" alt="Anitha S">
           <div><div class="testi-name">Anitha S</div><div class="testi-role">Chennai · HR Executive Candidate</div></div>
@@ -1055,26 +955,11 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         <h2 class="sec-title">The Sathish Manpower <em>Difference</em></h2>
         <p class="sec-desc">We don't just fill vacancies — we match the right professional to your exact need, every time.</p>
         <div class="why-points">
-          <div class="why-pt">
-            <div class="why-ico"><i class="fas fa-shield-check"></i></div>
-            <div><h4>✔ Verified Candidates</h4><p>Every professional undergoes thorough background, ID, and credential checks before placement.</p></div>
-          </div>
-          <div class="why-pt">
-            <div class="why-ico"><i class="fas fa-bolt"></i></div>
-            <div><h4>✔ Fast Recruitment Process</h4><p>Match and deploy staff within 24–48 hours of your requirement — sometimes even the same day.</p></div>
-          </div>
-          <div class="why-pt">
-            <div class="why-ico"><i class="fas fa-briefcase"></i></div>
-            <div><h4>✔ Industry Expertise</h4><p>Deep domain knowledge across healthcare, IT, manufacturing, logistics, and 6 more sectors.</p></div>
-          </div>
-          <div class="why-pt">
-            <div class="why-ico"><i class="fas fa-tags"></i></div>
-            <div><h4>✔ Affordable Solutions</h4><p>Transparent pricing with no hidden fees. Tailored packages for every budget and business size.</p></div>
-          </div>
-          <div class="why-pt">
-            <div class="why-ico"><i class="fas fa-map-marked-alt"></i></div>
-            <div><h4>✔ PAN India Service</h4><p>Primary base in Tamil Nadu with the capability to place candidates anywhere across India.</p></div>
-          </div>
+          <div class="why-pt"><div class="why-ico"><i class="fas fa-shield-check"></i></div><div><h4>✔ Verified Candidates</h4><p>Every professional undergoes thorough background, ID, and credential checks before placement.</p></div></div>
+          <div class="why-pt"><div class="why-ico"><i class="fas fa-bolt"></i></div><div><h4>✔ Fast Recruitment Process</h4><p>Match and deploy staff within 24–48 hours — sometimes even the same day.</p></div></div>
+          <div class="why-pt"><div class="why-ico"><i class="fas fa-briefcase"></i></div><div><h4>✔ Industry Expertise</h4><p>Deep domain knowledge across healthcare, IT, manufacturing, logistics, and 6 more sectors.</p></div></div>
+          <div class="why-pt"><div class="why-ico"><i class="fas fa-tags"></i></div><div><h4>✔ Affordable Solutions</h4><p>Transparent pricing with no hidden fees. Tailored packages for every budget and business size.</p></div></div>
+          <div class="why-pt"><div class="why-ico"><i class="fas fa-map-marked-alt"></i></div><div><h4>✔ PAN India Service</h4><p>Primary base in Tamil Nadu with capability to place candidates anywhere across India.</p></div></div>
         </div>
       </div>
       <div class="why-stats rv d2">
@@ -1191,7 +1076,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   </div>
 </section>
 
-<!-- JOB APPLICATION PORTAL -->
+<!-- JOB APPLICATION PORTAL with Resume Upload -->
 <section id="apply">
   <div class="max">
     <div class="portal-grid">
@@ -1249,7 +1134,21 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           <div class="fg"><label>Location</label><input type="text" id="aloc" placeholder="City / Area"></div>
         </div>
         <div class="fg"><label>Additional Info</label><textarea id="amsg" placeholder="Qualifications, certifications, or anything else..."></textarea></div>
+
+        <!-- RESUME UPLOAD -->
+        <div class="fg">
+          <label>Upload Resume / CV (Optional)</label>
+          <div class="resume-upload-area" id="resumeArea">
+            <input type="file" id="resumeFile" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" onchange="handleResumeSelect(this)">
+            <div class="resume-upload-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+            <div class="resume-upload-text">Tap to upload or drag & drop your CV<br><span>PDF, DOC, DOCX, JPG, PNG</span></div>
+            <div class="resume-file-name" id="resumeFileName"></div>
+          </div>
+          <div class="resume-note" id="resumeNote">📎 If resume is attached, it will be emailed to us. Application details go via WhatsApp.</div>
+        </div>
+
         <button class="submit-btn" onclick="applyWA()"><i class="fab fa-whatsapp"></i> Submit Application via WhatsApp</button>
+        <button class="submit-btn submit-btn-email" id="emailBtn" style="margin-top:10px;display:none;" onclick="applyEmail()"><i class="fas fa-envelope"></i> Send Resume via Email</button>
       </div>
     </div>
   </div>
@@ -1272,11 +1171,11 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           </div>
           <div class="emp-ben">
             <div class="emp-ben-ico"><i class="fas fa-bolt" style="color:var(--navy)"></i></div>
-            <div><h4>Fast TAT</h4><p>Receive shortlisted profiles within 24 hours of your request. Emergency deployments same day in Chennai metro.</p></div>
+            <div><h4>Fast TAT</h4><p>Receive shortlisted profiles within 24 hours. Emergency deployments same day in Chennai metro.</p></div>
           </div>
           <div class="emp-ben">
             <div class="emp-ben-ico"><i class="fas fa-rotate" style="color:var(--navy)"></i></div>
-            <div><h4>Free Replacement</h4><p>Not satisfied with a placement? We arrange a free replacement within 48 hours, no questions asked.</p></div>
+            <div><h4>Free Replacement</h4><p>Not satisfied? We arrange a free replacement within 48 hours, no questions asked.</p></div>
           </div>
           <div class="emp-ben">
             <div class="emp-ben-ico"><i class="fas fa-file-alt" style="color:var(--navy)"></i></div>
@@ -1313,30 +1212,12 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
       <p class="sec-desc">Office inaugurations, recruitment drives, training sessions, and our growing team.</p>
     </div>
     <div class="gallery-grid rv">
-      <div class="gal-item">
-        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=700&q=80" alt="Team at Work" loading="lazy">
-        <div class="gal-overlay"><span>Our Team</span></div>
-      </div>
-      <div class="gal-item">
-        <img src="https://images.unsplash.com/photo-1559523182-a284c3fb7cff?w=400&q=80" alt="Office" loading="lazy">
-        <div class="gal-overlay"><span>Our Office</span></div>
-      </div>
-      <div class="gal-item">
-        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&q=80" alt="Healthcare" loading="lazy">
-        <div class="gal-overlay"><span>Healthcare Placements</span></div>
-      </div>
-      <div class="gal-item">
-        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=700&q=80" alt="Meeting" loading="lazy">
-        <div class="gal-overlay"><span>Client Meeting</span></div>
-      </div>
-      <div class="gal-item">
-        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80" alt="Training" loading="lazy">
-        <div class="gal-overlay"><span>Staff Training</span></div>
-      </div>
-      <div class="gal-item">
-        <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=400&q=80" alt="Recruitment Drive" loading="lazy">
-        <div class="gal-overlay"><span>Recruitment Drive</span></div>
-      </div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=700&q=80" alt="Team at Work" loading="lazy"><div class="gal-overlay"><span>Our Team</span></div></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1559523182-a284c3fb7cff?w=400&q=80" alt="Office" loading="lazy"><div class="gal-overlay"><span>Our Office</span></div></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&q=80" alt="Healthcare" loading="lazy"><div class="gal-overlay"><span>Healthcare Placements</span></div></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=700&q=80" alt="Meeting" loading="lazy"><div class="gal-overlay"><span>Client Meeting</span></div></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80" alt="Training" loading="lazy"><div class="gal-overlay"><span>Staff Training</span></div></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=400&q=80" alt="Recruitment Drive" loading="lazy"><div class="gal-overlay"><span>Recruitment Drive</span></div></div>
     </div>
   </div>
 </section>
@@ -1351,9 +1232,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     </div>
     <div class="blog-grid">
       <div class="blog-card rv d1">
-        <div class="blog-img">
-          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&q=80" alt="Hiring Trends" loading="lazy">
-        </div>
+        <div class="blog-img"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&q=80" alt="Hiring Trends" loading="lazy"></div>
         <div class="blog-body">
           <div class="blog-cat">Industry Trends</div>
           <h3>Hiring Trends in India for 2025: What Employers Need to Know</h3>
@@ -1363,25 +1242,21 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         </div>
       </div>
       <div class="blog-card rv d2">
-        <div class="blog-img">
-          <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&q=80" alt="Interview Tips" loading="lazy">
-        </div>
+        <div class="blog-img"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&q=80" alt="Interview Tips" loading="lazy"></div>
         <div class="blog-body">
           <div class="blog-cat">Career Tips</div>
           <h3>10 Interview Tips That Will Get You Hired in Tamil Nadu</h3>
-          <p>From dressing right to answering tricky questions — here's our practical guide to cracking interviews for healthcare, corporate, and technical roles.</p>
+          <p>From dressing right to answering tricky questions — our practical guide to cracking interviews for healthcare, corporate, and technical roles.</p>
           <div class="blog-meta"><span><i class="fas fa-calendar"></i> Feb 2025</span><span><i class="fas fa-clock"></i> 4 min read</span></div>
           <a href="#" class="blog-link">Read Article <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
       <div class="blog-card rv d3">
-        <div class="blog-img">
-          <img src="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?w=500&q=80" alt="Resume Guide" loading="lazy">
-        </div>
+        <div class="blog-img"><img src="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?w=500&q=80" alt="Resume Guide" loading="lazy"></div>
         <div class="blog-body">
           <div class="blog-cat">Resume Guide</div>
           <h3>How to Build a Resume That Gets Shortlisted in 2025</h3>
-          <p>A clear, well-structured resume is your first impression. Learn what recruiters actually look for and how to make yours stand out from hundreds of applications.</p>
+          <p>A clear, well-structured resume is your first impression. Learn what recruiters look for and how to stand out from hundreds of applications.</p>
           <div class="blog-meta"><span><i class="fas fa-calendar"></i> Mar 2025</span><span><i class="fas fa-clock"></i> 6 min read</span></div>
           <a href="#" class="blog-link">Read Article <i class="fas fa-arrow-right"></i></a>
         </div>
@@ -1405,27 +1280,27 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
       </div>
       <div class="faq-item open" data-cat="employer">
         <div class="faq-q" onclick="toggleFAQ(this)">How quickly can you deploy staff after I place a request? <i class="fas fa-chevron-down"></i></div>
-        <div class="faq-a"><p>We typically deploy verified staff within 24–48 hours of receiving your request. For emergency healthcare needs in Chennai and Chengalpattu, we can often arrange same-day deployment. Contact us via WhatsApp for urgent requirements.</p></div>
+        <div class="faq-a"><p>We typically deploy verified staff within 24–48 hours. For emergency healthcare needs in Chennai and Chengalpattu, we can often arrange same-day deployment. Contact us via WhatsApp for urgent requirements.</p></div>
       </div>
       <div class="faq-item" data-cat="employer">
         <div class="faq-q" onclick="toggleFAQ(this)">Are all your staff background-verified and trained? <i class="fas fa-chevron-down"></i></div>
-        <div class="faq-a"><p>Absolutely. Every professional in our network undergoes thorough identity verification, credential checks, and reference verification before being listed. Healthcare staff must provide their registration certificates and we verify them directly with the relevant councils.</p></div>
+        <div class="faq-a"><p>Absolutely. Every professional undergoes thorough identity verification, credential checks, and reference verification before being listed. Healthcare staff must provide their registration certificates which we verify directly.</p></div>
       </div>
       <div class="faq-item" data-cat="employer">
         <div class="faq-q" onclick="toggleFAQ(this)">What if I'm not satisfied with the staff provided? <i class="fas fa-chevron-down"></i></div>
-        <div class="faq-a"><p>We offer a free replacement guarantee. If you're not satisfied for any reason, simply contact us and we will arrange a replacement professional within 48 hours at no additional cost. Your satisfaction is our priority.</p></div>
+        <div class="faq-a"><p>We offer a free replacement guarantee. If you're not satisfied for any reason, simply contact us and we will arrange a replacement professional within 48 hours at no additional cost.</p></div>
       </div>
       <div class="faq-item" data-cat="employer">
         <div class="faq-q" onclick="toggleFAQ(this)">Do you provide live-in staff or only day-duty? <i class="fas fa-chevron-down"></i></div>
-        <div class="faq-a"><p>We provide both! Live-in staff for round-the-clock care (particularly popular for caretakers, nurses, and domestic maids), as well as day-duty and night-duty options. We'll match the arrangement to your specific needs.</p></div>
+        <div class="faq-a"><p>We provide both! Live-in staff for round-the-clock care, as well as day-duty and night-duty options. We'll match the arrangement to your specific needs.</p></div>
       </div>
       <div class="faq-item" data-cat="candidate">
         <div class="faq-q" onclick="toggleFAQ(this)">Is registration free for job seekers? <i class="fas fa-chevron-down"></i></div>
-        <div class="faq-a"><p>Yes, registration is completely free for all candidates. We never charge placement fees from job seekers. Our service is funded by the employers we work with. Simply fill out our application form and our team will reach out with matching opportunities.</p></div>
+        <div class="faq-a"><p>Yes, registration is completely free for all candidates. We never charge placement fees from job seekers. Simply fill out our application form and our team will reach out with matching opportunities.</p></div>
       </div>
       <div class="faq-item" data-cat="candidate">
         <div class="faq-q" onclick="toggleFAQ(this)">How long does it take to get placed after registering? <i class="fas fa-chevron-down"></i></div>
-        <div class="faq-a"><p>This depends on the role and your qualifications. For high-demand roles like nurses, caretakers, and security guards, placements can happen within 1–7 days. For corporate roles like HR or sales, it typically takes 1–3 weeks. We guide you through the entire process.</p></div>
+        <div class="faq-a"><p>For high-demand roles like nurses, caretakers, and security guards, placements can happen within 1–7 days. For corporate roles like HR or sales, it typically takes 1–3 weeks. We guide you through the entire process.</p></div>
       </div>
       <div class="faq-item" data-cat="employer">
         <div class="faq-q" onclick="toggleFAQ(this)">Is Sathish Manpower a registered company? <i class="fas fa-chevron-down"></i></div>
@@ -1449,28 +1324,15 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     <div class="contact-grid">
       <div class="ci rv">
         <h3>We're Here to Help</h3>
-        <p>Fill out the form and we'll connect you on WhatsApp instantly — or simply call us directly for immediate assistance. Available 7 days a week.</p>
+        <p>Fill out the form and we'll connect you on WhatsApp instantly — or simply call us directly. Available 7 days a week.</p>
         <div class="clist">
-          <div class="citem">
-            <div class="c-ico"><i class="fas fa-phone-alt"></i></div>
-            <div><h5>Phone / WhatsApp</h5><p><a href="tel:+919944455127">+91 99444 55127</a></p></div>
-          </div>
-          <div class="citem">
-            <div class="c-ico"><i class="fas fa-map-marker-alt"></i></div>
-            <div><h5>Office Address</h5><p>Kakkan Street, West Pothery, Kattankulathur,<br>Chengalpattu Dist – 603 203, Tamil Nadu</p></div>
-          </div>
-          <div class="citem">
-            <div class="c-ico"><i class="fas fa-id-card"></i></div>
-            <div><h5>GSTIN</h5><p>33ABSCS1284Q1ZI</p></div>
-          </div>
-          <div class="citem">
-            <div class="c-ico"><i class="fas fa-clock"></i></div>
-            <div><h5>Working Hours</h5><p>Mon – Sat: 9:00 AM – 7:00 PM<br>Sundays: 10:00 AM – 4:00 PM</p></div>
-          </div>
+          <div class="citem"><div class="c-ico"><i class="fas fa-phone-alt"></i></div><div><h5>Phone / WhatsApp</h5><p><a href="tel:+919944455127">+91 99444 55127</a></p></div></div>
+          <div class="citem"><div class="c-ico"><i class="fas fa-map-marker-alt"></i></div><div><h5>Office Address</h5><p>Kakkan Street, West Pothery, Kattankulathur,<br>Chengalpattu Dist – 603 203, Tamil Nadu</p></div></div>
+          <div class="citem"><div class="c-ico"><i class="fas fa-id-card"></i></div><div><h5>GSTIN</h5><p>33ABSCS1284Q1ZI</p></div></div>
+          <div class="citem"><div class="c-ico"><i class="fas fa-clock"></i></div><div><h5>Working Hours</h5><p>Mon – Sat: 9:00 AM – 7:00 PM<br>Sundays: 10:00 AM – 4:00 PM</p></div></div>
         </div>
-        <!-- Social Media Links -->
-        <div style="margin-top:20px;">
-          <div style="font-size:.75rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">Follow Us</div>
+        <div style="margin-top:18px;">
+          <div style="font-size:.72rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:1px;margin-bottom:9px;">Follow Us</div>
           <div class="social-links">
             <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="https://wa.me/919944455127" class="social-link" style="background:#25d366" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
@@ -1479,9 +1341,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
             <a href="#" class="social-link" style="background:#ff0000" title="YouTube"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
-        <!-- Google Map -->
         <div class="map-container">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3368.6353620660807!2d80.03643947431645!3d12.817802418233052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f70d92395c99%3A0x22e5853de9bd6678!2sSathish%20Manpower%20Pvt.Ltd!5e1!3m2!1sen!2sin!4v1781150216334!5m2!1sen!2sin" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Sathish Manpower Office Map"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3368.6353620660807!2d80.03643947431645!3d12.817802418233052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f70d92395c99%3A0x22e5853de9bd6678!2sSathish%20Manpower%20Pvt.Ltd!5e1!3m2!1sen!2sin!4v1781150216334!5m2!1sen!2sin" width="100%" height="230" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Sathish Manpower Office Map"></iframe>
         </div>
       </div>
       <div class="cform-wrap rv d2">
@@ -1496,25 +1357,16 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           <select id="fservice">
             <option value="">Select a service...</option>
             <option>Doctor for Home Visit</option>
-            <option>Male Nurse</option>
-            <option>Female Nurse</option>
-            <option>Lab Technician</option>
-            <option>X-Ray Technician</option>
+            <option>Male Nurse</option><option>Female Nurse</option>
+            <option>Lab Technician</option><option>X-Ray Technician</option>
             <option>OT Assistant</option>
-            <option>Male Caretaker</option>
-            <option>Female Caretaker</option>
-            <option>Aayabai</option>
-            <option>Wardboy</option>
-            <option>Elder Care</option>
-            <option>Baby Care</option>
+            <option>Male Caretaker</option><option>Female Caretaker</option>
+            <option>Aayabai</option><option>Wardboy</option>
+            <option>Elder Care</option><option>Baby Care</option>
             <option>Maid (Cooking & Cleaning)</option>
-            <option>Electrician</option>
-            <option>Plumber</option>
-            <option>Carpenter</option>
-            <option>Security Guard</option>
-            <option>Driver</option>
-            <option>HR Executive</option>
-            <option>Bulk Hiring / Corporate</option>
+            <option>Electrician</option><option>Plumber</option><option>Carpenter</option>
+            <option>Security Guard</option><option>Driver</option>
+            <option>HR Executive</option><option>Bulk Hiring / Corporate</option>
           </select>
         </div>
         <div class="frow">
@@ -1533,7 +1385,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   <div class="max">
     <div class="ftgrid">
       <div class="ft-brand">
-        <div class="logo-wrap" style="margin-bottom:14px">
+        <div class="logo-wrap" style="margin-bottom:12px">
           <div class="logo-icon">SM</div>
           <div class="logo-text"><span class="name">SATHISH MANPOWER</span><span class="pvt">Private Limited</span></div>
         </div>
@@ -1577,9 +1429,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         <div class="ft-clist">
           <div class="ft-ci"><i class="fas fa-phone-alt"></i><a href="tel:+919944455127">+91 99444 55127</a></div>
           <div class="ft-ci"><i class="fab fa-whatsapp"></i><a href="https://wa.me/919944455127" target="_blank">WhatsApp Us Now</a></div>
+          <div class="ft-ci"><i class="fas fa-envelope"></i><a href="mailto:SathishManpower.pvt.ltd@gmail.com">SathishManpower.pvt.ltd@gmail.com</a></div>
           <div class="ft-ci"><i class="fas fa-map-marker-alt"></i><span>Kakkan Street, West Pothery, Kattankulathur – 603 203, Tamil Nadu</span></div>
           <div class="ft-ci"><i class="fas fa-clock"></i><span>Mon–Sat: 9AM–7PM · Sun: 10AM–4PM</span></div>
-          <div class="ft-ci"><i class="fas fa-certificate"></i><span>GSTIN: 33ABSCS1284Q1ZI</span></div>
         </div>
       </div>
     </div>
@@ -1623,8 +1475,7 @@ document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 // LANGUAGE TOGGLE
 function toggleLang(){
   const body=document.body;
-  const cur=body.getAttribute('data-lang');
-  body.setAttribute('data-lang',cur==='en'?'ta':'en');
+  body.setAttribute('data-lang',body.getAttribute('data-lang')==='en'?'ta':'en');
 }
 
 // FAQ
@@ -1638,8 +1489,8 @@ function filterFAQ(cat,tab){
   document.querySelectorAll('.faq-tab').forEach(t=>t.classList.remove('active'));
   tab.classList.add('active');
   document.querySelectorAll('.faq-item').forEach(item=>{
-    if(cat==='all'||item.getAttribute('data-cat')===cat){item.style.display='block';}
-    else{item.style.display='none';item.classList.remove('open');}
+    item.style.display=(cat==='all'||item.getAttribute('data-cat')===cat)?'block':'none';
+    if(item.style.display==='none')item.classList.remove('open');
   });
 }
 
@@ -1652,17 +1503,89 @@ const statsObs=new IntersectionObserver((entries)=>{
         const suffix=el.querySelector('em')?el.querySelector('em').outerHTML:'';
         let cur=0;const dur=1800;const steps=60;const inc=target/steps;
         const timer=setInterval(()=>{
-          cur+=inc;
-          if(cur>=target){cur=target;clearInterval(timer);}
+          cur+=inc;if(cur>=target){cur=target;clearInterval(timer);}
           el.innerHTML=Math.floor(cur)+suffix;
         },dur/steps);
-      });
-      statsObs.disconnect();
-    }
+      });statsObs.disconnect();}
   });
 },{threshold:.3});
 const statsSection=document.getElementById('stats');
 if(statsSection)statsObs.observe(statsSection);
+
+// ─── RESUME UPLOAD ───
+let selectedResumeFile = null;
+
+function handleResumeSelect(input) {
+  const file = input.files[0];
+  if (!file) return;
+  selectedResumeFile = file;
+  const area = document.getElementById('resumeArea');
+  const nameEl = document.getElementById('resumeFileName');
+  const emailBtn = document.getElementById('emailBtn');
+  area.classList.add('has-file');
+  nameEl.textContent = '✅ ' + file.name + ' (' + (file.size/1024).toFixed(0) + ' KB)';
+  document.getElementById('resumeNote').textContent = '✅ Resume selected! Click "Send Resume via Email" to send it to us, or use WhatsApp for text-only application.';
+  emailBtn.style.display = 'flex';
+}
+
+// Send application details via WhatsApp (no file)
+function applyWA(){
+  const n=document.getElementById('aname').value.trim();
+  const ph=document.getElementById('aphone').value.trim();
+  const job=document.getElementById('ajob').value;
+  if(!n||!ph||!job){alert('Please fill in your name, phone, and select a job category.');return;}
+  const age=document.getElementById('aage').value;
+  const gender=document.getElementById('agender').value;
+  const exp=document.getElementById('aexp').value.trim();
+  const loc=document.getElementById('aloc').value.trim();
+  const msg=document.getElementById('amsg').value.trim();
+  let txt=`Hello Sathish Manpower! I want to register as a candidate 🙏\n\n*Candidate Registration*\n━━━━━━━━━━━━\n`;
+  txt+=`👤 *Name:* ${n}\n📞 *Phone:* ${ph}\n💼 *Position:* ${job}\n`;
+  if(age)txt+=`🎂 *Age:* ${age}\n`;
+  if(gender)txt+=`⚧ *Gender:* ${gender}\n`;
+  if(exp)txt+=`⏳ *Experience:* ${exp}\n`;
+  if(loc)txt+=`📍 *Location:* ${loc}\n`;
+  if(msg)txt+=`📝 *Details:* ${msg}\n`;
+  if(selectedResumeFile)txt+=`📎 *Resume:* ${selectedResumeFile.name} (sending separately via email)\n`;
+  txt+=`━━━━━━━━━━━━\nPlease contact me at your earliest. Thank you!`;
+  window.open(`https://wa.me/919944455127?text=${encodeURIComponent(txt)}`,'_blank');
+  // If resume selected, also trigger email send
+  if(selectedResumeFile){
+    setTimeout(()=>{ applyEmail(); }, 800);
+  }
+}
+
+// Send resume via email (mailto with body, file can't be attached via mailto — prompt user)
+function applyEmail(){
+  const n=document.getElementById('aname').value.trim()||'Candidate';
+  const ph=document.getElementById('aphone').value.trim()||'Not provided';
+  const job=document.getElementById('ajob').value||'Not specified';
+  const exp=document.getElementById('aexp').value.trim()||'Not specified';
+  const loc=document.getElementById('aloc').value.trim()||'Not specified';
+
+  // Try to compose email with file attachment via FormData + mail client
+  // Since mailto: doesn't support attachments, we open the default mail app
+  // and tell the user to attach the file manually
+  const subject = encodeURIComponent(`Resume Application – ${n} – ${job}`);
+  const body = encodeURIComponent(
+    `Dear Sathish Manpower Team,\n\nPlease find my job application details below:\n\n` +
+    `Name: ${n}\nPhone: ${ph}\nPosition Applied For: ${job}\nExperience: ${exp}\nLocation: ${loc}\n\n` +
+    `IMPORTANT: Please find my resume "${selectedResumeFile ? selectedResumeFile.name : 'attached'}" attached to this email.\n\n` +
+    `Kindly review my application and contact me at your earliest convenience.\n\nThank you.`
+  );
+  const mailtoLink = `mailto:SathishManpower.pvt.ltd@gmail.com?subject=${subject}&body=${body}`;
+
+  // Show instructions alert first
+  const confirmed = confirm(
+    `📧 Resume Email Instructions:\n\n` +
+    `1. Your email app will open with a pre-filled message.\n` +
+    `2. IMPORTANT: Manually attach your resume file:\n   "${selectedResumeFile ? selectedResumeFile.name : 'your resume'}"\n` +
+    `3. Then click SEND.\n\nEmail: SathishManpower.pvt.ltd@gmail.com\n\nClick OK to open your email app.`
+  );
+  if(confirmed){
+    window.location.href = mailtoLink;
+  }
+}
 
 // WHATSAPP - Contact Form
 function sendWA(){
@@ -1682,28 +1605,6 @@ function sendWA(){
   window.open(`https://wa.me/919944455127?text=${encodeURIComponent(txt)}`,'_blank');
 }
 
-// WHATSAPP - Apply Form
-function applyWA(){
-  const n=document.getElementById('aname').value.trim();
-  const ph=document.getElementById('aphone').value.trim();
-  const job=document.getElementById('ajob').value;
-  if(!n||!ph||!job){alert('Please fill in your name, phone, and select a job category.');return;}
-  const age=document.getElementById('aage').value;
-  const gender=document.getElementById('agender').value;
-  const exp=document.getElementById('aexp').value.trim();
-  const loc=document.getElementById('aloc').value.trim();
-  const msg=document.getElementById('amsg').value.trim();
-  let txt=`Hello Sathish Manpower! I want to register as a candidate 🙏\n\n*Candidate Registration*\n━━━━━━━━━━━━\n`;
-  txt+=`👤 *Name:* ${n}\n📞 *Phone:* ${ph}\n💼 *Position:* ${job}\n`;
-  if(age)txt+=`🎂 *Age:* ${age}\n`;
-  if(gender)txt+=`⚧ *Gender:* ${gender}\n`;
-  if(exp)txt+=`⏳ *Experience:* ${exp}\n`;
-  if(loc)txt+=`📍 *Location:* ${loc}\n`;
-  if(msg)txt+=`📝 *Details:* ${msg}\n`;
-  txt+=`━━━━━━━━━━━━\nPlease contact me at your earliest. Thank you!`;
-  window.open(`https://wa.me/919944455127?text=${encodeURIComponent(txt)}`,'_blank');
-}
-
 // WHATSAPP - Employer Form
 function employerWA(){
   const co=document.getElementById('ename').value.trim();
@@ -1715,7 +1616,7 @@ function employerWA(){
   const city=document.getElementById('ecity').value.trim();
   const msg=document.getElementById('emsg').value.trim();
   let txt=`Hello Sathish Manpower! I need to hire staff 🙏\n\n*Employer Enquiry*\n━━━━━━━━━━━━\n`;
-  txt+=`🏢 *Company:* ${co}\n👤 *Contact Person:* ${cp}\n📞 *Phone:* ${ph}\n💼 *Position(s):* ${pos}\n`;
+  txt+=`🏢 *Company:* ${co}\n👤 *Contact:* ${cp}\n📞 *Phone:* ${ph}\n💼 *Position(s):* ${pos}\n`;
   if(vac)txt+=`🔢 *Vacancies:* ${vac}\n`;
   if(city)txt+=`📍 *Location:* ${city}\n`;
   if(msg)txt+=`📝 *Requirements:* ${msg}\n`;
@@ -1729,6 +1630,33 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     const tgt=document.querySelector(a.getAttribute('href'));
     if(tgt){e.preventDefault();tgt.scrollIntoView({behavior:'smooth',block:'start'});}
   });
+});
+
+// TOOLTIP on mobile – tap to show/hide (since hover doesn't work on touch)
+document.querySelectorAll('.mini-tile').forEach(tile=>{
+  tile.addEventListener('click',function(e){
+    // On mobile screens, toggle tooltip visibility via a class
+    const isMobile=window.innerWidth<=768;
+    if(!isMobile)return;
+    e.stopPropagation();
+    const tooltip=this.querySelector('.tile-tooltip');
+    const wasVisible=tooltip.style.opacity==='1';
+    // Hide all tooltips first
+    document.querySelectorAll('.tile-tooltip').forEach(t=>{
+      t.style.opacity='0';t.style.visibility='hidden';
+    });
+    if(!wasVisible){
+      tooltip.style.opacity='1';
+      tooltip.style.visibility='visible';
+    }
+  });
+});
+document.addEventListener('click',()=>{
+  if(window.innerWidth<=768){
+    document.querySelectorAll('.tile-tooltip').forEach(t=>{
+      t.style.opacity='0';t.style.visibility='hidden';
+    });
+  }
 });
 </script>
 </body>

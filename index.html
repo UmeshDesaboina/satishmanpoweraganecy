@@ -28,12 +28,7 @@ html{scroll-behavior:smooth;}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);color:var(--dark);overflow-x:hidden;}
 
 /* ─── LOADER ─── */
-#loader{
-  position:fixed;inset:0;z-index:9999;
-  background:var(--navy);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;
-  transition:opacity .7s ease,visibility .7s ease;
-}
+#loader{position:fixed;inset:0;z-index:9999;background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;transition:opacity .7s ease,visibility .7s ease;}
 #loader.out{opacity:0;visibility:hidden;}
 .ld-logo{font-family:'Fraunces',serif;font-size:2.4rem;font-weight:900;color:#fff;letter-spacing:1px;margin-bottom:4px;}
 .ld-logo em{color:var(--gold);font-style:normal;}
@@ -44,19 +39,14 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);color:va
 @keyframes ldFill{to{width:100%;}}
 
 /* ─── NAVBAR ─── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:1000;
-  height:72px;padding:0 6%;
-  display:flex;align-items:center;justify-content:space-between;
-  transition:all .4s ease;
-}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;transition:all .4s ease;}
 nav.scrolled{background:rgba(6,15,30,.96);backdrop-filter:blur(24px);box-shadow:0 2px 40px rgba(0,0,0,.35);}
 .logo-wrap{display:flex;align-items:center;gap:12px;text-decoration:none;}
 .logo-icon{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--gold),var(--gold2));display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:900;font-size:1.15rem;color:var(--navy);flex-shrink:0;}
 .logo-text .name{font-size:.92rem;font-weight:800;color:#fff;letter-spacing:.5px;line-height:1.2;display:block;}
 .logo-text .pvt{font-size:.58rem;color:var(--gold);letter-spacing:3px;text-transform:uppercase;}
-.nav-menu{display:flex;align-items:center;gap:32px;list-style:none;}
-.nav-menu a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.8rem;font-weight:600;letter-spacing:.8px;text-transform:uppercase;position:relative;transition:color .3s;}
+.nav-menu{display:flex;align-items:center;gap:24px;list-style:none;}
+.nav-menu a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.78rem;font-weight:600;letter-spacing:.8px;text-transform:uppercase;position:relative;transition:color .3s;}
 .nav-menu a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--gold);transition:width .3s;border-radius:2px;}
 .nav-menu a:hover{color:var(--gold);}
 .nav-menu a:hover::after{width:100%;}
@@ -68,10 +58,18 @@ nav.scrolled{background:rgba(6,15,30,.96);backdrop-filter:blur(24px);box-shadow:
 .burger.on span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
 .burger.on span:nth-child(2){opacity:0;}
 .burger.on span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
-.mob-nav{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(6,15,30,.98);backdrop-filter:blur(24px);padding:32px 6%;flex-direction:column;gap:18px;z-index:999;border-top:1px solid var(--border);}
+.mob-nav{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(6,15,30,.98);backdrop-filter:blur(24px);padding:24px 6%;flex-direction:column;gap:14px;z-index:999;border-top:1px solid var(--border);max-height:calc(100vh - 72px);overflow-y:auto;}
 .mob-nav.on{display:flex;}
-.mob-nav a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.95rem;font-weight:600;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.07);transition:color .3s;}
+.mob-nav a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.9rem;font-weight:600;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.07);transition:color .3s;}
 .mob-nav a:hover{color:var(--gold);}
+
+/* ─── LANG TOGGLE ─── */
+.lang-btn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:6px 14px;border-radius:50px;font-size:.72rem;font-weight:700;cursor:pointer;transition:all .3s;letter-spacing:1px;}
+.lang-btn:hover{background:var(--gold);color:var(--navy);border-color:var(--gold);}
+[data-lang="ta"] .en-text{display:none;}
+[data-lang="ta"] .ta-text{display:inline;}
+[data-lang="en"] .ta-text{display:none;}
+[data-lang="en"] .en-text{display:inline;}
 
 /* ─── HERO ─── */
 #hero{min-height:100vh;background:var(--navy);position:relative;overflow:hidden;display:flex;align-items:center;}
@@ -92,12 +90,12 @@ nav.scrolled{background:rgba(6,15,30,.96);backdrop-filter:blur(24px);box-shadow:
 .btn-gold:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(212,164,58,.38);}
 .btn-ghost{padding:15px 32px;background:transparent;color:#fff;font-weight:600;font-size:.88rem;border:1.5px solid rgba(255,255,255,.28);border-radius:50px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .3s;}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px);}
+.btn-green{padding:15px 32px;background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;font-weight:700;font-size:.88rem;border:none;border-radius:50px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .3s;}
+.btn-green:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(37,211,102,.38);}
 .hero-nums{display:flex;gap:32px;margin-top:48px;animation:fUp .8s ease 1.3s both;}
 .h-num .n{font-family:'Fraunces',serif;font-size:2rem;font-weight:900;color:var(--gold);line-height:1;}
 .h-num .l{font-size:.68rem;color:rgba(255,255,255,.48);text-transform:uppercase;letter-spacing:1.5px;margin-top:4px;}
 .h-num+.h-num{border-left:1px solid rgba(255,255,255,.1);padding-left:28px;}
-
-/* hero card */
 .hero-right{animation:fRight .8s ease .8s both;position:relative;}
 .h-card{background:linear-gradient(145deg,rgba(27,63,122,.85),rgba(6,15,30,.9));border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:32px;backdrop-filter:blur(20px);position:relative;overflow:hidden;}
 .h-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2),var(--red));}
@@ -144,8 +142,6 @@ section{padding:100px 6%;}
 .sec-hd{margin-bottom:60px;}
 .sec-hd.c{text-align:center;}
 .sec-hd.c .sec-desc{margin:0 auto;}
-
-/* reveal */
 .rv{opacity:0;transform:translateY(36px);transition:opacity .7s ease,transform .7s ease;}
 .rv.on{opacity:1;transform:translateY(0);}
 .d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}
@@ -166,9 +162,29 @@ section{padding:100px 6%;}
 .vals{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px;}
 .val{display:flex;align-items:center;gap:9px;font-size:.83rem;font-weight:600;color:var(--dark);}
 .val i{color:var(--gold);}
+/* CEO Message */
+.ceo-box{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:20px;padding:28px;margin-top:28px;position:relative;box-shadow:0 4px 18px rgba(0,0,0,.06);}
+.ceo-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:3px 3px 0 0;}
+.ceo-quote{font-size:.88rem;color:var(--gray);line-height:1.8;font-style:italic;margin-bottom:16px;}
+.ceo-author{display:flex;align-items:center;gap:12px;}
+.ceo-avatar{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.2rem;font-weight:800;font-family:'Fraunces',serif;}
+.ceo-name{font-size:.88rem;font-weight:800;color:var(--navy);}
+.ceo-title{font-size:.72rem;color:var(--gray);}
+
+/* ─── INDUSTRIES ─── */
+#industries{background:#fff;}
+.ind-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px;}
+.ind-card{background:var(--offwhite);border:1px solid rgba(0,0,0,.06);border-radius:18px;padding:28px 20px;text-align:center;transition:all .35s;cursor:default;}
+.ind-card:hover{background:var(--navy);transform:translateY(-8px);box-shadow:0 20px 50px rgba(6,15,30,.18);}
+.ind-icon{width:62px;height:62px;border-radius:16px;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.5rem;margin:0 auto 16px;transition:all .3s;}
+.ind-card:hover .ind-icon{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);}
+.ind-card h4{font-size:.88rem;font-weight:700;color:var(--navy);transition:color .3s;}
+.ind-card:hover h4{color:#fff;}
+.ind-card p{font-size:.74rem;color:var(--gray);margin-top:6px;line-height:1.5;transition:color .3s;}
+.ind-card:hover p{color:rgba(255,255,255,.65);}
 
 /* ─── SERVICES ─── */
-#services{background:#fff;}
+#services{background:var(--offwhite);}
 .svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:26px;}
 .svc-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 3px 18px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.05);transition:all .4s cubic-bezier(.175,.885,.32,1.275);cursor:pointer;}
 .svc-card:hover{transform:translateY(-10px);box-shadow:0 28px 60px rgba(6,15,30,.14);border-color:rgba(212,164,58,.28);}
@@ -183,13 +199,34 @@ section{padding:100px 6%;}
 .svc-link{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:700;color:var(--blue);text-decoration:none;transition:gap .3s,color .3s;}
 .svc-link:hover{gap:10px;color:var(--gold);}
 
+/* ─── STATS COUNTER ─── */
+#stats{background:linear-gradient(135deg,var(--navy),var(--blue));padding:80px 6%;position:relative;overflow:hidden;}
+#stats::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(212,164,58,.1),transparent 70%);}
+.stats-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.stat-box{text-align:center;padding:40px 20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;transition:all .3s;}
+.stat-box:hover{background:rgba(212,164,58,.1);border-color:rgba(212,164,58,.3);transform:translateY(-5px);}
+.stat-num{font-family:'Fraunces',serif;font-size:2.8rem;font-weight:900;color:var(--gold);line-height:1;margin-bottom:8px;}
+.stat-num em{font-style:normal;font-size:2rem;}
+.stat-label{font-size:.82rem;color:rgba(255,255,255,.7);font-weight:600;}
+.stat-icon{font-size:1.5rem;color:rgba(255,255,255,.2);margin-bottom:14px;}
+
+/* ─── JOB CATEGORIES ─── */
+#jobs{background:#fff;}
+.jobs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;}
+.job-card{background:var(--offwhite);border:1px solid rgba(0,0,0,.06);border-radius:16px;padding:20px;display:flex;align-items:center;gap:14px;transition:all .3s;}
+.job-card:hover{border-color:rgba(212,164,58,.4);background:#fff;transform:translateX(5px);box-shadow:0 8px 28px rgba(0,0,0,.08);}
+.job-ico{width:48px;height:48px;flex-shrink:0;border-radius:12px;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.1rem;}
+.job-info h4{font-size:.88rem;font-weight:700;color:var(--navy);}
+.job-info span{font-size:.72rem;color:var(--gray);}
+.job-badge{margin-left:auto;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font-size:.6rem;font-weight:800;padding:4px 10px;border-radius:50px;white-space:nowrap;flex-shrink:0;}
+
 /* ─── TESTIMONIALS ─── */
 #testimonials{background:var(--navy);position:relative;overflow:hidden;}
 #testimonials::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(27,63,122,.7) 0%,transparent 60%);}
 .testi-wrap{position:relative;z-index:1;}
 #testimonials .sec-title{color:#fff;}
 #testimonials .sec-desc{color:rgba(255,255,255,.55);}
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:0;}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 .testi-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:20px;padding:28px;transition:all .3s;position:relative;}
 .testi-card:hover{background:rgba(212,164,58,.07);border-color:rgba(212,164,58,.25);transform:translateY(-5px);}
 .testi-stars{display:flex;gap:4px;margin-bottom:16px;}
@@ -227,7 +264,7 @@ section{padding:100px 6%;}
 .step h4{font-size:.93rem;font-weight:700;color:var(--navy);margin-bottom:8px;}
 .step p{font-size:.78rem;color:var(--gray);line-height:1.65;}
 
-/* ─── COVERAGE MAP SECTION ─── */
+/* ─── COVERAGE ─── */
 #coverage{background:var(--navy);position:relative;overflow:hidden;padding:80px 6%;}
 #coverage::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(27,63,122,.6),transparent 60%);}
 .cov-inner{position:relative;z-index:1;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
@@ -237,13 +274,10 @@ section{padding:100px 6%;}
 .cpill{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.75);font-size:.78rem;font-weight:600;padding:8px 14px;border-radius:50px;transition:all .3s;}
 .cpill i{color:var(--gold);font-size:.75rem;}
 .cpill:hover{background:rgba(212,164,58,.12);border-color:rgba(212,164,58,.35);color:#fff;}
-.map-visual{position:relative;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:22px;overflow:hidden;height:340px;display:flex;align-items:center;justify-content:center;}
-.map-visual img{width:100%;height:100%;object-fit:cover;opacity:.55;border-radius:22px;}
-.map-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;}
-.map-overlay i{font-size:3rem;color:var(--gold);}
-.map-overlay span{font-size:.85rem;color:rgba(255,255,255,.8);font-weight:600;letter-spacing:1px;}
+.map-visual{position:relative;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:22px;overflow:hidden;height:380px;}
+.map-visual iframe{width:100%;height:100%;border:0;border-radius:22px;filter:grayscale(20%);}
 
-/* ─── PRICING / PACKAGES ─── */
+/* ─── PRICING ─── */
 #pricing{background:var(--offwhite);padding:100px 6%;}
 .pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 .pkg{background:#fff;border:2px solid rgba(0,0,0,.06);border-radius:22px;padding:36px 28px;text-align:center;transition:all .35s;position:relative;overflow:hidden;}
@@ -263,16 +297,83 @@ section{padding:100px 6%;}
 .pkg.featured .pkg-btn{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);}
 .pkg-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.18);}
 
+/* ─── APPLY PORTAL ─── */
+#apply{background:#fff;padding:100px 6%;}
+.portal-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start;}
+.portal-info{padding-right:10px;}
+.portal-info .sec-title{margin-bottom:16px;}
+.portal-info p{font-size:.88rem;color:var(--gray);line-height:1.8;margin-bottom:22px;}
+.portal-perks{display:flex;flex-direction:column;gap:12px;}
+.perk{display:flex;align-items:center;gap:12px;font-size:.84rem;font-weight:600;color:var(--dark);}
+.perk i{width:32px;height:32px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:.78rem;flex-shrink:0;}
+.portal-form{background:var(--navy);border-radius:24px;padding:40px;position:relative;overflow:hidden;}
+.portal-form::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold2));}
+.portal-form .form-title{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:900;color:#fff;margin-bottom:4px;}
+.portal-form .form-sub{font-size:.75rem;color:rgba(255,255,255,.45);margin-bottom:26px;}
+.fg{margin-bottom:16px;}
+.fg label{display:block;font-size:.72rem;font-weight:700;color:rgba(255,255,255,.65);letter-spacing:1px;text-transform:uppercase;margin-bottom:7px;}
+.fg input,.fg select,.fg textarea{width:100%;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 15px;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.83rem;transition:all .3s;outline:none;}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.32);}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold);background:rgba(255,255,255,.12);}
+.fg select option{background:var(--navy);color:#fff;}
+.fg textarea{resize:vertical;min-height:80px;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.submit-btn{width:100%;padding:15px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;font-weight:800;border:none;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;transition:all .3s;margin-top:6px;}
+.submit-btn:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(212,164,58,.4);}
+
+/* ─── EMPLOYER ENQUIRY ─── */
+#employer{background:var(--offwhite);padding:100px 6%;}
+.emp-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:50px;align-items:start;}
+.emp-form{background:linear-gradient(145deg,var(--navy),var(--blue));border-radius:24px;padding:44px 40px;position:relative;overflow:hidden;}
+.emp-form::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold2),var(--red));}
+.emp-benefits{display:flex;flex-direction:column;gap:20px;margin-top:32px;}
+.emp-ben{display:flex;gap:14px;align-items:flex-start;}
+.emp-ben-ico{width:46px;height:46px;flex-shrink:0;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:1.1rem;box-shadow:0 3px 12px rgba(0,0,0,.08);}
+.emp-ben h4{font-size:.9rem;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.emp-ben p{font-size:.78rem;color:var(--gray);line-height:1.6;}
+
+/* ─── GALLERY ─── */
+#gallery{background:#fff;padding:100px 6%;}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px;}
+.gal-item{border-radius:16px;overflow:hidden;position:relative;cursor:pointer;}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+.gal-item:hover img{transform:scale(1.08);}
+.gal-item:nth-child(1){grid-column:span 2;grid-row:span 2;}
+.gal-item:nth-child(4){grid-column:span 2;}
+.gal-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,15,30,.7),transparent);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:16px;}
+.gal-item:hover .gal-overlay{opacity:1;}
+.gal-overlay span{color:#fff;font-size:.78rem;font-weight:700;}
+
+/* ─── BLOG ─── */
+#blog{background:var(--offwhite);padding:100px 6%;}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+.blog-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 3px 18px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.05);transition:all .35s;}
+.blog-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,.12);}
+.blog-img{height:185px;overflow:hidden;}
+.blog-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.blog-card:hover .blog-img img{transform:scale(1.06);}
+.blog-body{padding:22px;}
+.blog-cat{font-size:.62rem;font-weight:700;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;}
+.blog-body h3{font-size:.95rem;font-weight:800;color:var(--navy);margin-bottom:10px;line-height:1.4;}
+.blog-body p{font-size:.78rem;color:var(--gray);line-height:1.7;margin-bottom:16px;}
+.blog-meta{display:flex;align-items:center;gap:14px;font-size:.7rem;color:var(--gray);}
+.blog-meta i{color:var(--gold);}
+.blog-link{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:700;color:var(--blue);text-decoration:none;margin-top:12px;transition:gap .3s,color .3s;}
+.blog-link:hover{gap:10px;color:var(--gold);}
+
 /* ─── FAQ ─── */
 #faq{background:#fff;padding:100px 6%;}
 .faq-wrap{max-width:820px;margin:0 auto;}
+.faq-tabs{display:flex;gap:12px;margin-bottom:32px;flex-wrap:wrap;}
+.faq-tab{padding:9px 22px;border-radius:50px;font-size:.8rem;font-weight:700;cursor:pointer;border:2px solid rgba(0,0,0,.1);color:var(--gray);transition:all .3s;}
+.faq-tab.active{background:var(--navy);color:var(--gold);border-color:var(--navy);}
 .faq-item{border:1px solid rgba(0,0,0,.08);border-radius:14px;margin-bottom:12px;overflow:hidden;transition:all .3s;}
 .faq-item.open{border-color:rgba(212,164,58,.35);box-shadow:0 5px 20px rgba(212,164,58,.1);}
 .faq-q{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;cursor:pointer;font-weight:700;font-size:.88rem;color:var(--navy);}
 .faq-q i{color:var(--gold);transition:transform .3s;font-size:.82rem;flex-shrink:0;}
 .faq-item.open .faq-q i{transform:rotate(180deg);}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
-.faq-item.open .faq-a{max-height:200px;}
+.faq-item.open .faq-a{max-height:300px;}
 .faq-a p{padding:0 22px 18px;font-size:.83rem;color:var(--gray);line-height:1.75;}
 
 /* ─── CONTACT ─── */
@@ -287,18 +388,15 @@ section{padding:100px 6%;}
 .citem p{font-size:.83rem;color:var(--gray);margin:0;}
 .citem a{color:var(--blue);text-decoration:none;font-weight:600;}
 .citem a:hover{color:var(--gold);}
+.map-container{margin-top:24px;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);}
+.map-container iframe{display:block;width:100%;border-radius:16px;}
+.social-links{display:flex;gap:10px;margin-top:24px;}
+.social-link{width:42px;height:42px;border-radius:12px;background:var(--navy);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:1rem;transition:all .3s;}
+.social-link:hover{background:var(--gold);color:var(--navy);transform:translateY(-3px);}
 .cform-wrap{background:linear-gradient(145deg,var(--navy),var(--blue));border-radius:24px;padding:44px 40px;position:relative;overflow:hidden;}
 .cform-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold2),var(--red));}
 .cform-title{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:900;color:#fff;margin-bottom:4px;}
 .cform-sub{font-size:.75rem;color:rgba(255,255,255,.45);margin-bottom:28px;}
-.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.fg{margin-bottom:16px;}
-.fg label{display:block;font-size:.72rem;font-weight:700;color:rgba(255,255,255,.65);letter-spacing:1px;text-transform:uppercase;margin-bottom:7px;}
-.fg input,.fg select,.fg textarea{width:100%;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 15px;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.83rem;transition:all .3s;outline:none;}
-.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.32);}
-.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold);background:rgba(255,255,255,.12);box-shadow:0 0 0 3px rgba(212,164,58,.14);}
-.fg select option{background:var(--navy);color:#fff;}
-.fg textarea{resize:vertical;min-height:96px;}
 .wa-btn{width:100%;padding:15px;background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;font-weight:700;border:none;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;transition:all .3s;margin-top:6px;}
 .wa-btn:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(37,211,102,.4);}
 .wa-btn i{font-size:1.15rem;}
@@ -325,6 +423,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 .ft-ci a:hover{color:var(--gold);}
 .ft-bot{border-top:1px solid rgba(255,255,255,.08);padding-top:26px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:.77rem;}
 .ft-bot a{color:var(--gold);text-decoration:none;}
+.ft-legal{display:flex;gap:18px;flex-wrap:wrap;}
+.ft-legal a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.72rem;transition:color .3s;}
+.ft-legal a:hover{color:var(--gold);}
 
 /* ─── FLOATING UI ─── */
 #scrtop{position:fixed;bottom:32px;right:32px;width:48px;height:48px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:.95rem;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 5px 20px rgba(212,164,58,.38);z-index:800;}
@@ -336,7 +437,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 
 /* ─── RESPONSIVE ─── */
 @media(max-width:1100px){
-  .hero-inner,.about-grid,.why-grid,.cov-inner,.contact-grid{grid-template-columns:1fr;gap:48px;}
+  .hero-inner,.about-grid,.why-grid,.cov-inner,.contact-grid,.portal-grid,.emp-grid{grid-template-columns:1fr;gap:48px;}
   .pkg-grid{grid-template-columns:1fr 1fr;}
   .testi-grid{grid-template-columns:1fr 1fr;}
   .ftgrid{grid-template-columns:1fr 1fr;}
@@ -344,6 +445,10 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   .steps::after{display:none;}
   .hero-right{max-width:480px;}
   .img-stack{height:380px;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .gallery-grid{grid-template-columns:repeat(3,1fr);}
+  .gal-item:nth-child(4){grid-column:span 1;}
+  .blog-grid{grid-template-columns:1fr 1fr;}
 }
 @media(max-width:768px){
   section{padding:70px 5%;}
@@ -352,23 +457,32 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   .frow{grid-template-columns:1fr;}
   .svc-grid{grid-template-columns:1fr 1fr;}
   .ftgrid{grid-template-columns:1fr;gap:28px;}
-  .cform-wrap{padding:28px 20px;}
-  .pkg-grid{grid-template-columns:1fr;}
-  .testi-grid{grid-template-columns:1fr;}
+  .cform-wrap,.portal-form,.emp-form{padding:28px 20px;}
+  .pkg-grid,.testi-grid,.blog-grid{grid-template-columns:1fr;}
   .trust-inner{flex-direction:column;align-items:flex-start;}
   .trust-div{display:none;}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-auto-rows:160px;}
+  .gal-item:nth-child(1){grid-column:span 2;grid-row:span 1;}
+  .ind-grid{grid-template-columns:repeat(2,1fr);}
+  .jobs-grid{grid-template-columns:1fr;}
 }
 @media(max-width:520px){
   .svc-grid{grid-template-columns:1fr;}
   .vals{grid-template-columns:1fr;}
   .hero-btns{flex-direction:column;}
-  .btn-gold,.btn-ghost{width:100%;justify-content:center;}
+  .btn-gold,.btn-ghost,.btn-green{width:100%;justify-content:center;}
   .steps{grid-template-columns:1fr;}
   .mini-grid{grid-template-columns:repeat(3,1fr);}
+  .stats-grid{grid-template-columns:1fr 1fr;}
+  .gallery-grid{grid-template-columns:1fr;grid-auto-rows:200px;}
+  .gal-item:nth-child(1){grid-column:span 1;}
+  .ind-grid{grid-template-columns:1fr 1fr;}
+  .faq-tabs{flex-direction:column;}
+  .blog-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
-<body>
+<body data-lang="en">
 
 <!-- LOADER -->
 <div id="loader">
@@ -390,23 +504,29 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   <ul class="nav-menu">
     <li><a href="#hero">Home</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#industries">Industries</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#why">Why Us</a></li>
-    <li><a href="#coverage">Coverage</a></li>
+    <li><a href="#jobs">Job Openings</a></li>
+    <li><a href="#blog">Blog</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#contact" class="nav-cta"><i class="fab fa-whatsapp"></i> Hire Now</a></li>
+    <li><button class="lang-btn" onclick="toggleLang()">தமிழ் / EN</button></li>
+    <li><a href="#apply" class="nav-cta"><i class="fas fa-briefcase"></i> Apply Now</a></li>
   </ul>
   <div class="burger" id="burger"><span></span><span></span><span></span></div>
 </nav>
 <div class="mob-nav" id="mobNav">
   <a href="#hero" onclick="closeMob()">Home</a>
   <a href="#about" onclick="closeMob()">About Us</a>
+  <a href="#industries" onclick="closeMob()">Industries</a>
   <a href="#services" onclick="closeMob()">Services</a>
-  <a href="#why" onclick="closeMob()">Why Choose Us</a>
-  <a href="#coverage" onclick="closeMob()">Coverage</a>
-  <a href="#pricing" onclick="closeMob()">Packages</a>
+  <a href="#jobs" onclick="closeMob()">Job Openings</a>
+  <a href="#apply" onclick="closeMob()">Apply for Jobs</a>
+  <a href="#employer" onclick="closeMob()">Hire Staff</a>
+  <a href="#gallery" onclick="closeMob()">Gallery</a>
+  <a href="#blog" onclick="closeMob()">Blog</a>
+  <a href="#faq" onclick="closeMob()">FAQ</a>
   <a href="#contact" onclick="closeMob()">Contact</a>
-  <a href="#contact" onclick="closeMob()" style="color:var(--gold)"><i class="fab fa-whatsapp"></i> Hire via WhatsApp</a>
+  <a href="https://wa.me/919944455127" onclick="closeMob()" style="color:#25d366"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
 </div>
 
 <!-- HERO -->
@@ -419,23 +539,40 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   </div>
   <div class="hero-inner">
     <div>
-      <div class="hero-pill"><i class="fas fa-shield-check"></i> Tamil Nadu's #1 Verified Manpower Agency</div>
-      <h1 class="hero-h1">Your Trusted Partner for <em>Skilled</em> Healthcare & Home Staff</h1>
-      <p class="hero-sub">Sathish Manpower Pvt. Ltd. connects families, hospitals, and businesses with certified healthcare professionals, domestic helpers, and technical workers across Tamil Nadu — verified, trained, and deployed within 24 hours.</p>
+      <div class="hero-pill"><i class="fas fa-shield-check"></i>
+        <span class="en-text">Tamil Nadu's #1 Verified Manpower Agency</span>
+        <span class="ta-text">தமிழ்நாடின் சிறந்த மேன்பவர் ஏஜென்சி</span>
+      </div>
+      <h1 class="hero-h1">
+        <span class="en-text">Your Trusted Partner for <em>Skilled</em> Manpower Across India</span>
+        <span class="ta-text">திறமையான <em>பணியாளர்களை</em> வழங்கும் நம்பகமான பங்காளி</span>
+      </h1>
+      <p class="hero-sub">
+        <span class="en-text">Sathish Manpower Pvt. Ltd. connects families, hospitals, and businesses with certified healthcare professionals, domestic helpers, and technical workers across Tamil Nadu — verified, trained, and deployed within 24 hours.</span>
+        <span class="ta-text">சதீஷ் மேன்பவர் Pvt. Ltd. தமிழ்நாடு முழுவதும் சான்றிதழ் பெற்ற சுகாதார நிபுணர்கள், வீட்டு உதவியாளர்கள் மற்றும் தொழில்நுட்ப தொழிலாளர்களை இணைக்கிறது.</span>
+      </p>
       <div class="hero-btns">
-        <a href="#services" class="btn-gold"><i class="fas fa-th-large"></i> Explore Services</a>
-        <a href="#contact" class="btn-ghost"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+        <a href="#employer" class="btn-gold"><i class="fas fa-users"></i>
+          <span class="en-text">Hire Staff</span>
+          <span class="ta-text">பணியாளர் வேண்டும்</span>
+        </a>
+        <a href="#apply" class="btn-ghost"><i class="fas fa-briefcase"></i>
+          <span class="en-text">Apply for Jobs</span>
+          <span class="ta-text">வேலை விண்ணப்பிக்க</span>
+        </a>
+        <a href="tel:+919944455127" class="btn-green"><i class="fas fa-phone-alt"></i> +91 99444 55127</a>
       </div>
       <div class="hero-nums">
-        <div class="h-num"><div class="n">1200+</div><div class="l">Staff Placed</div></div>
-        <div class="h-num"><div class="n">15+</div><div class="l">Years Experience</div></div>
-        <div class="h-num"><div class="n">98%</div><div class="l">Satisfaction</div></div>
+        <div class="h-num"><div class="n">500+</div><div class="l">Candidates Placed</div></div>
+        <div class="h-num"><div class="n">100+</div><div class="l">Clients Served</div></div>
+        <div class="h-num"><div class="n">10+</div><div class="l">Industries</div></div>
+        <div class="h-num"><div class="n">15+</div><div class="l">Years Exp</div></div>
       </div>
     </div>
     <div class="hero-right">
       <div class="h-card">
         <div class="h-card-hd">Our Professional Services</div>
-        <div class="h-card-sub">Healthcare · Domestic · Technical</div>
+        <div class="h-card-sub">Healthcare · Domestic · Technical · PAN India</div>
         <div class="mini-grid">
           <div class="mini-tile"><i class="fas fa-user-nurse"></i><span>Nurses</span></div>
           <div class="mini-tile"><i class="fas fa-stethoscope"></i><span>Doctors</span></div>
@@ -470,6 +607,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     <div class="mq-item"><i class="fas fa-broom"></i> Maid Services</div>
     <div class="mq-item"><i class="fas fa-tools"></i> Electricians & Plumbers</div>
     <div class="mq-item"><i class="fas fa-hospital-user"></i> Wardboys</div>
+    <div class="mq-item"><i class="fas fa-shield-alt"></i> Security Guards</div>
+    <div class="mq-item"><i class="fas fa-car"></i> Drivers</div>
+    <div class="mq-item"><i class="fas fa-user-tie"></i> HR Executives</div>
     <div class="mq-item"><i class="fas fa-user-nurse"></i> Nurses</div>
     <div class="mq-item"><i class="fas fa-stethoscope"></i> Doctor Home Visits</div>
     <div class="mq-item"><i class="fas fa-flask"></i> Lab Technicians</div>
@@ -480,6 +620,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     <div class="mq-item"><i class="fas fa-broom"></i> Maid Services</div>
     <div class="mq-item"><i class="fas fa-tools"></i> Electricians & Plumbers</div>
     <div class="mq-item"><i class="fas fa-hospital-user"></i> Wardboys</div>
+    <div class="mq-item"><i class="fas fa-shield-alt"></i> Security Guards</div>
+    <div class="mq-item"><i class="fas fa-car"></i> Drivers</div>
+    <div class="mq-item"><i class="fas fa-user-tie"></i> HR Executives</div>
   </div>
 </div>
 
@@ -507,8 +650,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     </div>
     <div class="trust-div"></div>
     <div class="trust-item">
-      <div class="trust-icon"><i class="fas fa-star"></i></div>
-      <div class="trust-text"><strong>15+ Years Excellence</strong><span>Trusted since 2010</span></div>
+      <div class="trust-icon"><i class="fas fa-map-marked-alt"></i></div>
+      <div class="trust-text"><strong>PAN India Service</strong><span>Tamil Nadu & Beyond</span></div>
     </div>
   </div>
 </div>
@@ -529,8 +672,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
       <div class="rv d2">
         <div class="sec-eyebrow">Who We Are</div>
         <h2 class="sec-title">Tamil Nadu's Most <em>Trusted</em> Manpower Agency</h2>
-        <p class="sec-desc">Sathish Manpower Private Limited is a certified staffing solutions company based in Kattankulathur, Chengalpattu. We specialize in placing verified healthcare professionals, domestic helpers, and technical workers across homes, hospitals, and businesses throughout Tamil Nadu.</p>
-        <p class="sec-desc" style="margin-top:14px;">GSTIN: <strong>33ABSCS1284Q1ZI</strong> · Registered at Kakkan Street, West Pothery, Kattankulathur – 603 203.</p>
+        <p class="sec-desc">Sathish Manpower Private Limited is a certified staffing solutions company based in Kattankulathur, Chengalpattu. We specialize in placing verified healthcare professionals, domestic helpers, and technical workers across homes, hospitals, and businesses throughout Tamil Nadu and across India.</p>
+        <p class="sec-desc" style="margin-top:14px;"><strong>Our Vision:</strong> To be India's most reliable and ethical manpower partner — bridging talent with opportunity across every sector.</p>
+        <p class="sec-desc" style="margin-top:10px;"><strong>Our Mission:</strong> Provide verified, trained professionals who create lasting value for employers and fulfilling careers for candidates.</p>
         <div class="vals">
           <div class="val"><i class="fas fa-shield-alt"></i> Integrity First</div>
           <div class="val"><i class="fas fa-handshake"></i> Commitment</div>
@@ -539,7 +683,75 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           <div class="val"><i class="fas fa-star"></i> Excellence</div>
           <div class="val"><i class="fas fa-clock"></i> Fast Placement</div>
         </div>
-        <a href="#contact" class="btn-gold" style="margin-top:30px;display:inline-flex"><i class="fas fa-phone-alt"></i> Get In Touch</a>
+        <!-- CEO Message -->
+        <div class="ceo-box rv d3">
+          <p class="ceo-quote">"At Sathish Manpower, we believe every placement is a responsibility — not just a transaction. Our commitment is to find you the right person, not just any person. Trust, quality, and speed have been our pillars for 15 years, and they always will be."</p>
+          <div class="ceo-author">
+            <div class="ceo-avatar">DS</div>
+            <div>
+              <div class="ceo-name">Dr. Sathish</div>
+              <div class="ceo-title">Founder & CEO, Sathish Manpower Pvt. Ltd.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES WE SERVE -->
+<section id="industries">
+  <div class="max">
+    <div class="sec-hd c rv">
+      <div class="sec-eyebrow">Industries We Serve</div>
+      <h2 class="sec-title">Staffing Solutions Across <em>10+ Industries</em></h2>
+      <p class="sec-desc">From critical healthcare to booming construction — we supply verified talent wherever you need it.</p>
+    </div>
+    <div class="ind-grid">
+      <div class="ind-card rv d1">
+        <div class="ind-icon"><i class="fas fa-hospital"></i></div>
+        <h4>Healthcare</h4>
+        <p>Nurses, Doctors, Lab Tech</p>
+      </div>
+      <div class="ind-card rv d2">
+        <div class="ind-icon"><i class="fas fa-industry"></i></div>
+        <h4>Manufacturing</h4>
+        <p>Floor workers, supervisors</p>
+      </div>
+      <div class="ind-card rv d3">
+        <div class="ind-icon"><i class="fas fa-hard-hat"></i></div>
+        <h4>Construction</h4>
+        <p>Engineers, site workers</p>
+      </div>
+      <div class="ind-card rv d1">
+        <div class="ind-icon"><i class="fas fa-laptop-code"></i></div>
+        <h4>IT & Technology</h4>
+        <p>Developers, data entry</p>
+      </div>
+      <div class="ind-card rv d2">
+        <div class="ind-icon"><i class="fas fa-shopping-bag"></i></div>
+        <h4>Retail</h4>
+        <p>Sales staff, cashiers</p>
+      </div>
+      <div class="ind-card rv d3">
+        <div class="ind-icon"><i class="fas fa-truck"></i></div>
+        <h4>Logistics</h4>
+        <p>Drivers, warehouse staff</p>
+      </div>
+      <div class="ind-card rv d1">
+        <div class="ind-icon"><i class="fas fa-concierge-bell"></i></div>
+        <h4>Hospitality</h4>
+        <p>Hotel staff, catering</p>
+      </div>
+      <div class="ind-card rv d2">
+        <div class="ind-icon"><i class="fas fa-shield-alt"></i></div>
+        <h4>Security Services</h4>
+        <p>Trained security guards</p>
+      </div>
+      <div class="ind-card rv d3">
+        <div class="ind-icon"><i class="fas fa-building"></i></div>
+        <h4>Office Administration</h4>
+        <p>HR, admin, front desk</p>
       </div>
     </div>
   </div>
@@ -554,6 +766,78 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
       <p class="sec-desc">Verified, trained professionals for every home and hospital need — from critical healthcare to everyday domestic support.</p>
     </div>
     <div class="svc-grid">
+      <div class="svc-card rv d1">
+        <div class="svc-img">
+          <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=600&q=80" alt="Permanent Staffing" loading="lazy">
+          <div class="svc-tag">Staffing</div>
+          <div class="svc-ico"><i class="fas fa-user-check"></i></div>
+        </div>
+        <div class="svc-body">
+          <h3>Permanent Staffing</h3>
+          <p>End-to-end permanent recruitment across all sectors. We source, screen, and place candidates who grow with your organisation.</p>
+          <a href="#employer" class="svc-link">Get Started <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="svc-card rv d2">
+        <div class="svc-img">
+          <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80" alt="Contract Staffing" loading="lazy">
+          <div class="svc-tag">Staffing</div>
+          <div class="svc-ico"><i class="fas fa-file-contract"></i></div>
+        </div>
+        <div class="svc-body">
+          <h3>Contract Staffing</h3>
+          <p>Flexible contract-based professionals deployed for project durations. Reduced hiring overhead with full compliance management.</p>
+          <a href="#employer" class="svc-link">Enquire Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="svc-card rv d3">
+        <div class="svc-img">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="Temporary Staffing" loading="lazy">
+          <div class="svc-tag">Staffing</div>
+          <div class="svc-ico"><i class="fas fa-calendar-alt"></i></div>
+        </div>
+        <div class="svc-body">
+          <h3>Temporary Staffing</h3>
+          <p>On-demand temporary staff for peak seasons, events, or urgent replacements. Deployed within 24 hours.</p>
+          <a href="#employer" class="svc-link">Hire Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="svc-card rv d1">
+        <div class="svc-img">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Bulk Hiring" loading="lazy">
+          <div class="svc-tag">Enterprise</div>
+          <div class="svc-ico"><i class="fas fa-users"></i></div>
+        </div>
+        <div class="svc-body">
+          <h3>Bulk Hiring</h3>
+          <p>Large-scale recruitment drives for factories, hospitals, and corporate clients. 10 to 1000 candidates delivered on time.</p>
+          <a href="#employer" class="svc-link">Get Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="svc-card rv d2">
+        <div class="svc-img">
+          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="Payroll Management" loading="lazy">
+          <div class="svc-tag">HR Services</div>
+          <div class="svc-ico"><i class="fas fa-money-check-alt"></i></div>
+        </div>
+        <div class="svc-body">
+          <h3>Payroll Management</h3>
+          <p>Complete payroll outsourcing — salary processing, PF, ESI, TDS, and compliance. Accurate and on time, every month.</p>
+          <a href="#employer" class="svc-link">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="svc-card rv d3">
+        <div class="svc-img">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="HR Consulting" loading="lazy">
+          <div class="svc-tag">Consulting</div>
+          <div class="svc-ico"><i class="fas fa-chart-line"></i></div>
+        </div>
+        <div class="svc-body">
+          <h3>HR Consulting</h3>
+          <p>Strategic HR advice for SMEs — policy drafting, job description design, appraisal frameworks, and workforce planning.</p>
+          <a href="#employer" class="svc-link">Consult Us <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
       <div class="svc-card rv d1">
         <div class="svc-img">
           <img src="https://images.unsplash.com/photo-1666214280391-8ff5bd3d0bf0?w=600&q=80" alt="Doctor Home Visit" loading="lazy">
@@ -580,42 +864,6 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
       </div>
       <div class="svc-card rv d3">
         <div class="svc-img">
-          <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=80" alt="Lab Technician" loading="lazy">
-          <div class="svc-tag">Diagnostics</div>
-          <div class="svc-ico"><i class="fas fa-flask"></i></div>
-        </div>
-        <div class="svc-body">
-          <h3>Lab Technicians</h3>
-          <p>Skilled technicians for blood collection, diagnostic testing, and pathology coordination with precision and care.</p>
-          <a href="#contact" class="svc-link">Enquire Now <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-      <div class="svc-card rv d1">
-        <div class="svc-img">
-          <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&q=80" alt="X-Ray Technician" loading="lazy">
-          <div class="svc-tag">Imaging</div>
-          <div class="svc-ico"><i class="fas fa-x-ray"></i></div>
-        </div>
-        <div class="svc-body">
-          <h3>X-Ray Technicians</h3>
-          <p>Proficient in portable and clinic-based imaging. Ensures radiation safety and accurate diagnostic results.</p>
-          <a href="#contact" class="svc-link">Hire Technician <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-      <div class="svc-card rv d2">
-        <div class="svc-img">
-          <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600&q=80" alt="OT Assistants" loading="lazy">
-          <div class="svc-tag">Surgical</div>
-          <div class="svc-ico"><i class="fas fa-procedures"></i></div>
-        </div>
-        <div class="svc-body">
-          <h3>O.T. Assistants</h3>
-          <p>Trained in sterilization, surgical instrument handling, and pre/post-operative assistance for smooth OT operations.</p>
-          <a href="#contact" class="svc-link">Hire OT Staff <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-      <div class="svc-card rv d3">
-        <div class="svc-img">
           <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=600&q=80" alt="Caretakers" loading="lazy">
           <div class="svc-tag">Care Support</div>
           <div class="svc-ico"><i class="fas fa-hands-holding-child"></i></div>
@@ -624,42 +872,6 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           <h3>Female & Male Caretakers</h3>
           <p>Compassionate caretakers for elderly, disabled, or post-operative patients. Daily activities, medication reminders, and companionship.</p>
           <a href="#contact" class="svc-link">Hire Caretaker <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-      <div class="svc-card rv d1">
-        <div class="svc-img">
-          <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&q=80" alt="Aayabai" loading="lazy">
-          <div class="svc-tag">Hospital Staff</div>
-          <div class="svc-ico"><i class="fas fa-hospital-user"></i></div>
-        </div>
-        <div class="svc-body">
-          <h3>Aayabai</h3>
-          <p>Hospital-trained Aayabais for patient hygiene, bedding, food service, and maintaining cleanliness around patients.</p>
-          <a href="#contact" class="svc-link">Hire Aayabai <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-      <div class="svc-card rv d2">
-        <div class="svc-img">
-          <img src="https://images.unsplash.com/photo-1536064479547-7ee40b74b807?w=600&q=80" alt="Wardboys" loading="lazy">
-          <div class="svc-tag">Hospital Staff</div>
-          <div class="svc-ico"><i class="fas fa-hospital"></i></div>
-        </div>
-        <div class="svc-body">
-          <h3>Wardboys</h3>
-          <p>Disciplined wardboys for patient shifting, transportation within hospital premises, and emergency assistance tasks.</p>
-          <a href="#contact" class="svc-link">Hire Wardboy <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-      <div class="svc-card rv d3">
-        <div class="svc-img">
-          <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&q=80" alt="Elder Baby Care" loading="lazy">
-          <div class="svc-tag">Family Care</div>
-          <div class="svc-ico"><i class="fas fa-baby"></i></div>
-        </div>
-        <div class="svc-body">
-          <h3>Elder & Baby Care</h3>
-          <p>Specialized caregivers for newborns and senior citizens — feeding, bathing, medication support, and emotional care.</p>
-          <a href="#contact" class="svc-link">Book Now <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
       <div class="svc-card rv d1">
@@ -690,13 +902,117 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   </div>
 </section>
 
+<!-- STATS COUNTER -->
+<section id="stats">
+  <div class="max">
+    <div class="stats-grid">
+      <div class="stat-box rv d1">
+        <div class="stat-icon"><i class="fas fa-user-check"></i></div>
+        <div class="stat-num" data-target="500">0<em>+</em></div>
+        <div class="stat-label">Candidates Placed</div>
+      </div>
+      <div class="stat-box rv d2">
+        <div class="stat-icon"><i class="fas fa-handshake"></i></div>
+        <div class="stat-num" data-target="100">0<em>+</em></div>
+        <div class="stat-label">Clients Served</div>
+      </div>
+      <div class="stat-box rv d3">
+        <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
+        <div class="stat-num" data-target="50">0<em>+</em></div>
+        <div class="stat-label">Active Job Openings</div>
+      </div>
+      <div class="stat-box rv d4">
+        <div class="stat-icon"><i class="fas fa-industry"></i></div>
+        <div class="stat-num" data-target="10">0<em>+</em></div>
+        <div class="stat-label">Industries Covered</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOB CATEGORIES -->
+<section id="jobs">
+  <div class="max">
+    <div class="sec-hd c rv">
+      <div class="sec-eyebrow">Current Openings</div>
+      <h2 class="sec-title">Open <em>Job Positions</em></h2>
+      <p class="sec-desc">We regularly place candidates in these roles. Click any position to apply instantly via WhatsApp.</p>
+    </div>
+    <div class="jobs-grid">
+      <div class="job-card rv d1">
+        <div class="job-ico"><i class="fas fa-user-nurse"></i></div>
+        <div class="job-info"><h4>Staff Nurse (Male/Female)</h4><span>Healthcare · Full Time / Part Time</span></div>
+        <div class="job-badge">Hiring</div>
+      </div>
+      <div class="job-card rv d2">
+        <div class="job-ico"><i class="fas fa-stethoscope"></i></div>
+        <div class="job-info"><h4>Doctor (Home Visits)</h4><span>Healthcare · Flexible Hours</span></div>
+        <div class="job-badge">Hiring</div>
+      </div>
+      <div class="job-card rv d3">
+        <div class="job-ico"><i class="fas fa-user-tie"></i></div>
+        <div class="job-info"><h4>HR Executive</h4><span>Corporate · Full Time</span></div>
+        <div class="job-badge">Hiring</div>
+      </div>
+      <div class="job-card rv d1">
+        <div class="job-ico"><i class="fas fa-bolt"></i></div>
+        <div class="job-info"><h4>Electrician</h4><span>Technical · Contract/Full Time</span></div>
+        <div class="job-badge">Hiring</div>
+      </div>
+      <div class="job-card rv d2">
+        <div class="job-ico"><i class="fas fa-car"></i></div>
+        <div class="job-info"><h4>Driver (LMV/HMV)</h4><span>Logistics · Full Time</span></div>
+        <div class="job-badge">Hiring</div>
+      </div>
+      <div class="job-card rv d3">
+        <div class="job-ico"><i class="fas fa-keyboard"></i></div>
+        <div class="job-info"><h4>Data Entry Operator</h4><span>IT / Admin · Full Time</span></div>
+        <div class="job-badge">Hiring</div>
+      </div>
+      <div class="job-card rv d1">
+        <div class="job-ico"><i class="fas fa-tags"></i></div>
+        <div class="job-info"><h4>Sales Executive</h4><span>Retail / Corporate · Full Time</span></div>
+        <div class="job-badge">Hiring</div>
+      </div>
+      <div class="job-card rv d2">
+        <div class="job-ico"><i class="fas fa-shield-alt"></i></div>
+        <div class="job-info"><h4>Security Guard</h4><span>Security Services · All Shifts</span></div>
+        <div class="job-badge">Hiring</div>
+      </div>
+      <div class="job-card rv d3">
+        <div class="job-ico"><i class="fas fa-hands-helping"></i></div>
+        <div class="job-info"><h4>Caretaker / Ayah</h4><span>Healthcare · Live-in / Day Duty</span></div>
+        <div class="job-badge">Hiring</div>
+      </div>
+      <div class="job-card rv d1">
+        <div class="job-ico"><i class="fas fa-broom"></i></div>
+        <div class="job-info"><h4>Domestic Maid</h4><span>Domestic · Full Time / Part Time</span></div>
+        <div class="job-badge">Hiring</div>
+      </div>
+      <div class="job-card rv d2">
+        <div class="job-ico"><i class="fas fa-flask"></i></div>
+        <div class="job-info"><h4>Lab / X-Ray Technician</h4><span>Diagnostics · Full Time</span></div>
+        <div class="job-badge">Hiring</div>
+      </div>
+      <div class="job-card rv d3">
+        <div class="job-ico"><i class="fas fa-hospital-user"></i></div>
+        <div class="job-info"><h4>Wardboy / Aayabai</h4><span>Hospital Staff · All Shifts</span></div>
+        <div class="job-badge">Hiring</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="#apply" class="btn-gold"><i class="fas fa-paper-plane"></i> Apply for Any Position</a>
+    </div>
+  </div>
+</section>
+
 <!-- TESTIMONIALS -->
 <section id="testimonials">
   <div class="max testi-wrap">
     <div class="sec-hd c rv">
       <div class="sec-eyebrow" style="color:var(--gold)">What Clients Say</div>
-      <h2 class="sec-title">Trusted by <em>500+ Families</em> & Hospitals</h2>
-      <p class="sec-desc" style="color:rgba(255,255,255,.55)">Real stories from real clients who trusted us with their most important needs.</p>
+      <h2 class="sec-title">Trusted by <em>100+ Clients</em> & Families</h2>
+      <p class="sec-desc">Real stories from employers and candidates who trusted us with what matters most.</p>
     </div>
     <div class="testi-grid">
       <div class="testi-card rv d1">
@@ -711,7 +1027,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
       <div class="testi-card rv d2">
         <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
         <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="testi-text">"We've been using their wardboy and Aayabai services at our clinic for 3 years now. The staff is disciplined, punctual, and always properly verified. Best agency in Chengalpattu."</p>
+        <p class="testi-text">"We've been using their wardboy and Aayabai services at our clinic for 3 years. The staff is disciplined, punctual, and always properly verified. Best agency in Chengalpattu."</p>
         <div class="testi-author">
           <img class="testi-avatar" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=100&q=80" alt="Dr. Suresh Kumar">
           <div><div class="testi-name">Dr. Suresh Kumar</div><div class="testi-role">Clinic Director · Kattankulathur</div></div>
@@ -720,10 +1036,10 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
       <div class="testi-card rv d3">
         <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
         <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-        <p class="testi-text">"The domestic maid they sent is absolutely trustworthy and hardworking. Sathish Manpower's screening process gave us real confidence. A reliable and professional agency."</p>
+        <p class="testi-text">"Got placed as an HR Executive within 2 weeks of registering with Sathish Manpower. The team was supportive throughout the interview process. Truly a candidate-friendly agency."</p>
         <div class="testi-author">
-          <img class="testi-avatar" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80" alt="Lakshmi Venkat">
-          <div><div class="testi-name">Lakshmi Venkat</div><div class="testi-role">Tambaram · Domestic Services</div></div>
+          <img class="testi-avatar" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80" alt="Anitha S">
+          <div><div class="testi-name">Anitha S</div><div class="testi-role">Chennai · HR Executive Candidate</div></div>
         </div>
       </div>
     </div>
@@ -741,25 +1057,29 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         <div class="why-points">
           <div class="why-pt">
             <div class="why-ico"><i class="fas fa-shield-check"></i></div>
-            <div><h4>Background-Verified Staff</h4><p>Every professional undergoes thorough background, ID, and credential checks before placement.</p></div>
+            <div><h4>✔ Verified Candidates</h4><p>Every professional undergoes thorough background, ID, and credential checks before placement.</p></div>
           </div>
           <div class="why-pt">
             <div class="why-ico"><i class="fas fa-bolt"></i></div>
-            <div><h4>Fast, Reliable Placement</h4><p>Match and deploy staff within 24–48 hours of your requirement — sometimes even the same day.</p></div>
+            <div><h4>✔ Fast Recruitment Process</h4><p>Match and deploy staff within 24–48 hours of your requirement — sometimes even the same day.</p></div>
           </div>
           <div class="why-pt">
-            <div class="why-ico"><i class="fas fa-headset"></i></div>
-            <div><h4>24/7 Customer Support</h4><p>Our team is available round the clock via WhatsApp and phone for any concern or emergency.</p></div>
+            <div class="why-ico"><i class="fas fa-briefcase"></i></div>
+            <div><h4>✔ Industry Expertise</h4><p>Deep domain knowledge across healthcare, IT, manufacturing, logistics, and 6 more sectors.</p></div>
           </div>
           <div class="why-pt">
-            <div class="why-ico"><i class="fas fa-rotate"></i></div>
-            <div><h4>Free Replacement Guarantee</h4><p>Not satisfied with a placement? We arrange a free replacement within 48 hours, no questions asked.</p></div>
+            <div class="why-ico"><i class="fas fa-tags"></i></div>
+            <div><h4>✔ Affordable Solutions</h4><p>Transparent pricing with no hidden fees. Tailored packages for every budget and business size.</p></div>
+          </div>
+          <div class="why-pt">
+            <div class="why-ico"><i class="fas fa-map-marked-alt"></i></div>
+            <div><h4>✔ PAN India Service</h4><p>Primary base in Tamil Nadu with the capability to place candidates anywhere across India.</p></div>
           </div>
         </div>
       </div>
       <div class="why-stats rv d2">
-        <div class="wstat"><div class="big">1200<em>+</em></div><p>Professionals Placed</p></div>
-        <div class="wstat"><div class="big">500<em>+</em></div><p>Happy Clients</p></div>
+        <div class="wstat"><div class="big">500<em>+</em></div><p>Candidates Placed</p></div>
+        <div class="wstat"><div class="big">100<em>+</em></div><p>Happy Clients</p></div>
         <div class="wstat"><div class="big">15<em>+</em></div><p>Years Experience</p></div>
         <div class="wstat"><div class="big">98<em>%</em></div><p>Satisfaction Rate</p></div>
       </div>
@@ -775,7 +1095,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
       <h2 class="sec-title">Get Your Staff in <em>4 Simple Steps</em></h2>
     </div>
     <div class="steps">
-      <div class="step rv d1"><div class="step-n">1</div><h4>Contact Us</h4><p>Reach out via WhatsApp, call, or our contact form with your requirement.</p></div>
+      <div class="step rv d1"><div class="step-n">1</div><h4>Contact Us</h4><p>Reach out via WhatsApp, call, or our enquiry form with your requirement.</p></div>
       <div class="step rv d2"><div class="step-n">2</div><h4>Share Requirements</h4><p>Tell us the type of staff, duration, and any specific skills needed.</p></div>
       <div class="step rv d3"><div class="step-n">3</div><h4>We Match & Verify</h4><p>We select and vet the best-fit professional from our trained talent pool.</p></div>
       <div class="step rv d4"><div class="step-n">4</div><h4>Staff Deployed</h4><p>Your professional arrives ready to work within 24–48 hours.</p></div>
@@ -783,13 +1103,13 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   </div>
 </section>
 
-<!-- COVERAGE -->
+<!-- COVERAGE MAP SECTION -->
 <section id="coverage">
   <div class="cov-inner">
     <div class="rv">
       <div class="sec-eyebrow" style="color:var(--gold)">Service Coverage</div>
-      <h2 class="sec-title" style="color:#fff">Serving Across <em>Tamil Nadu</em></h2>
-      <p class="sec-desc" style="color:rgba(255,255,255,.55)">We deploy staff across major cities and districts throughout Tamil Nadu. Emergency placements available in Chennai metro area within hours.</p>
+      <h2 class="sec-title" style="color:#fff">Serving Across <em>Tamil Nadu</em> & India</h2>
+      <p class="sec-desc" style="color:rgba(255,255,255,.55)">We deploy staff across major cities and districts throughout Tamil Nadu. Emergency placements available in Chennai metro area within hours. PAN India placements available on request.</p>
       <div class="coverage-pills">
         <div class="cpill"><i class="fas fa-map-marker-alt"></i> Chennai</div>
         <div class="cpill"><i class="fas fa-map-marker-alt"></i> Chengalpattu</div>
@@ -806,11 +1126,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
       </div>
     </div>
     <div class="map-visual rv d2">
-      <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=700&q=80" alt="Tamil Nadu Map" loading="lazy">
-      <div class="map-overlay">
-        <i class="fas fa-map-marked-alt"></i>
-        <span>Pan Tamil Nadu Coverage</span>
-      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3368.6353620660807!2d80.03643947431645!3d12.817802418233052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f70d92395c99%3A0x22e5853de9bd6678!2sSathish%20Manpower%20Pvt.Ltd!5e1!3m2!1sen!2sin!4v1781150216334!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Sathish Manpower Office Location"></iframe>
     </div>
   </div>
 </section>
@@ -875,6 +1191,205 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   </div>
 </section>
 
+<!-- JOB APPLICATION PORTAL -->
+<section id="apply">
+  <div class="max">
+    <div class="portal-grid">
+      <div class="portal-info rv">
+        <div class="sec-eyebrow">Career Opportunities</div>
+        <h2 class="sec-title">Apply <em>Online</em> Today</h2>
+        <p>Register with Sathish Manpower and get placed in your dream job across Tamil Nadu and India. We work with top employers who value talent and dedication.</p>
+        <div class="portal-perks">
+          <div class="perk"><i class="fas fa-check"></i> Free registration for all candidates</div>
+          <div class="perk"><i class="fas fa-check"></i> Placements across 10+ industries</div>
+          <div class="perk"><i class="fas fa-check"></i> Career guidance and interview support</div>
+          <div class="perk"><i class="fas fa-check"></i> Immediate openings available</div>
+          <div class="perk"><i class="fas fa-check"></i> Transparent salary and job terms</div>
+          <div class="perk"><i class="fas fa-check"></i> PAN India placement network</div>
+        </div>
+      </div>
+      <div class="portal-form rv d2">
+        <div class="form-title">Candidate Registration</div>
+        <div class="form-sub">Register now — our team will contact you within 24 hours</div>
+        <div class="frow">
+          <div class="fg"><label>Full Name *</label><input type="text" id="aname" placeholder="Your full name"></div>
+          <div class="fg"><label>Phone *</label><input type="tel" id="aphone" placeholder="+91 XXXXX XXXXX"></div>
+        </div>
+        <div class="frow">
+          <div class="fg"><label>Age</label><input type="number" id="aage" placeholder="Age"></div>
+          <div class="fg"><label>Gender</label>
+            <select id="agender">
+              <option value="">Select...</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="fg"><label>Job Category *</label>
+          <select id="ajob">
+            <option value="">Select position...</option>
+            <option>Staff Nurse (Male/Female)</option>
+            <option>Doctor</option>
+            <option>HR Executive</option>
+            <option>Electrician</option>
+            <option>Driver (LMV/HMV)</option>
+            <option>Data Entry Operator</option>
+            <option>Sales Executive</option>
+            <option>Security Guard</option>
+            <option>Caretaker / Ayah</option>
+            <option>Domestic Maid</option>
+            <option>Lab/X-Ray Technician</option>
+            <option>Wardboy / Aayabai</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="frow">
+          <div class="fg"><label>Experience</label><input type="text" id="aexp" placeholder="e.g. 2 years"></div>
+          <div class="fg"><label>Location</label><input type="text" id="aloc" placeholder="City / Area"></div>
+        </div>
+        <div class="fg"><label>Additional Info</label><textarea id="amsg" placeholder="Qualifications, certifications, or anything else..."></textarea></div>
+        <button class="submit-btn" onclick="applyWA()"><i class="fab fa-whatsapp"></i> Submit Application via WhatsApp</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMPLOYER ENQUIRY FORM -->
+<section id="employer">
+  <div class="max">
+    <div class="sec-hd rv">
+      <div class="sec-eyebrow">For Employers</div>
+      <h2 class="sec-title">Post Your <em>Staffing Requirement</em></h2>
+    </div>
+    <div class="emp-grid">
+      <div class="rv">
+        <p class="sec-desc">Tell us what you need and we'll handpick the right candidates from our verified talent pool. Fast, reliable, and hassle-free hiring.</p>
+        <div class="emp-benefits">
+          <div class="emp-ben">
+            <div class="emp-ben-ico"><i class="fas fa-user-check" style="color:var(--navy)"></i></div>
+            <div><h4>Pre-screened Talent</h4><p>Every candidate is background-verified, reference-checked, and credential-validated before being shared with you.</p></div>
+          </div>
+          <div class="emp-ben">
+            <div class="emp-ben-ico"><i class="fas fa-bolt" style="color:var(--navy)"></i></div>
+            <div><h4>Fast TAT</h4><p>Receive shortlisted profiles within 24 hours of your request. Emergency deployments same day in Chennai metro.</p></div>
+          </div>
+          <div class="emp-ben">
+            <div class="emp-ben-ico"><i class="fas fa-rotate" style="color:var(--navy)"></i></div>
+            <div><h4>Free Replacement</h4><p>Not satisfied with a placement? We arrange a free replacement within 48 hours, no questions asked.</p></div>
+          </div>
+          <div class="emp-ben">
+            <div class="emp-ben-ico"><i class="fas fa-file-alt" style="color:var(--navy)"></i></div>
+            <div><h4>Full Compliance</h4><p>We provide all statutory documentation including offer letters, appointment letters, and payroll records.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="emp-form rv d2">
+        <div class="cform-title">Employer Enquiry Form</div>
+        <div class="cform-sub">We'll respond within 2 business hours</div>
+        <div class="fg"><label>Company Name *</label><input type="text" id="ename" placeholder="Your company name"></div>
+        <div class="frow">
+          <div class="fg"><label>Contact Person *</label><input type="text" id="eperson" placeholder="Your name"></div>
+          <div class="fg"><label>Phone Number *</label><input type="tel" id="ephone" placeholder="+91 XXXXX XXXXX"></div>
+        </div>
+        <div class="fg"><label>Required Position(s) *</label><input type="text" id="eposition" placeholder="e.g. Nurse, Security Guard, HR Executive"></div>
+        <div class="frow">
+          <div class="fg"><label>No. of Vacancies *</label><input type="number" id="evacancies" placeholder="e.g. 5"></div>
+          <div class="fg"><label>Location / City</label><input type="text" id="ecity" placeholder="City / Area"></div>
+        </div>
+        <div class="fg"><label>Additional Requirements</label><textarea id="emsg" placeholder="Contract type, salary range, joining date, specific skills needed..."></textarea></div>
+        <button class="wa-btn" onclick="employerWA()"><i class="fab fa-whatsapp"></i> Send Requirement via WhatsApp</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="max">
+    <div class="sec-hd c rv">
+      <div class="sec-eyebrow">Our Gallery</div>
+      <h2 class="sec-title">Behind the <em>Scenes</em></h2>
+      <p class="sec-desc">Office inaugurations, recruitment drives, training sessions, and our growing team.</p>
+    </div>
+    <div class="gallery-grid rv">
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=700&q=80" alt="Team at Work" loading="lazy">
+        <div class="gal-overlay"><span>Our Team</span></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1559523182-a284c3fb7cff?w=400&q=80" alt="Office" loading="lazy">
+        <div class="gal-overlay"><span>Our Office</span></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&q=80" alt="Healthcare" loading="lazy">
+        <div class="gal-overlay"><span>Healthcare Placements</span></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=700&q=80" alt="Meeting" loading="lazy">
+        <div class="gal-overlay"><span>Client Meeting</span></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80" alt="Training" loading="lazy">
+        <div class="gal-overlay"><span>Staff Training</span></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=400&q=80" alt="Recruitment Drive" loading="lazy">
+        <div class="gal-overlay"><span>Recruitment Drive</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="max">
+    <div class="sec-hd c rv">
+      <div class="sec-eyebrow">Insights & Tips</div>
+      <h2 class="sec-title">From Our <em>Blog</em></h2>
+      <p class="sec-desc">Expert advice on hiring, HR best practices, and career growth from our team.</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card rv d1">
+        <div class="blog-img">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&q=80" alt="Hiring Trends" loading="lazy">
+        </div>
+        <div class="blog-body">
+          <div class="blog-cat">Industry Trends</div>
+          <h3>Hiring Trends in India for 2025: What Employers Need to Know</h3>
+          <p>The Indian job market is evolving rapidly. From AI-assisted screening to the rise of gig economy roles, here's what smart employers are doing differently.</p>
+          <div class="blog-meta"><span><i class="fas fa-calendar"></i> Jan 2025</span><span><i class="fas fa-clock"></i> 5 min read</span></div>
+          <a href="#" class="blog-link">Read Article <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="blog-card rv d2">
+        <div class="blog-img">
+          <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&q=80" alt="Interview Tips" loading="lazy">
+        </div>
+        <div class="blog-body">
+          <div class="blog-cat">Career Tips</div>
+          <h3>10 Interview Tips That Will Get You Hired in Tamil Nadu</h3>
+          <p>From dressing right to answering tricky questions — here's our practical guide to cracking interviews for healthcare, corporate, and technical roles.</p>
+          <div class="blog-meta"><span><i class="fas fa-calendar"></i> Feb 2025</span><span><i class="fas fa-clock"></i> 4 min read</span></div>
+          <a href="#" class="blog-link">Read Article <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="blog-card rv d3">
+        <div class="blog-img">
+          <img src="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?w=500&q=80" alt="Resume Guide" loading="lazy">
+        </div>
+        <div class="blog-body">
+          <div class="blog-cat">Resume Guide</div>
+          <h3>How to Build a Resume That Gets Shortlisted in 2025</h3>
+          <p>A clear, well-structured resume is your first impression. Learn what recruiters actually look for and how to make yours stand out from hundreds of applications.</p>
+          <div class="blog-meta"><span><i class="fas fa-calendar"></i> Mar 2025</span><span><i class="fas fa-clock"></i> 6 min read</span></div>
+          <a href="#" class="blog-link">Read Article <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section id="faq">
   <div class="max">
@@ -883,29 +1398,42 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
       <h2 class="sec-title">Frequently Asked <em>Questions</em></h2>
     </div>
     <div class="faq-wrap rv">
-      <div class="faq-item open">
+      <div class="faq-tabs">
+        <div class="faq-tab active" onclick="filterFAQ('all',this)">All</div>
+        <div class="faq-tab" onclick="filterFAQ('employer',this)">For Employers</div>
+        <div class="faq-tab" onclick="filterFAQ('candidate',this)">For Candidates</div>
+      </div>
+      <div class="faq-item open" data-cat="employer">
         <div class="faq-q" onclick="toggleFAQ(this)">How quickly can you deploy staff after I place a request? <i class="fas fa-chevron-down"></i></div>
         <div class="faq-a"><p>We typically deploy verified staff within 24–48 hours of receiving your request. For emergency healthcare needs in Chennai and Chengalpattu, we can often arrange same-day deployment. Contact us via WhatsApp for urgent requirements.</p></div>
       </div>
-      <div class="faq-item">
+      <div class="faq-item" data-cat="employer">
         <div class="faq-q" onclick="toggleFAQ(this)">Are all your staff background-verified and trained? <i class="fas fa-chevron-down"></i></div>
         <div class="faq-a"><p>Absolutely. Every professional in our network undergoes thorough identity verification, credential checks, and reference verification before being listed. Healthcare staff must provide their registration certificates and we verify them directly with the relevant councils.</p></div>
       </div>
-      <div class="faq-item">
+      <div class="faq-item" data-cat="employer">
         <div class="faq-q" onclick="toggleFAQ(this)">What if I'm not satisfied with the staff provided? <i class="fas fa-chevron-down"></i></div>
         <div class="faq-a"><p>We offer a free replacement guarantee. If you're not satisfied for any reason, simply contact us and we will arrange a replacement professional within 48 hours at no additional cost. Your satisfaction is our priority.</p></div>
       </div>
-      <div class="faq-item">
+      <div class="faq-item" data-cat="employer">
         <div class="faq-q" onclick="toggleFAQ(this)">Do you provide live-in staff or only day-duty? <i class="fas fa-chevron-down"></i></div>
         <div class="faq-a"><p>We provide both! Live-in staff for round-the-clock care (particularly popular for caretakers, nurses, and domestic maids), as well as day-duty and night-duty options. We'll match the arrangement to your specific needs.</p></div>
       </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFAQ(this)">Which areas do you serve? <i class="fas fa-chevron-down"></i></div>
-        <div class="faq-a"><p>We operate across Tamil Nadu including Chennai, Chengalpattu, Kattankulathur, Tambaram, Velachery, OMR, Coimbatore, Madurai, Salem, Trichy, and Vellore. Contact us for specific district enquiries — we may be able to help even if your area isn't listed.</p></div>
+      <div class="faq-item" data-cat="candidate">
+        <div class="faq-q" onclick="toggleFAQ(this)">Is registration free for job seekers? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-a"><p>Yes, registration is completely free for all candidates. We never charge placement fees from job seekers. Our service is funded by the employers we work with. Simply fill out our application form and our team will reach out with matching opportunities.</p></div>
       </div>
-      <div class="faq-item">
+      <div class="faq-item" data-cat="candidate">
+        <div class="faq-q" onclick="toggleFAQ(this)">How long does it take to get placed after registering? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-a"><p>This depends on the role and your qualifications. For high-demand roles like nurses, caretakers, and security guards, placements can happen within 1–7 days. For corporate roles like HR or sales, it typically takes 1–3 weeks. We guide you through the entire process.</p></div>
+      </div>
+      <div class="faq-item" data-cat="employer">
         <div class="faq-q" onclick="toggleFAQ(this)">Is Sathish Manpower a registered company? <i class="fas fa-chevron-down"></i></div>
         <div class="faq-a"><p>Yes, Sathish Manpower Private Limited is a fully registered company with GSTIN 33ABSCS1284Q1ZI, operating from Kattankulathur, Chengalpattu. We provide all necessary documentation for corporate and hospital clients.</p></div>
+      </div>
+      <div class="faq-item" data-cat="candidate">
+        <div class="faq-q" onclick="toggleFAQ(this)">Do you provide jobs outside Tamil Nadu? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-a"><p>Yes! While our primary base is Tamil Nadu, we have a growing PAN India placement network. We've placed candidates in cities like Bangalore, Hyderabad, Mumbai, and Delhi. Let us know your preferred location when registering.</p></div>
       </div>
     </div>
   </div>
@@ -921,7 +1449,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     <div class="contact-grid">
       <div class="ci rv">
         <h3>We're Here to Help</h3>
-        <p>Fill out the form and we'll connect you on WhatsApp instantly with your service details — or simply call us directly for immediate assistance. Available 7 days a week.</p>
+        <p>Fill out the form and we'll connect you on WhatsApp instantly — or simply call us directly for immediate assistance. Available 7 days a week.</p>
         <div class="clist">
           <div class="citem">
             <div class="c-ico"><i class="fas fa-phone-alt"></i></div>
@@ -939,6 +1467,21 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
             <div class="c-ico"><i class="fas fa-clock"></i></div>
             <div><h5>Working Hours</h5><p>Mon – Sat: 9:00 AM – 7:00 PM<br>Sundays: 10:00 AM – 4:00 PM</p></div>
           </div>
+        </div>
+        <!-- Social Media Links -->
+        <div style="margin-top:20px;">
+          <div style="font-size:.75rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">Follow Us</div>
+          <div class="social-links">
+            <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/919944455127" class="social-link" style="background:#25d366" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-link" style="background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" style="background:#0077b5" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" style="background:#ff0000" title="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <!-- Google Map -->
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3368.6353620660807!2d80.03643947431645!3d12.817802418233052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f70d92395c99%3A0x22e5853de9bd6678!2sSathish%20Manpower%20Pvt.Ltd!5e1!3m2!1sen!2sin!4v1781150216334!5m2!1sen!2sin" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Sathish Manpower Office Map"></iframe>
         </div>
       </div>
       <div class="cform-wrap rv d2">
@@ -968,6 +1511,10 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
             <option>Electrician</option>
             <option>Plumber</option>
             <option>Carpenter</option>
+            <option>Security Guard</option>
+            <option>Driver</option>
+            <option>HR Executive</option>
+            <option>Bulk Hiring / Corporate</option>
           </select>
         </div>
         <div class="frow">
@@ -990,12 +1537,13 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           <div class="logo-icon">SM</div>
           <div class="logo-text"><span class="name">SATHISH MANPOWER</span><span class="pvt">Private Limited</span></div>
         </div>
-        <p>Tamil Nadu's trusted manpower agency for healthcare professionals, domestic help, and technical workers. GSTIN: 33ABSCS1284Q1ZI. Est. 2010.</p>
+        <p>Tamil Nadu's trusted manpower agency for healthcare professionals, domestic help, technical workers, and corporate staffing. GSTIN: 33ABSCS1284Q1ZI. Est. 2010. PAN India service available.</p>
         <div class="ft-social">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://wa.me/919944455127" target="_blank"><i class="fab fa-whatsapp"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/919944455127" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
       <div class="ft-col">
@@ -1003,21 +1551,25 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         <ul>
           <li><a href="#hero"><i class="fas fa-chevron-right"></i> Home</a></li>
           <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+          <li><a href="#industries"><i class="fas fa-chevron-right"></i> Industries</a></li>
           <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
-          <li><a href="#why"><i class="fas fa-chevron-right"></i> Why Choose Us</a></li>
-          <li><a href="#pricing"><i class="fas fa-chevron-right"></i> Packages</a></li>
+          <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+          <li><a href="#blog"><i class="fas fa-chevron-right"></i> Blog</a></li>
           <li><a href="#faq"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+          <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
         </ul>
       </div>
       <div class="ft-col">
         <h4>Our Services</h4>
         <ul>
+          <li><a href="#services"><i class="fas fa-chevron-right"></i> Permanent Staffing</a></li>
+          <li><a href="#services"><i class="fas fa-chevron-right"></i> Contract Staffing</a></li>
+          <li><a href="#services"><i class="fas fa-chevron-right"></i> Bulk Hiring</a></li>
+          <li><a href="#services"><i class="fas fa-chevron-right"></i> Payroll Management</a></li>
+          <li><a href="#services"><i class="fas fa-chevron-right"></i> HR Consulting</a></li>
           <li><a href="#services"><i class="fas fa-chevron-right"></i> Nurses (M/F)</a></li>
-          <li><a href="#services"><i class="fas fa-chevron-right"></i> Doctor Home Visits</a></li>
           <li><a href="#services"><i class="fas fa-chevron-right"></i> Caretakers</a></li>
-          <li><a href="#services"><i class="fas fa-chevron-right"></i> Baby & Elder Care</a></li>
           <li><a href="#services"><i class="fas fa-chevron-right"></i> Maid Services</a></li>
-          <li><a href="#services"><i class="fas fa-chevron-right"></i> Electricians & More</a></li>
         </ul>
       </div>
       <div class="ft-col">
@@ -1027,12 +1579,18 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           <div class="ft-ci"><i class="fab fa-whatsapp"></i><a href="https://wa.me/919944455127" target="_blank">WhatsApp Us Now</a></div>
           <div class="ft-ci"><i class="fas fa-map-marker-alt"></i><span>Kakkan Street, West Pothery, Kattankulathur – 603 203, Tamil Nadu</span></div>
           <div class="ft-ci"><i class="fas fa-clock"></i><span>Mon–Sat: 9AM–7PM · Sun: 10AM–4PM</span></div>
+          <div class="ft-ci"><i class="fas fa-certificate"></i><span>GSTIN: 33ABSCS1284Q1ZI</span></div>
         </div>
       </div>
     </div>
     <div class="ft-bot">
-      <span>© 2024 Sathish Manpower Private Limited. All Rights Reserved.</span>
-      <span>GSTIN: 33ABSCS1284Q1ZI · <a href="tel:+919944455127">+91 99444 55127</a></span>
+      <span>© 2025 Sathish Manpower Private Limited. All Rights Reserved.</span>
+      <div class="ft-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Sitemap</a>
+        <a href="tel:+919944455127">+91 99444 55127</a>
+      </div>
     </div>
   </div>
 </footer>
@@ -1062,14 +1620,51 @@ function closeMob(){burger.classList.remove('on');mob.classList.remove('on');}
 const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');});},{threshold:.1});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 
+// LANGUAGE TOGGLE
+function toggleLang(){
+  const body=document.body;
+  const cur=body.getAttribute('data-lang');
+  body.setAttribute('data-lang',cur==='en'?'ta':'en');
+}
+
 // FAQ
 function toggleFAQ(el){
   const item=el.parentElement;
+  const isOpen=item.classList.contains('open');
   document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
-  item.classList.add('open');
+  if(!isOpen)item.classList.add('open');
+}
+function filterFAQ(cat,tab){
+  document.querySelectorAll('.faq-tab').forEach(t=>t.classList.remove('active'));
+  tab.classList.add('active');
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    if(cat==='all'||item.getAttribute('data-cat')===cat){item.style.display='block';}
+    else{item.style.display='none';item.classList.remove('open');}
+  });
 }
 
-// WHATSAPP
+// STATS COUNTER
+const statsObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('[data-target]').forEach(el=>{
+        const target=parseInt(el.getAttribute('data-target'));
+        const suffix=el.querySelector('em')?el.querySelector('em').outerHTML:'';
+        let cur=0;const dur=1800;const steps=60;const inc=target/steps;
+        const timer=setInterval(()=>{
+          cur+=inc;
+          if(cur>=target){cur=target;clearInterval(timer);}
+          el.innerHTML=Math.floor(cur)+suffix;
+        },dur/steps);
+      });
+      statsObs.disconnect();
+    }
+  });
+},{threshold:.3});
+const statsSection=document.getElementById('stats');
+if(statsSection)statsObs.observe(statsSection);
+
+// WHATSAPP - Contact Form
 function sendWA(){
   const n=document.getElementById('fname').value.trim();
   const ph=document.getElementById('fphone').value.trim();
@@ -1087,6 +1682,47 @@ function sendWA(){
   window.open(`https://wa.me/919944455127?text=${encodeURIComponent(txt)}`,'_blank');
 }
 
+// WHATSAPP - Apply Form
+function applyWA(){
+  const n=document.getElementById('aname').value.trim();
+  const ph=document.getElementById('aphone').value.trim();
+  const job=document.getElementById('ajob').value;
+  if(!n||!ph||!job){alert('Please fill in your name, phone, and select a job category.');return;}
+  const age=document.getElementById('aage').value;
+  const gender=document.getElementById('agender').value;
+  const exp=document.getElementById('aexp').value.trim();
+  const loc=document.getElementById('aloc').value.trim();
+  const msg=document.getElementById('amsg').value.trim();
+  let txt=`Hello Sathish Manpower! I want to register as a candidate 🙏\n\n*Candidate Registration*\n━━━━━━━━━━━━\n`;
+  txt+=`👤 *Name:* ${n}\n📞 *Phone:* ${ph}\n💼 *Position:* ${job}\n`;
+  if(age)txt+=`🎂 *Age:* ${age}\n`;
+  if(gender)txt+=`⚧ *Gender:* ${gender}\n`;
+  if(exp)txt+=`⏳ *Experience:* ${exp}\n`;
+  if(loc)txt+=`📍 *Location:* ${loc}\n`;
+  if(msg)txt+=`📝 *Details:* ${msg}\n`;
+  txt+=`━━━━━━━━━━━━\nPlease contact me at your earliest. Thank you!`;
+  window.open(`https://wa.me/919944455127?text=${encodeURIComponent(txt)}`,'_blank');
+}
+
+// WHATSAPP - Employer Form
+function employerWA(){
+  const co=document.getElementById('ename').value.trim();
+  const cp=document.getElementById('eperson').value.trim();
+  const ph=document.getElementById('ephone').value.trim();
+  const pos=document.getElementById('eposition').value.trim();
+  if(!co||!cp||!ph||!pos){alert('Please fill in company name, contact person, phone, and required position.');return;}
+  const vac=document.getElementById('evacancies').value;
+  const city=document.getElementById('ecity').value.trim();
+  const msg=document.getElementById('emsg').value.trim();
+  let txt=`Hello Sathish Manpower! I need to hire staff 🙏\n\n*Employer Enquiry*\n━━━━━━━━━━━━\n`;
+  txt+=`🏢 *Company:* ${co}\n👤 *Contact Person:* ${cp}\n📞 *Phone:* ${ph}\n💼 *Position(s):* ${pos}\n`;
+  if(vac)txt+=`🔢 *Vacancies:* ${vac}\n`;
+  if(city)txt+=`📍 *Location:* ${city}\n`;
+  if(msg)txt+=`📝 *Requirements:* ${msg}\n`;
+  txt+=`━━━━━━━━━━━━\nPlease respond at your earliest. Thank you!`;
+  window.open(`https://wa.me/919944455127?text=${encodeURIComponent(txt)}`,'_blank');
+}
+
 // SMOOTH SCROLL
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
@@ -1094,25 +1730,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     if(tgt){e.preventDefault();tgt.scrollIntoView({behavior:'smooth',block:'start'});}
   });
 });
-
-// COUNTER ANIMATION
-function animateCounters(){
-  document.querySelectorAll('.h-num .n,.wstat .big').forEach(el=>{
-    const txt=el.textContent;
-    const num=parseInt(txt.replace(/\D/g,''));
-    if(!num)return;
-    const suffix=txt.replace(/[\d]/g,'').trim();
-    let cur=0;const dur=1800;const step=dur/60;
-    const inc=num/60;
-    const timer=setInterval(()=>{
-      cur+=inc;if(cur>=num){cur=num;clearInterval(timer);}
-      el.textContent=Math.floor(cur)+suffix;
-    },step);
-  });
-}
-const heroObs=new IntersectionObserver((e)=>{if(e[0].isIntersecting){animateCounters();heroObs.disconnect();}},{threshold:.3});
-const heroNums=document.querySelector('.hero-nums');
-if(heroNums)heroObs.observe(heroNums);
 </script>
 </body>
 </html>

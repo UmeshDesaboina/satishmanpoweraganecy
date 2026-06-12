@@ -99,8 +99,6 @@ nav.scrolled{background:rgba(6,15,30,.96);backdrop-filter:blur(24px);box-shadow:
 .mini-tile i{font-size:1.25rem;color:var(--gold);display:block;margin-bottom:6px;transition:transform .3s;}
 .mini-tile:hover i{transform:scale(1.15);}
 .mini-tile span{font-size:.68rem;color:rgba(255,255,255,.82);font-weight:600;}
-
-/* Tooltip popup */
 .tile-tooltip{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);background:#fff;color:var(--navy);font-size:.72rem;font-weight:600;line-height:1.55;padding:10px 13px;border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.22);white-space:nowrap;z-index:100;opacity:0;visibility:hidden;transition:opacity .25s ease,transform .25s ease;pointer-events:none;max-width:220px;white-space:normal;text-align:left;min-width:160px;}
 .tile-tooltip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#fff;}
 .mini-tile:hover .tile-tooltip{opacity:1;visibility:visible;transform:translateX(-50%) translateY(-4px);}
@@ -296,7 +294,7 @@ section{padding:80px 6%;}
 .pkg.featured .pkg-btn{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);}
 .pkg-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.18);}
 
-/* ─── APPLY PORTAL with Resume Upload ─── */
+/* ─── APPLY PORTAL ─── */
 #apply{background:#fff;}
 .portal-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start;}
 .portal-info{padding-right:10px;}
@@ -317,8 +315,6 @@ section{padding:80px 6%;}
 .fg select option{background:var(--navy);color:#fff;}
 .fg textarea{resize:vertical;min-height:72px;}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-
-/* Resume Upload */
 .resume-upload-area{width:100%;background:rgba(255,255,255,.06);border:2px dashed rgba(212,164,58,.4);border-radius:10px;padding:18px;text-align:center;cursor:pointer;transition:all .3s;position:relative;}
 .resume-upload-area:hover{border-color:var(--gold);background:rgba(212,164,58,.08);}
 .resume-upload-area.has-file{border-color:#25d366;background:rgba(37,211,102,.06);}
@@ -330,7 +326,6 @@ section{padding:80px 6%;}
 .resume-upload-area.has-file .resume-file-name{display:block;}
 .resume-upload-area.has-file .resume-upload-icon{color:#25d366;}
 .resume-note{font-size:.68rem;color:rgba(255,255,255,.35);margin-top:6px;line-height:1.4;text-align:center;}
-
 .submit-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font-family:'Plus Jakarta Sans',sans-serif;font-size:.86rem;font-weight:800;border:none;border-radius:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;transition:all .3s;margin-top:6px;}
 .submit-btn:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(212,164,58,.4);}
 .submit-btn-email{background:linear-gradient(135deg,#4285f4,#1a73e8)!important;}
@@ -358,6 +353,26 @@ section{padding:80px 6%;}
 .gal-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,15,30,.7),transparent);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:14px;}
 .gal-item:hover .gal-overlay{opacity:1;}
 .gal-overlay span{color:#fff;font-size:.76rem;font-weight:700;}
+
+/* ─── LIGHTBOX ─── */
+.lightbox{position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,.93);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;padding:20px;}
+.lightbox.open{opacity:1;visibility:visible;}
+.lightbox-inner{position:relative;max-width:90vw;max-height:90vh;display:flex;flex-direction:column;align-items:center;}
+.lightbox-inner img{max-width:88vw;max-height:82vh;object-fit:contain;border-radius:12px;display:block;box-shadow:0 20px 60px rgba(0,0,0,.6);}
+.lightbox-close{position:absolute;top:-18px;right:-18px;width:42px;height:42px;background:var(--gold);border:none;border-radius:50%;color:var(--navy);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:900;transition:all .3s;z-index:10;line-height:1;box-shadow:0 4px 16px rgba(0,0,0,.4);}
+.lightbox-close:hover{background:#fff;transform:scale(1.12);}
+.lightbox-caption{text-align:center;color:rgba(255,255,255,.6);font-size:.78rem;margin-top:12px;letter-spacing:.5px;}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-60%);background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.2);color:#fff;width:44px;height:44px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:all .3s;z-index:10;}
+.lightbox-nav:hover{background:var(--gold);color:var(--navy);border-color:var(--gold);}
+.lightbox-prev{left:-58px;}
+.lightbox-next{right:-58px;}
+@media(max-width:700px){
+  .lightbox-prev,.lightbox-next{top:auto;transform:none;bottom:-56px;}
+  .lightbox-prev{left:calc(50% - 56px);}
+  .lightbox-next{right:calc(50% - 56px);}
+  .lightbox-inner img{max-width:94vw;max-height:75vh;}
+  .lightbox-close{top:-14px;right:-8px;}
+}
 
 /* ─── BLOG ─── */
 #blog{background:var(--offwhite);}
@@ -535,10 +550,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 <!-- NAVBAR -->
 <nav id="nav">
   <a href="#" class="logo-wrap">
-    <div class="logo-icon">SM</div>
     <div class="logo-text">
-      <span class="name">SATHISH MANPOWER</span>
-      <span class="pvt">Private Limited</span>
+      <img src="img14.png" alt="logo" style="width:100px;margin-top:10px;">
     </div>
   </a>
   <ul class="nav-menu">
@@ -614,56 +627,30 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         <div class="h-card-hd">Our Professional Services</div>
         <div class="h-card-sub">Healthcare · Domestic · Technical · PAN India</div>
         <div class="mini-grid">
-
-          <!-- Each tile has a tooltip with description -->
           <div class="mini-tile">
-            <div class="tile-tooltip">
-              <strong>🏥 Staff Nurses</strong>
-              Qualified male &amp; female nurses for home care, wound dressing, IV therapy, injections, and post-operative bedside nursing.
-            </div>
+            <div class="tile-tooltip"><strong>🏥 Staff Nurses</strong>Qualified male &amp; female nurses for home care, wound dressing, IV therapy, injections, and post-operative bedside nursing.</div>
             <i class="fas fa-user-nurse"></i><span>Nurses</span>
           </div>
-
           <div class="mini-tile">
-            <div class="tile-tooltip">
-              <strong>🩺 Doctor Home Visits</strong>
-              Certified doctors who visit your home for consultations, prescriptions &amp; check-ups. Ideal for elderly &amp; post-surgery patients.
-            </div>
+            <div class="tile-tooltip"><strong>🩺 Doctor Home Visits</strong>Certified doctors who visit your home for consultations, prescriptions &amp; check-ups. Ideal for elderly &amp; post-surgery patients.</div>
             <i class="fas fa-stethoscope"></i><span>Doctors</span>
           </div>
-
           <div class="mini-tile">
-            <div class="tile-tooltip">
-              <strong>🤲 Caretakers</strong>
-              Compassionate male &amp; female caretakers for elderly, disabled, or post-op patients. Assist with daily activities, medication &amp; companionship.
-            </div>
+            <div class="tile-tooltip"><strong>🤲 Caretakers</strong>Compassionate male &amp; female caretakers for elderly, disabled, or post-op patients. Assist with daily activities, medication &amp; companionship.</div>
             <i class="fas fa-hands-holding-child"></i><span>Caretakers</span>
           </div>
-
           <div class="mini-tile">
-            <div class="tile-tooltip">
-              <strong>👶 Baby Care</strong>
-              Trained nannies and baby care specialists for newborn care, feeding routines, hygiene &amp; early development support.
-            </div>
+            <div class="tile-tooltip"><strong>👶 Baby Care</strong>Trained nannies and baby care specialists for newborn care, feeding routines, hygiene &amp; early development support.</div>
             <i class="fas fa-baby"></i><span>Baby Care</span>
           </div>
-
           <div class="mini-tile">
-            <div class="tile-tooltip">
-              <strong>🧹 Maid Services</strong>
-              Background-verified domestic maids for cooking, cleaning, laundry &amp; household management. Live-in or day-duty available.
-            </div>
+            <div class="tile-tooltip"><strong>🧹 Maid Services</strong>Background-verified domestic maids for cooking, cleaning, laundry &amp; household management. Live-in or day-duty available.</div>
             <i class="fas fa-broom"></i><span>Maids</span>
           </div>
-
           <div class="mini-tile">
-            <div class="tile-tooltip">
-              <strong>🔧 Technicians</strong>
-              Certified electricians, plumbers &amp; carpenters for fast, reliable home &amp; commercial maintenance and repair work.
-            </div>
+            <div class="tile-tooltip"><strong>🔧 Technicians</strong>Certified electricians, plumbers &amp; carpenters for fast, reliable home &amp; commercial maintenance and repair work.</div>
             <i class="fas fa-tools"></i><span>Technicians</span>
           </div>
-
         </div>
       </div>
       <div class="fb fb-1">
@@ -689,7 +676,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     <div class="mq-item"><i class="fas fa-hands-holding-child"></i> Caretakers</div>
     <div class="mq-item"><i class="fas fa-baby"></i> Baby Care</div>
     <div class="mq-item"><i class="fas fa-broom"></i> Maid Services</div>
-    <div class="mq-item"><i class="fas fa-tools"></i> Electricians & Plumbers</div>
+    <div class="mq-item"><i class="fas fa-tools"></i> Electricians &amp; Plumbers</div>
     <div class="mq-item"><i class="fas fa-hospital-user"></i> Wardboys</div>
     <div class="mq-item"><i class="fas fa-shield-alt"></i> Security Guards</div>
     <div class="mq-item"><i class="fas fa-car"></i> Drivers</div>
@@ -702,7 +689,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     <div class="mq-item"><i class="fas fa-hands-holding-child"></i> Caretakers</div>
     <div class="mq-item"><i class="fas fa-baby"></i> Baby Care</div>
     <div class="mq-item"><i class="fas fa-broom"></i> Maid Services</div>
-    <div class="mq-item"><i class="fas fa-tools"></i> Electricians & Plumbers</div>
+    <div class="mq-item"><i class="fas fa-tools"></i> Electricians &amp; Plumbers</div>
     <div class="mq-item"><i class="fas fa-hospital-user"></i> Wardboys</div>
     <div class="mq-item"><i class="fas fa-shield-alt"></i> Security Guards</div>
     <div class="mq-item"><i class="fas fa-car"></i> Drivers</div>
@@ -720,7 +707,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     <div class="trust-div"></div>
     <div class="trust-item">
       <div class="trust-icon"><i class="fas fa-id-badge"></i></div>
-      <div class="trust-text"><strong>100% Background Verified</strong><span>ID & credential checks</span></div>
+      <div class="trust-text"><strong>100% Background Verified</strong><span>ID &amp; credential checks</span></div>
     </div>
     <div class="trust-div"></div>
     <div class="trust-item">
@@ -730,12 +717,12 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     <div class="trust-div"></div>
     <div class="trust-item">
       <div class="trust-icon"><i class="fas fa-headset"></i></div>
-      <div class="trust-text"><strong>24/7 Support</strong><span>Phone & WhatsApp</span></div>
+      <div class="trust-text"><strong>24/7 Support</strong><span>Phone &amp; WhatsApp</span></div>
     </div>
     <div class="trust-div"></div>
     <div class="trust-item">
       <div class="trust-icon"><i class="fas fa-map-marked-alt"></i></div>
-      <div class="trust-text"><strong>PAN India Service</strong><span>Tamil Nadu & Beyond</span></div>
+      <div class="trust-text"><strong>PAN India Service</strong><span>Tamil Nadu &amp; Beyond</span></div>
     </div>
   </div>
 </div>
@@ -772,7 +759,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
             <div class="ceo-avatar">DS</div>
             <div>
               <div class="ceo-name">Dr. Sathish</div>
-              <div class="ceo-title">Founder & CEO, Sathish Manpower Pvt. Ltd.</div>
+              <div class="ceo-title">Founder &amp; CEO, Sathish Manpower Pvt. Ltd.</div>
             </div>
           </div>
         </div>
@@ -781,7 +768,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   </div>
 </section>
 
-<!-- INDUSTRIES WE SERVE -->
+<!-- INDUSTRIES -->
 <section id="industries">
   <div class="max">
     <div class="sec-hd c rv">
@@ -793,7 +780,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
       <div class="ind-card rv d1"><div class="ind-icon"><i class="fas fa-hospital"></i></div><h4>Healthcare</h4><p>Nurses, Doctors, Lab Tech</p></div>
       <div class="ind-card rv d2"><div class="ind-icon"><i class="fas fa-industry"></i></div><h4>Manufacturing</h4><p>Floor workers, supervisors</p></div>
       <div class="ind-card rv d3"><div class="ind-icon"><i class="fas fa-hard-hat"></i></div><h4>Construction</h4><p>Engineers, site workers</p></div>
-      <div class="ind-card rv d1"><div class="ind-icon"><i class="fas fa-laptop-code"></i></div><h4>IT & Technology</h4><p>Developers, data entry</p></div>
+      <div class="ind-card rv d1"><div class="ind-icon"><i class="fas fa-laptop-code"></i></div><h4>IT &amp; Technology</h4><p>Developers, data entry</p></div>
       <div class="ind-card rv d2"><div class="ind-icon"><i class="fas fa-shopping-bag"></i></div><h4>Retail</h4><p>Sales staff, cashiers</p></div>
       <div class="ind-card rv d3"><div class="ind-icon"><i class="fas fa-truck"></i></div><h4>Logistics</h4><p>Drivers, warehouse staff</p></div>
       <div class="ind-card rv d1"><div class="ind-icon"><i class="fas fa-concierge-bell"></i></div><h4>Hospitality</h4><p>Hotel staff, catering</p></div>
@@ -837,16 +824,16 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         <div class="svc-body"><h3>HR Consulting</h3><p>Strategic HR advice for SMEs — policy drafting, job descriptions, appraisal frameworks, and workforce planning.</p><a href="#employer" class="svc-link">Consult Us <i class="fas fa-arrow-right"></i></a></div>
       </div>
       <div class="svc-card rv d1">
-        <div class="svc-img"><img src="https://images.unsplash.com/photo-1666214280391-8ff5bd3d0bf0?w=600&q=80" alt="Doctor Home Visit" loading="lazy"><div class="svc-tag">Healthcare</div><div class="svc-ico"><i class="fas fa-stethoscope"></i></div></div>
+        <div class="svc-img"><img src="doctors.jpg" alt="Doctor Home Visit" loading="lazy"><div class="svc-tag">Healthcare</div><div class="svc-ico"><i class="fas fa-stethoscope"></i></div></div>
         <div class="svc-body"><h3>Doctors for Home Visits</h3><p>Certified doctors who bring clinic-quality consultation to your doorstep. Ideal for elderly, post-surgery, or mobility-restricted patients.</p><a href="#contact" class="svc-link">Book a Doctor <i class="fas fa-arrow-right"></i></a></div>
       </div>
       <div class="svc-card rv d2">
         <div class="svc-img"><img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&q=80" alt="Nurses" loading="lazy"><div class="svc-tag">Healthcare</div><div class="svc-ico"><i class="fas fa-user-nurse"></i></div></div>
-        <div class="svc-body"><h3>Male & Female Nurses</h3><p>Qualified nurses for wound care, IV therapy, post-operative care, injections, and bedside nursing at home or hospital.</p><a href="#contact" class="svc-link">Hire a Nurse <i class="fas fa-arrow-right"></i></a></div>
+        <div class="svc-body"><h3>Male &amp; Female Nurses</h3><p>Qualified nurses for wound care, IV therapy, post-operative care, injections, and bedside nursing at home or hospital.</p><a href="#contact" class="svc-link">Hire a Nurse <i class="fas fa-arrow-right"></i></a></div>
       </div>
       <div class="svc-card rv d3">
         <div class="svc-img"><img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=600&q=80" alt="Caretakers" loading="lazy"><div class="svc-tag">Care Support</div><div class="svc-ico"><i class="fas fa-hands-holding-child"></i></div></div>
-        <div class="svc-body"><h3>Female & Male Caretakers</h3><p>Compassionate caretakers for elderly, disabled, or post-operative patients. Daily activities, medication reminders, and companionship.</p><a href="#contact" class="svc-link">Hire Caretaker <i class="fas fa-arrow-right"></i></a></div>
+        <div class="svc-body"><h3>Female &amp; Male Caretakers</h3><p>Compassionate caretakers for elderly, disabled, or post-operative patients. Daily activities, medication reminders, and companionship.</p><a href="#contact" class="svc-link">Hire Caretaker <i class="fas fa-arrow-right"></i></a></div>
       </div>
       <div class="svc-card rv d1">
         <div class="svc-img"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Maid Services" loading="lazy"><div class="svc-tag">Domestic</div><div class="svc-ico"><i class="fas fa-broom"></i></div></div>
@@ -854,7 +841,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
       </div>
       <div class="svc-card rv d2">
         <div class="svc-img"><img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&q=80" alt="Electricians Plumbers" loading="lazy"><div class="svc-tag">Technical</div><div class="svc-ico"><i class="fas fa-tools"></i></div></div>
-        <div class="svc-body"><h3>Electricians, Plumbers & Carpenters</h3><p>Certified maintenance professionals for electrical, plumbing, and carpentry work. Fast, reliable, top-quality repairs.</p><a href="#contact" class="svc-link">Book Service <i class="fas fa-arrow-right"></i></a></div>
+        <div class="svc-body"><h3>Electricians, Plumbers &amp; Carpenters</h3><p>Certified maintenance professionals for electrical, plumbing, and carpentry work. Fast, reliable, top-quality repairs.</p><a href="#contact" class="svc-link">Book Service <i class="fas fa-arrow-right"></i></a></div>
       </div>
     </div>
   </div>
@@ -905,7 +892,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   <div class="max testi-wrap">
     <div class="sec-hd c rv">
       <div class="sec-eyebrow" style="color:var(--gold)">What Clients Say</div>
-      <h2 class="sec-title">Trusted by <em>100+ Clients</em> & Families</h2>
+      <h2 class="sec-title">Trusted by <em>100+ Clients</em> &amp; Families</h2>
       <p class="sec-desc">Real stories from employers and candidates who trusted us with what matters most.</p>
     </div>
     <div class="testi-grid">
@@ -976,18 +963,18 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
     <div class="steps">
       <div class="step rv d1"><div class="step-n">1</div><h4>Contact Us</h4><p>Reach out via WhatsApp, call, or our enquiry form with your requirement.</p></div>
       <div class="step rv d2"><div class="step-n">2</div><h4>Share Requirements</h4><p>Tell us the type of staff, duration, and any specific skills needed.</p></div>
-      <div class="step rv d3"><div class="step-n">3</div><h4>We Match & Verify</h4><p>We select and vet the best-fit professional from our trained talent pool.</p></div>
+      <div class="step rv d3"><div class="step-n">3</div><h4>We Match &amp; Verify</h4><p>We select and vet the best-fit professional from our trained talent pool.</p></div>
       <div class="step rv d4"><div class="step-n">4</div><h4>Staff Deployed</h4><p>Your professional arrives ready to work within 24–48 hours.</p></div>
     </div>
   </div>
 </section>
 
-<!-- COVERAGE MAP SECTION -->
+<!-- COVERAGE -->
 <section id="coverage">
   <div class="cov-inner">
     <div class="rv">
       <div class="sec-eyebrow" style="color:var(--gold)">Service Coverage</div>
-      <h2 class="sec-title" style="color:#fff">Serving Across <em>Tamil Nadu</em> & India</h2>
+      <h2 class="sec-title" style="color:#fff">Serving Across <em>Tamil Nadu</em> &amp; India</h2>
       <p class="sec-desc" style="color:rgba(255,255,255,.55)">We deploy staff across major cities and districts throughout Tamil Nadu. Emergency placements available in Chennai metro area within hours. PAN India placements available on request.</p>
       <div class="coverage-pills">
         <div class="cpill"><i class="fas fa-map-marker-alt"></i> Chennai</div>
@@ -1001,7 +988,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         <div class="cpill"><i class="fas fa-map-marker-alt"></i> Salem</div>
         <div class="cpill"><i class="fas fa-map-marker-alt"></i> Trichy</div>
         <div class="cpill"><i class="fas fa-map-marker-alt"></i> Vellore</div>
-        <div class="cpill"><i class="fas fa-map-marker-alt"></i> & More Districts</div>
+        <div class="cpill"><i class="fas fa-map-marker-alt"></i> &amp; More Districts</div>
       </div>
     </div>
     <div class="map-visual rv d2">
@@ -1010,7 +997,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   </div>
 </section>
 
-<!-- PRICING PACKAGES -->
+<!-- PRICING -->
 <section id="pricing">
   <div class="max">
     <div class="sec-hd c rv">
@@ -1062,7 +1049,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           <li><i class="fas fa-check"></i> All specialties available</li>
           <li><i class="fas fa-check"></i> Dedicated relationship manager</li>
           <li><i class="fas fa-check"></i> Legal compliance documentation</li>
-          <li><i class="fas fa-check"></i> Monthly billing & reporting</li>
+          <li><i class="fas fa-check"></i> Monthly billing &amp; reporting</li>
         </ul>
         <a href="#contact" class="pkg-btn">Get Custom Quote</a>
       </div>
@@ -1070,7 +1057,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   </div>
 </section>
 
-<!-- JOB APPLICATION PORTAL with Resume Upload -->
+<!-- APPLY PORTAL -->
 <section id="apply">
   <div class="max">
     <div class="portal-grid">
@@ -1128,19 +1115,16 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           <div class="fg"><label>Location</label><input type="text" id="aloc" placeholder="City / Area"></div>
         </div>
         <div class="fg"><label>Additional Info</label><textarea id="amsg" placeholder="Qualifications, certifications, or anything else..."></textarea></div>
-
-        <!-- RESUME UPLOAD -->
         <div class="fg">
           <label>Upload Resume / CV (Optional)</label>
           <div class="resume-upload-area" id="resumeArea">
             <input type="file" id="resumeFile" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" onchange="handleResumeSelect(this)">
             <div class="resume-upload-icon"><i class="fas fa-cloud-upload-alt"></i></div>
-            <div class="resume-upload-text">Tap to upload or drag & drop your CV<br><span>PDF, DOC, DOCX, JPG, PNG</span></div>
+            <div class="resume-upload-text">Tap to upload or drag &amp; drop your CV<br><span>PDF, DOC, DOCX, JPG, PNG</span></div>
             <div class="resume-file-name" id="resumeFileName"></div>
           </div>
           <div class="resume-note" id="resumeNote">📎 If resume is attached, it will be emailed to us. Application details go via WhatsApp.</div>
         </div>
-
         <button class="submit-btn" onclick="applyWA()"><i class="fab fa-whatsapp"></i> Submit Application via WhatsApp</button>
         <button class="submit-btn submit-btn-email" id="emailBtn" style="margin-top:10px;display:none;" onclick="applyEmail()"><i class="fas fa-envelope"></i> Send Resume via Email</button>
       </div>
@@ -1148,7 +1132,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   </div>
 </section>
 
-<!-- EMPLOYER ENQUIRY FORM -->
+<!-- EMPLOYER ENQUIRY -->
 <section id="employer">
   <div class="max">
     <div class="sec-hd rv">
@@ -1206,21 +1190,41 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
       <p class="sec-desc">Office inaugurations, recruitment drives, training sessions, and our growing team.</p>
     </div>
     <div class="gallery-grid rv">
-      <div class="gal-item"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=700&q=80" alt="Team at Work" loading="lazy"><div class="gal-overlay"><span>Our Team</span></div></div>
-      <div class="gal-item"><img src="https://images.unsplash.com/photo-1559523182-a284c3fb7cff?w=400&q=80" alt="Office" loading="lazy"><div class="gal-overlay"><span>Our Office</span></div></div>
-      <div class="gal-item"><img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&q=80" alt="Healthcare" loading="lazy"><div class="gal-overlay"><span>Healthcare Placements</span></div></div>
-      <div class="gal-item"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=700&q=80" alt="Meeting" loading="lazy"><div class="gal-overlay"><span>Client Meeting</span></div></div>
-      <div class="gal-item"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80" alt="Training" loading="lazy"><div class="gal-overlay"><span>Staff Training</span></div></div>
-      <div class="gal-item"><img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=400&q=80" alt="Recruitment Drive" loading="lazy"><div class="gal-overlay"><span>Recruitment Drive</span></div></div>
+      <div class="gal-item" onclick="openLightbox(0)"><img src="img1.png" alt="Our Team" loading="lazy"><div class="gal-overlay"><span>📷 Tap to View</span></div></div>
+      <div class="gal-item" onclick="openLightbox(1)"><img src="img2.png" alt="Our Team" loading="lazy"><div class="gal-overlay"><span>📷 Tap to View</span></div></div>
+      <div class="gal-item" onclick="openLightbox(2)"><img src="img3.png" alt="Our Team" loading="lazy"><div class="gal-overlay"><span>📷 Tap to View</span></div></div>
+      <div class="gal-item" onclick="openLightbox(3)"><img src="img4.png" alt="Our Team" loading="lazy"><div class="gal-overlay"><span>📷 Tap to View</span></div></div>
+      <div class="gal-item" onclick="openLightbox(4)"><img src="img5.png" alt="Our Team" loading="lazy"><div class="gal-overlay"><span>📷 Tap to View</span></div></div>
+      <div class="gal-item" onclick="openLightbox(5)"><img src="img6.png" alt="Our Team" loading="lazy"><div class="gal-overlay"><span>📷 Tap to View</span></div></div>
+      <div class="gal-item" onclick="openLightbox(6)"><img src="img7.png" alt="Our Team" loading="lazy"><div class="gal-overlay"><span>📷 Tap to View</span></div></div>
+      <div class="gal-item" onclick="openLightbox(7)"><img src="img8.png" alt="Our Team" loading="lazy"><div class="gal-overlay"><span>📷 Tap to View</span></div></div>
+      <div class="gal-item" onclick="openLightbox(8)"><img src="img9.png" alt="Our Team" loading="lazy"><div class="gal-overlay"><span>📷 Tap to View</span></div></div>
+      <div class="gal-item" onclick="openLightbox(9)"><img src="img10.png" alt="Our Team" loading="lazy"><div class="gal-overlay"><span>📷 Tap to View</span></div></div>
+      <div class="gal-item" onclick="openLightbox(10)"><img src="img11.png" alt="Our Team" loading="lazy"><div class="gal-overlay"><span>📷 Tap to View</span></div></div>
+      <div class="gal-item" onclick="openLightbox(11)"><img src="img12.png" alt="Our Team" loading="lazy"><div class="gal-overlay"><span>📷 Tap to View</span></div></div>
+      <div class="gal-item" onclick="openLightbox(12)"><img src="img13.png" alt="Our Team" loading="lazy"><div class="gal-overlay"><span>📷 Tap to View</span></div></div>
+      <div class="gal-item" onclick="openLightbox(13)"><img src="img14.png" alt="Our Team" loading="lazy"><div class="gal-overlay"><span>📷 Tap to View</span></div></div>
+      <div class="gal-item" onclick="openLightbox(14)"><img src="img15.png" alt="Our Team" loading="lazy"><div class="gal-overlay"><span>📷 Tap to View</span></div></div>
     </div>
   </div>
 </section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image">&#x2715;</button>
+    <button class="lightbox-nav lightbox-prev" onclick="event.stopPropagation();changeSlide(-1)" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+    <button class="lightbox-nav lightbox-next" onclick="event.stopPropagation();changeSlide(1)" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+    <img id="lightboxImg" src="" alt="Gallery image">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+</div>
 
 <!-- BLOG -->
 <section id="blog">
   <div class="max">
     <div class="sec-hd c rv">
-      <div class="sec-eyebrow">Insights & Tips</div>
+      <div class="sec-eyebrow">Insights &amp; Tips</div>
       <h2 class="sec-title">From Our <em>Blog</em></h2>
       <p class="sec-desc">Expert advice on hiring, HR best practices, and career growth from our team.</p>
     </div>
@@ -1357,7 +1361,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
             <option>Male Caretaker</option><option>Female Caretaker</option>
             <option>Aayabai</option><option>Wardboy</option>
             <option>Elder Care</option><option>Baby Care</option>
-            <option>Maid (Cooking & Cleaning)</option>
+            <option>Maid (Cooking &amp; Cleaning)</option>
             <option>Electrician</option><option>Plumber</option><option>Carpenter</option>
             <option>Security Guard</option><option>Driver</option>
             <option>HR Executive</option><option>Bulk Hiring / Corporate</option>
@@ -1433,7 +1437,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
       <span>© 2025 Sathish Manpower Private Limited. All Rights Reserved.</span>
       <div class="ft-legal">
         <a href="#">Privacy Policy</a>
-        <a href="#">Terms & Conditions</a>
+        <a href="#">Terms &amp; Conditions</a>
         <a href="#">Sitemap</a>
         <a href="tel:+919944455127">+91 99444 55127</a>
       </div>
@@ -1507,22 +1511,19 @@ const statsSection=document.getElementById('stats');
 if(statsSection)statsObs.observe(statsSection);
 
 // ─── RESUME UPLOAD ───
-let selectedResumeFile = null;
-
-function handleResumeSelect(input) {
-  const file = input.files[0];
-  if (!file) return;
-  selectedResumeFile = file;
-  const area = document.getElementById('resumeArea');
-  const nameEl = document.getElementById('resumeFileName');
-  const emailBtn = document.getElementById('emailBtn');
+let selectedResumeFile=null;
+function handleResumeSelect(input){
+  const file=input.files[0];if(!file)return;
+  selectedResumeFile=file;
+  const area=document.getElementById('resumeArea');
+  const nameEl=document.getElementById('resumeFileName');
+  const emailBtn=document.getElementById('emailBtn');
   area.classList.add('has-file');
-  nameEl.textContent = '✅ ' + file.name + ' (' + (file.size/1024).toFixed(0) + ' KB)';
-  document.getElementById('resumeNote').textContent = '✅ Resume selected! Click "Send Resume via Email" to send it to us, or use WhatsApp for text-only application.';
-  emailBtn.style.display = 'flex';
+  nameEl.textContent='✅ '+file.name+' ('+(file.size/1024).toFixed(0)+' KB)';
+  document.getElementById('resumeNote').textContent='✅ Resume selected! Click "Send Resume via Email" to send it to us, or use WhatsApp for text-only application.';
+  emailBtn.style.display='flex';
 }
 
-// Send application details via WhatsApp (no file)
 function applyWA(){
   const n=document.getElementById('aname').value.trim();
   const ph=document.getElementById('aphone').value.trim();
@@ -1543,45 +1544,32 @@ function applyWA(){
   if(selectedResumeFile)txt+=`📎 *Resume:* ${selectedResumeFile.name} (sending separately via email)\n`;
   txt+=`━━━━━━━━━━━━\nPlease contact me at your earliest. Thank you!`;
   window.open(`https://wa.me/919944455127?text=${encodeURIComponent(txt)}`,'_blank');
-  // If resume selected, also trigger email send
-  if(selectedResumeFile){
-    setTimeout(()=>{ applyEmail(); }, 800);
-  }
+  if(selectedResumeFile){setTimeout(()=>{applyEmail();},800);}
 }
 
-// Send resume via email (mailto with body, file can't be attached via mailto — prompt user)
 function applyEmail(){
   const n=document.getElementById('aname').value.trim()||'Candidate';
   const ph=document.getElementById('aphone').value.trim()||'Not provided';
   const job=document.getElementById('ajob').value||'Not specified';
   const exp=document.getElementById('aexp').value.trim()||'Not specified';
   const loc=document.getElementById('aloc').value.trim()||'Not specified';
-
-  // Try to compose email with file attachment via FormData + mail client
-  // Since mailto: doesn't support attachments, we open the default mail app
-  // and tell the user to attach the file manually
-  const subject = encodeURIComponent(`Resume Application – ${n} – ${job}`);
-  const body = encodeURIComponent(
-    `Dear Sathish Manpower Team,\n\nPlease find my job application details below:\n\n` +
-    `Name: ${n}\nPhone: ${ph}\nPosition Applied For: ${job}\nExperience: ${exp}\nLocation: ${loc}\n\n` +
-    `IMPORTANT: Please find my resume "${selectedResumeFile ? selectedResumeFile.name : 'attached'}" attached to this email.\n\n` +
+  const subject=encodeURIComponent(`Resume Application – ${n} – ${job}`);
+  const body=encodeURIComponent(
+    `Dear Sathish Manpower Team,\n\nPlease find my job application details below:\n\n`+
+    `Name: ${n}\nPhone: ${ph}\nPosition Applied For: ${job}\nExperience: ${exp}\nLocation: ${loc}\n\n`+
+    `IMPORTANT: Please find my resume "${selectedResumeFile?selectedResumeFile.name:'attached'}" attached to this email.\n\n`+
     `Kindly review my application and contact me at your earliest convenience.\n\nThank you.`
   );
-  const mailtoLink = `mailto:SathishManpower.pvt.ltd@gmail.com?subject=${subject}&body=${body}`;
-
-  // Show instructions alert first
-  const confirmed = confirm(
-    `📧 Resume Email Instructions:\n\n` +
-    `1. Your email app will open with a pre-filled message.\n` +
-    `2. IMPORTANT: Manually attach your resume file:\n   "${selectedResumeFile ? selectedResumeFile.name : 'your resume'}"\n` +
+  const mailtoLink=`mailto:SathishManpower.pvt.ltd@gmail.com?subject=${subject}&body=${body}`;
+  const confirmed=confirm(
+    `📧 Resume Email Instructions:\n\n`+
+    `1. Your email app will open with a pre-filled message.\n`+
+    `2. IMPORTANT: Manually attach your resume file:\n   "${selectedResumeFile?selectedResumeFile.name:'your resume'}"\n`+
     `3. Then click SEND.\n\nEmail: SathishManpower.pvt.ltd@gmail.com\n\nClick OK to open your email app.`
   );
-  if(confirmed){
-    window.location.href = mailtoLink;
-  }
+  if(confirmed){window.location.href=mailtoLink;}
 }
 
-// WHATSAPP - Contact Form
 function sendWA(){
   const n=document.getElementById('fname').value.trim();
   const ph=document.getElementById('fphone').value.trim();
@@ -1599,7 +1587,6 @@ function sendWA(){
   window.open(`https://wa.me/919944455127?text=${encodeURIComponent(txt)}`,'_blank');
 }
 
-// WHATSAPP - Employer Form
 function employerWA(){
   const co=document.getElementById('ename').value.trim();
   const cp=document.getElementById('eperson').value.trim();
@@ -1618,39 +1605,103 @@ function employerWA(){
   window.open(`https://wa.me/919944455127?text=${encodeURIComponent(txt)}`,'_blank');
 }
 
+// ─── LIGHTBOX ───
+const galImages=[
+  {src:'img1.png',cap:'Our Team · 1 / 15'},
+  {src:'img2.png',cap:'Our Team · 2 / 15'},
+  {src:'img3.png',cap:'Our Team · 3 / 15'},
+  {src:'img4.png',cap:'Our Team · 4 / 15'},
+  {src:'img5.png',cap:'Our Team · 5 / 15'},
+  {src:'img6.png',cap:'Our Team · 6 / 15'},
+  {src:'img7.png',cap:'Our Team · 7 / 15'},
+  {src:'img8.png',cap:'Our Team · 8 / 15'},
+  {src:'img9.png',cap:'Our Team · 9 / 15'},
+  {src:'img10.png',cap:'Our Team · 10 / 15'},
+  {src:'img11.png',cap:'Our Team · 11 / 15'},
+  {src:'img12.png',cap:'Our Team · 12 / 15'},
+  {src:'img13.png',cap:'Our Team · 13 / 15'},
+  {src:'img14.png',cap:'Our Team · 14 / 15'},
+  {src:'img15.png',cap:'Our Team · 15 / 15'},
+];
+let currentSlide=0;
+
+function openLightbox(idx){
+  currentSlide=idx;
+  const lb=document.getElementById('lightbox');
+  const img=document.getElementById('lightboxImg');
+  const cap=document.getElementById('lightboxCaption');
+  img.src=galImages[idx].src;
+  img.alt=galImages[idx].cap;
+  cap.textContent=galImages[idx].cap;
+  lb.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+function closeLightboxOutside(e){
+  if(e.target===document.getElementById('lightbox'))closeLightbox();
+}
+
+function changeSlide(dir){
+  currentSlide=(currentSlide+dir+galImages.length)%galImages.length;
+  const img=document.getElementById('lightboxImg');
+  const cap=document.getElementById('lightboxCaption');
+  img.style.opacity='0';
+  setTimeout(()=>{
+    img.src=galImages[currentSlide].src;
+    img.alt=galImages[currentSlide].cap;
+    cap.textContent=galImages[currentSlide].cap;
+    img.style.opacity='1';
+  },150);
+}
+
+// Keyboard navigation
+document.addEventListener('keydown',e=>{
+  if(!document.getElementById('lightbox').classList.contains('open'))return;
+  if(e.key==='Escape')closeLightbox();
+  if(e.key==='ArrowRight')changeSlide(1);
+  if(e.key==='ArrowLeft')changeSlide(-1);
+});
+
+// Swipe support for mobile
+let touchStartX=0;
+document.getElementById('lightbox').addEventListener('touchstart',e=>{touchStartX=e.changedTouches[0].screenX;},{passive:true});
+document.getElementById('lightbox').addEventListener('touchend',e=>{
+  const diff=touchStartX-e.changedTouches[0].screenX;
+  if(Math.abs(diff)>50){changeSlide(diff>0?1:-1);}
+},{passive:true});
+
+// Add fade transition to lightbox image
+document.getElementById('lightboxImg').style.transition='opacity .15s ease';
+
+// TOOLTIP on mobile
+document.querySelectorAll('.mini-tile').forEach(tile=>{
+  tile.addEventListener('click',function(e){
+    const isMobile=window.innerWidth<=768;
+    if(!isMobile)return;
+    e.stopPropagation();
+    const tooltip=this.querySelector('.tile-tooltip');
+    const wasVisible=tooltip.style.opacity==='1';
+    document.querySelectorAll('.tile-tooltip').forEach(t=>{t.style.opacity='0';t.style.visibility='hidden';});
+    if(!wasVisible){tooltip.style.opacity='1';tooltip.style.visibility='visible';}
+  });
+});
+document.addEventListener('click',()=>{
+  if(window.innerWidth<=768){
+    document.querySelectorAll('.tile-tooltip').forEach(t=>{t.style.opacity='0';t.style.visibility='hidden';});
+  }
+});
+
 // SMOOTH SCROLL
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
     const tgt=document.querySelector(a.getAttribute('href'));
     if(tgt){e.preventDefault();tgt.scrollIntoView({behavior:'smooth',block:'start'});}
   });
-});
-
-// TOOLTIP on mobile – tap to show/hide (since hover doesn't work on touch)
-document.querySelectorAll('.mini-tile').forEach(tile=>{
-  tile.addEventListener('click',function(e){
-    // On mobile screens, toggle tooltip visibility via a class
-    const isMobile=window.innerWidth<=768;
-    if(!isMobile)return;
-    e.stopPropagation();
-    const tooltip=this.querySelector('.tile-tooltip');
-    const wasVisible=tooltip.style.opacity==='1';
-    // Hide all tooltips first
-    document.querySelectorAll('.tile-tooltip').forEach(t=>{
-      t.style.opacity='0';t.style.visibility='hidden';
-    });
-    if(!wasVisible){
-      tooltip.style.opacity='1';
-      tooltip.style.visibility='visible';
-    }
-  });
-});
-document.addEventListener('click',()=>{
-  if(window.innerWidth<=768){
-    document.querySelectorAll('.tile-tooltip').forEach(t=>{
-      t.style.opacity='0';t.style.visibility='hidden';
-    });
-  }
 });
 </script>
 </body>

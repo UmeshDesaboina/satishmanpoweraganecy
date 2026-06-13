@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -457,13 +458,30 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 .ft-legal a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.7rem;transition:color .3s;}
 .ft-legal a:hover{color:var(--gold);}
 
-/* FLOATING UI */
-#scrtop{position:fixed;bottom:28px;right:28px;width:46px;height:46px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:11px;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:.9rem;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 5px 20px rgba(212,164,58,.38);z-index:800;}
+/* ===== FLOATING BUTTONS ===== */
+/* Stack: email (bottom), whatsapp (middle), scroll-top (top) */
+.float-stack{position:fixed;right:28px;bottom:28px;display:flex;flex-direction:column;align-items:center;gap:12px;z-index:800;}
+
+/* Scroll to top */
+#scrtop{width:46px;height:46px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:11px;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:.9rem;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;box-shadow:0 5px 20px rgba(212,164,58,.38);}
 #scrtop.show{opacity:1;visibility:visible;}
 #scrtop:hover{transform:translateY(-4px);}
-.wa-float{position:fixed;bottom:86px;right:28px;width:50px;height:50px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.4rem;text-decoration:none;box-shadow:0 5px 24px rgba(37,211,102,.5);z-index:800;transition:all .3s;animation:waPulse 2.5s ease-in-out infinite;}
-.wa-float:hover{transform:scale(1.15);}
+
+/* WhatsApp float */
+.wa-float{width:50px;height:50px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.4rem;text-decoration:none;box-shadow:0 5px 24px rgba(37,211,102,.5);transition:all .3s;animation:waPulse 2.5s ease-in-out infinite;}
+.wa-float:hover{transform:scale(1.15);animation:none;}
 @keyframes waPulse{0%,100%{box-shadow:0 5px 24px rgba(37,211,102,.5);}50%{box-shadow:0 5px 42px rgba(37,211,102,.8);}}
+
+/* Email float */
+.mail-float{width:50px;height:50px;background:linear-gradient(135deg,#4285f4,#1a73e8);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.25rem;text-decoration:none;box-shadow:0 5px 24px rgba(66,133,244,.5);transition:all .3s;animation:mailPulse 2.5s ease-in-out infinite 1.25s;}
+.mail-float:hover{transform:scale(1.15);animation:none;}
+@keyframes mailPulse{0%,100%{box-shadow:0 5px 24px rgba(66,133,244,.45);}50%{box-shadow:0 5px 42px rgba(66,133,244,.75);}}
+
+/* Tooltip labels on floats */
+.float-btn-wrap{position:relative;display:flex;align-items:center;}
+.float-label{position:absolute;right:calc(100% + 10px);background:var(--navy);color:#fff;font-size:.7rem;font-weight:700;padding:5px 11px;border-radius:8px;white-space:nowrap;opacity:0;visibility:hidden;transition:opacity .25s ease,transform .25s ease;transform:translateX(6px);pointer-events:none;}
+.float-label::after{content:'';position:absolute;top:50%;right:-6px;transform:translateY(-50%);border:5px solid transparent;border-left-color:var(--navy);}
+.float-btn-wrap:hover .float-label{opacity:1;visibility:visible;transform:translateX(0);}
 
 /* RESPONSIVE */
 @media(max-width:1100px){
@@ -508,6 +526,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   .tile-tooltip{min-width:140px;font-size:.68rem;}
   .hero-inner{padding:90px 5% 60px;}
   .vals{grid-template-columns:1fr;}
+  .float-stack{right:18px;bottom:18px;}
+  .float-label{display:none;}
 }
 @media(max-width:520px){
   .svc-grid{grid-template-columns:1fr;}
@@ -1125,9 +1145,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           </div>
           <div class="resume-note" id="resumeNote">📎 You can also send your resume directly via email using the button below.</div>
         </div>
-        <!-- WhatsApp button — always visible -->
         <button class="submit-btn" onclick="applyWA()"><i class="fab fa-whatsapp"></i> Submit Application via WhatsApp</button>
-        <!-- Email button — always visible from page load -->
         <button class="submit-btn submit-btn-email" id="emailBtn" style="margin-top:10px;display:flex;" onclick="applyEmail()"><i class="fas fa-envelope"></i> Send Resume via Email</button>
       </div>
     </div>
@@ -1328,6 +1346,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         <p>Fill out the form and we'll connect you on WhatsApp instantly — or simply call us directly. Available 7 days a week.</p>
         <div class="clist">
           <div class="citem"><div class="c-ico"><i class="fas fa-phone-alt"></i></div><div><h5>Phone / WhatsApp</h5><p><a href="tel:+919944455127">+91 99444 55127</a></p></div></div>
+          <div class="citem"><div class="c-ico"><i class="fas fa-envelope"></i></div><div><h5>Email</h5><p><a href="mailto:SathishManpower.pvt.ltd@gmail.com">SathishManpower.pvt.ltd@gmail.com</a></p></div></div>
           <div class="citem"><div class="c-ico"><i class="fas fa-map-marker-alt"></i></div><div><h5>Office Address</h5><p>Kakkan Street, West Pothery, Kattankulathur,<br>Chengalpattu Dist – 603 203, Tamil Nadu</p></div></div>
           <div class="citem"><div class="c-ico"><i class="fas fa-id-card"></i></div><div><h5>GSTIN</h5><p>33ABSCS1284Q1ZI</p></div></div>
           <div class="citem"><div class="c-ico"><i class="fas fa-clock"></i></div><div><h5>Working Hours</h5><p>Mon – Sat: 9:00 AM – 7:00 PM<br>Sundays: 10:00 AM – 4:00 PM</p></div></div>
@@ -1449,8 +1468,32 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   </div>
 </footer>
 
-<div id="scrtop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-chevron-up"></i></div>
-<a href="https://wa.me/919944455127" class="wa-float" target="_blank" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<!-- ===== FLOATING BUTTON STACK ===== -->
+<div class="float-stack">
+  <!-- Scroll to top -->
+  <div class="float-btn-wrap">
+    <div class="float-label">Back to top</div>
+    <div id="scrtop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">
+      <i class="fas fa-chevron-up"></i>
+    </div>
+  </div>
+
+  <!-- WhatsApp -->
+  <div class="float-btn-wrap">
+    <div class="float-label">Chat on WhatsApp</div>
+    <a href="https://wa.me/919944455127" class="wa-float" target="_blank" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- Email -->
+  <div class="float-btn-wrap">
+    <div class="float-label">Send us an Email</div>
+    <a href="mailto:SathishManpower.pvt.ltd@gmail.com" class="mail-float" title="Send Email" aria-label="Send Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+</div>
 
 <script>
 // LOADER
@@ -1514,7 +1557,7 @@ const statsObs=new IntersectionObserver((entries)=>{
 const statsSection=document.getElementById('stats');
 if(statsSection)statsObs.observe(statsSection);
 
-// ── RESUME UPLOAD ──
+// RESUME UPLOAD
 let selectedResumeFile=null;
 function handleResumeSelect(input){
   const file=input.files[0];if(!file)return;
@@ -1526,7 +1569,7 @@ function handleResumeSelect(input){
   document.getElementById('resumeNote').textContent='✅ Resume selected! Click "Send Resume via Email" below to send it, or use WhatsApp for a text-only application.';
 }
 
-// ── APPLY SECTION ──
+// APPLY SECTION
 function applyWA(){
   const n=document.getElementById('aname').value.trim();
   const ph=document.getElementById('aphone').value.trim();
@@ -1573,7 +1616,7 @@ function applyEmail(){
   if(confirmed){window.location.href=mailtoLink;}
 }
 
-// ── CONTACT SECTION ──
+// CONTACT SECTION
 function sendWA(){
   const n=document.getElementById('fname').value.trim();
   const ph=document.getElementById('fphone').value.trim();
@@ -1611,7 +1654,7 @@ function sendEmail(){
   window.location.href=`mailto:SathishManpower.pvt.ltd@gmail.com?subject=${subject}&body=${body}`;
 }
 
-// ── EMPLOYER SECTION ──
+// EMPLOYER SECTION
 function employerWA(){
   const co=document.getElementById('ename').value.trim();
   const cp=document.getElementById('eperson').value.trim();
@@ -1651,7 +1694,7 @@ function employerEmail(){
   window.location.href=`mailto:SathishManpower.pvt.ltd@gmail.com?subject=${subject}&body=${body}`;
 }
 
-// ── LIGHTBOX ──
+// LIGHTBOX
 const galImages=[
   {src:'img1.png',cap:'Our Team · 1 / 15'},
   {src:'img2.png',cap:'Our Team · 2 / 15'},
